@@ -90,6 +90,9 @@ p{margin:0 0 1em}
 .hero .grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
 @media(min-width:980px){.hero .grid{grid-template-columns:1.02fr .98fr;gap:56px;align-items:start}}
 .hero h1 span.hl{background:linear-gradient(180deg, transparent 64%, #FEE08A 64%);padding:0 4px}
+.h1-sub{display:flex;flex-direction:column;gap:9px;font-size:.5em;font-weight:600;margin-top:18px;font-family:'Inter',sans-serif;letter-spacing:0;color:var(--ink-2);line-height:1.3}
+.h1-sub .item{display:flex;align-items:center;gap:10px}
+.h1-sub .cross{flex:0 0 24px;width:24px;height:24px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:grid;place-items:center;font-weight:800;font-size:.8rem;line-height:1}
 .hero .sub{font-size:1.18rem;color:var(--muted);max-width:560px;margin-top:14px}
 .benefits{margin:26px 0 30px;padding:0;list-style:none;display:grid;gap:11px}
 .benefits li{display:flex;gap:12px;align-items:flex-start;font-size:1.02rem}
@@ -310,7 +313,13 @@ body{padding-bottom:74px}
     <div class="grid">
       <div>
         <span class="eyebrow">Die KSG H+ Methode · 113 Seiten · Sofort lieferbar</span>
-        <h1 style="margin-top:18px">Rheuma besiegen in <span class="hl">3–24 Monaten.</span><br>Ohne Medikamente. Ohne Operationen. Ohne Nahrungsergänzungsmittel.</h1>
+        <h1 style="margin-top:18px">Rheuma besiegen in <span class="hl">3–24 Monaten.</span>
+          <span class="h1-sub">
+            <span class="item"><span class="cross">✕</span>Ohne Medikamente</span>
+            <span class="item"><span class="cross">✕</span>Ohne Operationen</span>
+            <span class="item"><span class="cross">✕</span>Ohne Nahrungsergänzungsmittel</span>
+          </span>
+        </h1>
         <ul class="benefits">
           <li><span class="check">✓</span><div><b>Die wahren 5 Ursachen</b> von rheumatoider Arthritis, Morbus Bechterew, Psoriasis-Arthritis & Co. — und wie du sie nacheinander auflöst.</div></li>
           <li><span class="check">✓</span><div><b>Schritt-für-Schritt-Anleitung</b>, die schon ein 6-jähriges Kind und ein 95-jähriger Mann erfolgreich durchgeführt haben.</div></li>
