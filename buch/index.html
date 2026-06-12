@@ -248,16 +248,19 @@ section{padding:80px 0}
 .guarantee-line{margin-top:14px;font-size:.82rem;color:#A7F3D0}
 
 /* ===== Comparison ===== */
-.compare{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm)}
-.compare table{width:100%;border-collapse:collapse}
-.compare th,.compare td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--line);font-size:.98rem;vertical-align:top}
-.compare thead th{background:var(--bg-2);font-family:'Lora',serif;font-weight:700;font-size:1.05rem}
-.compare thead th.you{color:var(--teal-700)}
-.compare tbody tr:last-child td{border-bottom:0}
-.compare .yes{color:var(--teal-700);font-weight:600}
-.compare .no{color:#9CA3AF}
-.compare td:first-child{font-weight:600;color:var(--ink-2);background:var(--bg-2);width:36%}
-@media(max-width:680px){.compare td:first-child{width:42%;font-size:.88rem}.compare th,.compare td{padding:12px 10px;font-size:.88rem}}
+.vs{max-width:760px;margin:0 auto}
+.vs-head{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 0;background:#fff}
+.vs-h{border-radius:12px;padding:12px 8px;text-align:center;font-family:'Lora',serif;font-weight:700;font-size:clamp(.9rem,2.4vw,1.05rem);line-height:1.2}
+.vs-h.no{background:#FEF2F2;color:#B91C1C;border:1px solid #FECACA}
+.vs-h.yes{background:var(--teal-50);color:var(--teal-700);border:1px solid #BBF7D0}
+.vs-row{margin-bottom:16px}
+.vs-crit{text-align:center;font-weight:700;color:var(--ink);font-size:.98rem;margin:4px 0 8px}
+.vs-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.vs-cell{border-radius:12px;padding:14px 14px;font-size:.95rem;border:1px solid var(--line);background:#fff}
+.vs-cell.no{color:#6B7280;background:#FafafA}
+.vs-cell.no::before{content:"✕";color:#DC2626;font-weight:800;margin-right:7px}
+.vs-cell.yes{color:var(--teal-700);font-weight:600;background:#F0FDF9;border-color:#BBF7D0}
+.vs-cell.yes::before{content:"✓";color:var(--teal);font-weight:800;margin-right:7px}
 
 /* ===== FAQ ===== */
 .faq{max-width:780px;margin:0 auto}
@@ -549,20 +552,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="eyebrow">Klassische Behandlung vs. KSG H+ Methode</span>
       <h2 style="margin-top:14px">Warum dieses Buch das macht, was Medikamente nicht können.</h2>
     </div>
-    <div class="compare">
-      <table>
-        <thead>
-          <tr><th></th><th>Klassische Rheumatologie</th><th class="you">KSG H+ Methode</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Behandlungsziel</td><td class="no">Symptome unterdrücken</td><td class="yes">Ursachen auflösen</td></tr>
-          <tr><td>Medikamente</td><td class="no">Lebenslang nötig</td><td class="yes">Schrittweise reduzieren</td></tr>
-          <tr><td>Nebenwirkungen</td><td class="no">Magen, Leber, Knochen, Immunsystem</td><td class="yes">Keine</td></tr>
-          <tr><td>Geeignet für jedes Stadium</td><td class="no">Eingeschränkt</td><td class="yes">Ja — auch nach 20+ Jahren</td></tr>
-          <tr><td>Kosten</td><td class="no">Hunderte €/Monat (über Jahrzehnte)</td><td class="yes">Einmalige Investition</td></tr>
-          <tr><td>Erfolg messbar</td><td class="no">Symptom-Score</td><td class="yes">Schmerzfrei. Schwellungsfrei. Cortisonfrei.</td></tr>
-        </tbody>
-      </table>
+    <div class="vs">
+      <div class="vs-head">
+        <div class="vs-h no">Klassische Rheumatologie</div>
+        <div class="vs-h yes">KSG H+ Methode</div>
+      </div>
+
+      <div class="vs-row">
+        <div class="vs-crit">Behandlungsziel</div>
+        <div class="vs-pair">
+          <div class="vs-cell no">Symptome unterdrücken</div>
+          <div class="vs-cell yes">Ursachen auflösen</div>
+        </div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-crit">Medikamente</div>
+        <div class="vs-pair">
+          <div class="vs-cell no">Lebenslang nötig</div>
+          <div class="vs-cell yes">Schrittweise reduzieren</div>
+        </div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-crit">Nebenwirkungen</div>
+        <div class="vs-pair">
+          <div class="vs-cell no">Magen, Leber, Knochen, Immunsystem</div>
+          <div class="vs-cell yes">Keine</div>
+        </div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-crit">Geeignet für jedes Stadium</div>
+        <div class="vs-pair">
+          <div class="vs-cell no">Eingeschränkt</div>
+          <div class="vs-cell yes">Ja — auch nach 20+ Jahren</div>
+        </div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-crit">Kosten</div>
+        <div class="vs-pair">
+          <div class="vs-cell no">Hunderte €/Monat (über Jahrzehnte)</div>
+          <div class="vs-cell yes">Einmalige Investition</div>
+        </div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-crit">Erfolg messbar</div>
+        <div class="vs-pair">
+          <div class="vs-cell no">Symptom-Score</div>
+          <div class="vs-cell yes">Schmerzfrei. Schwellungsfrei. Cortisonfrei.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
