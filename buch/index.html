@@ -907,7 +907,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   if(!bar) return;
   const toggle = () => bar.classList.toggle('visible', window.scrollY > 700);
   window.addEventListener('scroll', toggle, {passive:true});
-  toggle();
 })();
 </script>
 <script src="/assets/js/cookie-banner.js" defer></script>
