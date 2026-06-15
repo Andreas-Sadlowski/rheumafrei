@@ -42,13 +42,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 @media(min-width:980px){.up-grid{grid-template-columns:1.05fr .95fr}}
 .up-hero h1 .hl{background:linear-gradient(180deg,transparent 62%,#FEE08A 62%);padding:0 4px}
 
-/* course visual */
-.course-visual{position:relative;border-radius:24px;overflow:hidden;background:linear-gradient(160deg,#0B1F1C,#115E59);min-height:380px;display:grid;place-items:center;box-shadow:var(--shadow-lg)}
-.course-visual .play-big{width:92px;height:92px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center;box-shadow:0 14px 40px rgba(0,0,0,.4);position:relative;z-index:2}
-.course-visual .label{position:absolute;bottom:22px;left:22px;right:22px;z-index:2;color:#fff;text-align:left}
-.course-visual .label b{font-family:'Lora',serif;font-size:1.3rem;display:block}
-.course-visual .label small{color:#A7F3D0}
-.course-visual::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 2px,transparent 2px 22px)}
+/* course video */
+.course-video{position:relative;border-radius:24px;overflow:hidden;background:#0B1F1C;box-shadow:var(--shadow-lg)}
 .vbadge{position:absolute;top:18px;right:18px;background:#F97316;color:#fff;font-weight:800;border-radius:12px;padding:10px 14px;text-align:center;z-index:2;box-shadow:var(--shadow);transform:rotate(3deg)}
 .vbadge small{display:block;font-weight:600;font-size:.7rem;opacity:.9}
 
@@ -129,10 +124,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <div class="course-visual">
+      <div class="course-video">
         <div class="vbadge">33+<small>Videos</small></div>
-        <div class="play-big"><svg width="34" height="34" viewBox="0 0 24 24" fill="#0F766E"><path d="M8 5v14l11-7z"/></svg></div>
-        <div class="label"><b>„Selbstbestimmt leben“</b><small>Videokurs · KSG H+ · Körper · Seele · Geist</small></div>
+        <div style="position:relative;width:100%;padding-top:52.67%">
+          <iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://adilo.bigcommand.com/watch/W7hNq75o" title="Videokurs „Selbstbestimmt leben“" loading="lazy" allowtransparency="true" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen scrolling="no"></iframe>
+        </div>
       </div>
     </div>
   </div>
