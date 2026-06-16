@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dekonstruktion im Menschen – Buch bestellen | rheumafrei.de</title>
+  <meta name="description" content="Hier Buch bestellen: Dekonstruktion im Menschen – Das Verständnis der aufbauenden und zerstörenden Prozesse im Körper als Schlüssel zur wahren Gesundheit">
+  <meta name="author" content="Andreas Sadlowski">
+  <link rel="icon" type="image/png" href="/assets/img/favicon-300.png">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    .hero {
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      padding: 48px 20px 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Lato', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 900;
+      color: #fff;
+      max-width: 860px;
+      margin: 0 auto 20px;
+      line-height: 1.35;
+    }
+
+    .hero h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
+      font-weight: 700;
+      color: #ff5252;
+      max-width: 760px;
+      margin: 0 auto 28px;
+      line-height: 1.4;
+    }
+
+    .hero-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 40px;
+      padding: 10px 24px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .hero-contact i { color: #ffd700; font-size: 1.2rem; }
+
+    /* VIDEO SECTION */
+    .video-section {
+      background: #fff;
+      padding: 48px 20px;
+    }
+
+    .video-section .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    .video-text h3 {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .video-text h3 b { color: #e53935; }
+
+    .video-text p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* DIVIDER */
+    .divider {
+      max-width: 200px;
+      margin: 0 auto;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #302b63, transparent);
+      border-radius: 2px;
+    }
+
+    /* FACTS SECTION */
+    .facts-section {
+      background: #f8f9fb;
+      padding: 56px 20px;
+    }
+
+    .facts-section .inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .facts-section h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 900;
+      color: #1a1a2e;
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .facts-section h2 u { text-decoration-color: #302b63; }
+
+    .facts-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 32px;
+    }
+
+    .facts-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #444;
+      line-height: 1.5;
+      padding: 8px 0;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .facts-list li i {
+      color: #302b63;
+      margin-top: 3px;
+      flex-shrink: 0;
+      font-size: 0.85rem;
+    }
+
+    .facts-summary {
+      margin-top: 32px;
+      text-align: center;
+      font-weight: 700;
+      color: #333;
+      font-size: 1rem;
+      background: #fff;
+      border: 2px solid #302b63;
+      border-radius: 10px;
+      padding: 18px 24px;
+    }
+
+    /* ORDER SECTION */
+    .order-section {
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      padding: 56px 20px;
+    }
+
+    .order-section .inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .order-section h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      font-weight: 900;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 32px;
+      background: #27ae60;
+      padding: 20px 28px;
+      border-radius: 10px;
+      line-height: 1.4;
+    }
+
+    .order-box {
+      background: #fff;
+      border-radius: 14px;
+      padding: 32px;
+      box-shadow: 0 12px 60px rgba(0,0,0,0.35);
+    }
+
+    .order-box iframe {
+      width: 100%;
+      height: 680px;
+      border: none;
+      background: transparent;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #fafafa;
+      border-top: 1px solid #e0e0e0;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    footer .links a {
+      color: #555;
+      text-decoration: none;
+      font-size: 0.88rem;
+      margin: 0 10px;
+    }
+
+    footer .links a:hover { color: #302b63; text-decoration: underline; }
+
+    footer .disclaimer {
+      margin-top: 12px;
+      font-size: 0.75rem;
+      color: #999;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    footer .brand {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: #bbb;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .video-section .inner {
+        grid-template-columns: 1fr;
+      }
+      .facts-list {
+        grid-template-columns: 1fr;
+      }
+      .order-box { padding: 16px; }
+      .order-box iframe { height: 820px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Dekonstruktion im Menschen – Das Verständnis der aufbauenden und zerstörenden Prozesse im Körper als Schlüssel zur wahren Gesundheit</h1>
+    <h2>„Das fundamentale Programm zur Gesundheits-Wiederherstellung – mit Berücksichtigung des Körpers, der Seele und des Geistes"</h2>
+    <div class="hero-contact">
+      <i class="fas fa-envelope-open"></i>
+      <span><strong>service@rheumafrei.de</strong></span>
+    </div>
+  </section>
+
+  <!-- VIDEO + TEXT -->
+  <section class="video-section">
+    <div class="inner">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/i2idwaQ9nps?mute=1&autoplay=0&modestbranding=1&controls=1&rel=0" allowfullscreen></iframe>
+      </div>
+      <div class="video-text">
+        <h3>Das Buch „Dekonstruktion im Menschen" zeigt dir, wie du mit der KSG H+ Methode <b>gesund wirst und bleibst.</b></h3>
+        <p>Dieses Video zeigt, welche Krankheiten damit bereits geheilt wurden.</p>
+        <br>
+        <p>Der Erfolg hängt von der Genauigkeit der Umsetzung ab.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FACTS -->
+  <section class="facts-section">
+    <div class="inner">
+      <h2>Hier sind <u>nur einige</u> interessante Fakten, die Du in diesem Buch lernen wirst:</h2>
+      <ul class="facts-list">
+        <li><i class="fa fa-check"></i><span>Wie du deine chronische Erkrankung von Zuhause aus <strong>Schritt für Schritt</strong> besiegen kannst</span></li>
+        <li><i class="fa fa-check"></i><span>Über die konstruktive und destruktive Wirkung der Charaktereigenschaften und wie man bei der Umformung vorgehen sollte</span></li>
+        <li><i class="fa fa-check"></i><span>Warum es von Vorteil ist keinem der <strong>4 Temperamente</strong> den Vorrang zu geben</span></li>
+        <li><i class="fa fa-check"></i><span>Wie man <strong>negative Glaubensmuster zu positiven</strong> Einstellungen formt – hier beginnt der wahre Heilungsprozess</span></li>
+        <li><i class="fa fa-check"></i><span>Über die <strong>wissenschaftlichen Gesetze der Gedanken</strong> – unentbehrliches Wissen beim Heilungsprozess</span></li>
+        <li><i class="fa fa-check"></i><span>Warum die meisten mit einer <strong>Ernährungsumstellung allein keinen Heilungsprozess</strong> hervorrufen können</span></li>
+        <li><i class="fa fa-check"></i><span>Die 3 Faktoren, von denen die <strong>Geschwindigkeit Deines Erfolgs</strong> abhängt</span></li>
+        <li><i class="fa fa-check"></i><span>Welche <strong>3 Organe versagt</strong> haben und wie man sie wieder zu voller Leistung ankurbeln kann</span></li>
+        <li><i class="fa fa-check"></i><span>Der Kreislauf der <strong>Ablagerungen und Entzündungen</strong> – und wie Du ihn durchbrechen musst</span></li>
+        <li><i class="fa fa-check"></i><span>Wie Du <strong>festgesetzte Schlacken, Kalk, Ablagerungen und Säuren</strong> aus dem Körper lösen und abtransportieren musst</span></li>
+        <li><i class="fa fa-check"></i><span>Die Funktionsweise und Aufbau eines Gelenks und dessen Krankheitsentstehung</span></li>
+        <li><i class="fa fa-check"></i><span>3 Gründe warum eine Gruppe mit Giftbelastung <strong>gesund bleibt</strong> – und die andere leidet</span></li>
+        <li><i class="fa fa-check"></i><span>Der <strong>Mythos über die Übersäuerung</strong> – warum die beste Entsäuerungskur allein nicht hilft</span></li>
+        <li><i class="fa fa-check"></i><span>Welcher Parameter Atmung, Kreislauf, Verdauung, Abwehrkraft und <strong>Hormonhaushalt beeinflusst</strong></span></li>
+        <li><i class="fa fa-check"></i><span>Die Funktionsweise der <strong>Nieren</strong> und wie Du sie wieder auf Vordermann bringst</span></li>
+        <li><i class="fa fa-check"></i><span>Die Funktionsweise der <strong>Leber</strong> und dessen Zusammenhänge mit chronischen Erkrankungen</span></li>
+        <li><i class="fa fa-check"></i><span>Warum es keinen chronisch kranken Menschen gibt, bei dem die Leber richtig funktioniert – lass Dich nicht von <strong>positiven Leberwerten</strong> täuschen</span></li>
+        <li><i class="fa fa-check"></i><span>Das Problem der <strong>intrahepatischen Steine</strong> in der Leber und was Du dagegen unternehmen musst</span></li>
+        <li><i class="fa fa-check"></i><span>Wie <strong>Ärger, Hass, Furcht, Eifersucht, Depression</strong> und Hoffnungslosigkeit Deine Gesundheit in die Knie zwingen</span></li>
+        <li><i class="fa fa-check"></i><span>Die Funktionsweise des <strong>Darms</strong> und die Zusammenhänge mit Rheuma, Arthritis und Autoimmunerkrankungen</span></li>
+        <li><i class="fa fa-check"></i><span>80 % des Immunsystems sind vom Darm abhängig – <strong>spare Dir so viel Geld und Zeit</strong> durch richtiges Vorgehen</span></li>
+        <li><i class="fa fa-check"></i><span>Wie im Laufe der Jahre KILOWEISE Ablagerungen im Dünn- und Dickdarm entstanden sind und wie Du sie loswirst</span></li>
+        <li><i class="fa fa-check"></i><span>Die einfachste Methode rauszufinden, welche <strong>Nahrungsmittel Du nicht verträgst</strong></span></li>
+        <li><i class="fa fa-check"></i><span>Warum <strong>Parasitenreinigungen langfristig gar nichts bringen</strong> – und was wirklich funktioniert</span></li>
+        <li><i class="fa fa-check"></i><span>48 Symptome von <strong>Parasitenbefall</strong></span></li>
+        <li><i class="fa fa-check"></i><span>Innere und äußere <strong>Pilze</strong> – so müssen sie eliminiert werden</span></li>
+        <li><i class="fa fa-check"></i><span>Ursachen chronischer Erkrankungen in <strong>Zähnen, Zahnwurzeln und im Kiefer</strong></span></li>
+        <li><i class="fa fa-check"></i><span>In welchem Fall <strong>Amalgamfüllungen NICHT sofort</strong> entfernt werden dürfen</span></li>
+        <li><i class="fa fa-check"></i><span>Die <strong>6 Schadstoffquellen</strong>, die Du unbedingt vermeiden solltest</span></li>
+        <li><i class="fa fa-check"></i><span>Welche <strong>sportlichen Aktivitäten</strong> auch ein chronisch Erkrankter ausüben kann und sollte</span></li>
+        <li><i class="fa fa-check"></i><span>Kann <strong>Knorpel wieder nachwachsen?</strong></span></li>
+        <li><i class="fa fa-check"></i><span><strong>Schritt-für-Schritt-Anleitung</strong> zur Umsetzung</span></li>
+      </ul>
+      <div class="facts-summary">
+        Das ist nur eine sehr kleine Auswahl. Insgesamt sind es <strong>10 Kapitel</strong> mit unbezahlbaren Informationen, die Du sofort anwenden kannst.
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER -->
+  <section class="order-section">
+    <div class="inner">
+      <h2>
+        Hast Du ein gutes Gefühl das Buch <strong>„Dekonstruktion im Menschen"</strong> zu bestellen und zu lesen?<br><br>
+        <strong>Glückwunsch!</strong> Es wird Dein Leben unglaublich positiv verändern. Hier geht's zum Bestellprozess:
+      </h2>
+      <div class="order-box">
+        <script src="https://www.digistore24.com/service/js/orderform_widget.js"></script>
+        <iframe src="https://www.digistore24.com/product/300163/95823?is_in_iframe=1" style="overflow:hidden;width:100%;height:680px;border:none;background:transparent;"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="links">
+      <a href="/impressum">Impressum</a>
+      <a href="/datenschutz">Datenschutz</a>
+      <a href="/haftungsausschluss">Haftungsausschluss</a>
+      <a href="/agb">AGBs</a>
+    </div>
+    <p class="disclaimer">This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
+    <p class="brand">Andreas Sadlowski · D-53639 Königswinter · service@rheumafrei.de</p>
+  </footer>
+
+</body>
+</html>
