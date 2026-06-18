@@ -98,14 +98,6 @@ p{margin:0 0 18px}
 .cf-footer{background:#0f1f24;color:#9fb0b3;text-align:center;padding:34px 16px;font-size:.9rem}
 .cf-footer a{color:#cfe0e2;text-decoration:none;margin:0 8px}
 .cf-footer .disc{max-width:760px;margin:18px auto 0;font-size:.78rem;color:#6f8084;line-height:1.6}
-
-/* exit modal */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:999;padding:18px}
-.modal-overlay.show{display:flex}
-.modal{background:#fff;max-width:560px;width:100%;border-radius:12px;padding:30px 28px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.4)}
-.modal h3{color:#c0392b;font-size:1.4rem}
-.modal .close{position:absolute;top:10px;right:14px;font-size:1.7rem;line-height:1;color:#999;background:none;border:0;cursor:pointer}
-.modal a{font-weight:700}
 </style>
 </head>
 <body>
@@ -463,38 +455,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p class="disc">This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
 </footer>
 
-<!-- EXIT-INTENT MODAL -->
-<div class="modal-overlay" id="exitModal">
-  <div class="modal">
-    <button class="close" aria-label="Schließen" onclick="document.getElementById('exitModal').classList.remove('show')">×</button>
-    <h3>Warte kurz!</h3>
-    <p>Was ist der Grund dafür, dass Du diese Seite verlässt, ohne das Rheuma-Buch bestellt zu haben?</p>
-    <p><b>Ich schenke Dir das Buch als Hörbuch</b>, wenn Du uns den wahren Grund per E-Mail an <a href="mailto:service@rheumafrei.de">service@rheumafrei.de</a> aufschreibst.</p>
-    <p>Du kannst folgendermaßen beginnen:<br><em>„Die folgenden Gedanken oder Tatsachen haben mich davon abgehalten, Dein Buch zu bestellen: [Deine Gedanken oder Tatsache]“</em></p>
-    <p>Du erhältst dann unverzüglich das Hörbuch „Dekonstruktion im Menschen“ in voller Länge per E-Mail zugesandt.</p>
-    <div class="center" style="margin-top:16px">
-      <a class="order" href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" style="padding:14px 22px">
-        <span class="big" style="font-size:1.15rem">Doch lieber das Buch sichern →</span>
-      </a>
-    </div>
-  </div>
-</div>
-
-<script>
-// Exit-intent: show once per session when the cursor leaves at the top
-(function(){
-  var shown = false;
-  function trigger(){
-    if(shown || sessionStorage.getItem('rf_exit')) return;
-    shown = true;
-    sessionStorage.setItem('rf_exit','1');
-    document.getElementById('exitModal').classList.add('show');
-  }
-  document.addEventListener('mouseout', function(e){
-    if(!e.relatedTarget && e.clientY <= 0) trigger();
-  });
-})();
-</script>
 <script src="/assets/js/cookie-banner.js" defer></script>
 </body>
 </html>
