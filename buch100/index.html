@@ -23,7 +23,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" type="image/png" href="/assets/img/favicon-300.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap">
+<link rel="preload" as="image" href="/assets/img/rheuma-apfel.jpg" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap"></noscript>
 <style>
 /* ===== ClickFunnels-style classic long-form sales page ===== */
 *{box-sizing:border-box}
@@ -61,7 +63,7 @@ p{margin:0 0 18px}
 .ph svg{width:54px;height:54px;opacity:.5;margin-bottom:10px}
 .ph .lbl{font-size:.8rem;color:#7a8a86;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
 .ph.book{background:linear-gradient(135deg,#eef5ff,#f6efe2);min-height:auto;padding:0;border:0}
-.ph.book img{width:300px;max-width:80%;margin:0 auto;filter:drop-shadow(0 14px 30px rgba(0,0,0,.18))}
+.ph.book img{width:300px;max-width:80%;margin:0 auto;box-shadow:none;filter:none}
 
 /* order buttons */
 .order{display:inline-block;max-width:680px;width:100%;background:linear-gradient(#3fbf6b,#1e8449);color:#fff;text-decoration:none;border-radius:10px;padding:18px 26px;font-family:'Oswald',sans-serif;font-weight:700;text-align:center;box-shadow:0 8px 22px rgba(30,132,73,.35);transition:transform .12s, box-shadow .12s;text-transform:uppercase}
@@ -98,6 +100,14 @@ p{margin:0 0 18px}
 .cf-footer{background:#0f1f24;color:#9fb0b3;text-align:center;padding:34px 16px;font-size:.9rem}
 .cf-footer a{color:#cfe0e2;text-decoration:none;margin:0 8px}
 .cf-footer .disc{max-width:760px;margin:18px auto 0;font-size:.78rem;color:#6f8084;line-height:1.6}
+
+/* exit modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:999;padding:18px}
+.modal-overlay.show{display:flex}
+.modal{background:#fff;max-width:560px;width:100%;border-radius:12px;padding:30px 28px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.modal h3{color:#c0392b;font-size:1.4rem}
+.modal .close{position:absolute;top:10px;right:14px;font-size:1.7rem;line-height:1;color:#999;background:none;border:0;cursor:pointer}
+.modal a{font-weight:700}
 </style>
 </head>
 <body>
@@ -152,7 +162,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="section">
   <div class="wrap narrow center">
     <div class="media ph book">
-      <img src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – das Rheuma-Buch von Andreas Sadlowski" width="300" height="405">
+      <img src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – das Rheuma-Buch von Andreas Sadlowski" width="300" height="405" loading="lazy" decoding="async">
     </div>
     <p>Um Dir zu helfen, Dein Rheuma zu besiegen, hat Andreas Sadlowski diesen 113-seitigen Schritt-für-Schritt-Leitfaden für Dich erstellt:</p>
     <h2 class="red">„Dekonstruktion im Menschen –<br>Das Verständnis der aufbauenden und zerstörenden Prozesse im Körper als Schlüssel zur wahren Gesundheit“</h2>
@@ -433,7 +443,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1 class="red">Worauf wartest Du noch?</h1>
     <p style="font-size:1.2rem">Jetzt mit 113 Seiten geballtem Anti-Rheuma-Know-how das Rheuma besiegen!</p>
     <div class="media ph book">
-      <img src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – Buchcover" width="300" height="405">
+      <img src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – Buchcover" width="300" height="405" loading="lazy" decoding="async">
     </div>
     <div class="cta-block">
       <a class="order" href="https://www.digistore24.com/product/300163.html?aff=rheumafrei">
@@ -455,6 +465,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p class="disc">This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
 </footer>
 
+<!-- EXIT-INTENT MODAL -->
+<div class="modal-overlay" id="exitModal">
+  <div class="modal">
+    <button class="close" aria-label="Schließen" onclick="document.getElementById('exitModal').classList.remove('show')">×</button>
+    <h3>Warte kurz!</h3>
+    <p>Was ist der Grund dafür, dass Du diese Seite verlässt, ohne das Rheuma-Buch bestellt zu haben?</p>
+    <p><b>Ich schenke Dir das Buch als Hörbuch</b>, wenn Du uns den wahren Grund per E-Mail an <a href="mailto:service@rheumafrei.de">service@rheumafrei.de</a> aufschreibst.</p>
+    <p>Du kannst folgendermaßen beginnen:<br><em>„Die folgenden Gedanken oder Tatsachen haben mich davon abgehalten, Dein Buch zu bestellen: [Deine Gedanken oder Tatsache]“</em></p>
+    <p>Du erhältst dann unverzüglich das Hörbuch „Dekonstruktion im Menschen“ in voller Länge per E-Mail zugesandt.</p>
+    <div class="center" style="margin-top:16px">
+      <a class="order" href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" style="padding:14px 22px">
+        <span class="big" style="font-size:1.15rem">Doch lieber das Buch sichern →</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+// Exit-intent: show once per session when the cursor leaves at the top
+(function(){
+  var shown = false;
+  function trigger(){
+    if(shown || sessionStorage.getItem('rf_exit')) return;
+    shown = true;
+    sessionStorage.setItem('rf_exit','1');
+    document.getElementById('exitModal').classList.add('show');
+  }
+  document.addEventListener('mouseout', function(e){
+    if(!e.relatedTarget && e.clientY <= 0) trigger();
+  });
+})();
+</script>
 <script src="/assets/js/cookie-banner.js" defer></script>
 </body>
 </html>
