@@ -8,7 +8,18 @@
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(git branch *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git pull *)",
+      "WebFetch(domain:app.funnel-preview.com)",
+      "Bash(curl -s --ftp-pasv --user \"k6023-1:ohriteek\" \"ftp://ftp12.planet-school.de/\")",
+      "Bash(curl -s --ftp-pasv --user \"k6023-1:ohriteek\" \"ftp://ftp12.planet-school.de/httpdocs/\")",
+      "Bash(awk '{print $NF}')",
+      "Bash(curl -s --ftp-pasv --user \"k6023-1:ohriteek\" \"ftp://ftp12.planet-school.de/httpdocs/v2/\")",
+      "Bash(curl -v --ftp-pasv --user \"k6023-1:ohriteek\" \"ftp://ftp12.planet-school.de/httpdocs/warenkorb/\")",
+      "Bash(findstr -i \"danke\")",
+      "Bash(git -C \"C:\\\\Users\\\\Megaport\\\\Desktop\\\\Webseiten\\\\rheumafrei.de\" log --oneline --all)",
+      "Bash(find \"C:\\\\Users\\\\Megaport\\\\Desktop\\\\Webseiten\\\\andreas-sadlowski\" -type f | head -50)",
+      "Bash(git stash *)"
     ]
   }
 }
