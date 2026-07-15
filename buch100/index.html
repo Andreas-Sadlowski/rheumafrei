@@ -71,6 +71,13 @@ p{margin:0 0 18px}
 .ph.book{background:linear-gradient(135deg,#eef5ff,#f6efe2);min-height:auto;padding:0;border:0}
 .ph.book img{width:300px;max-width:80%;margin:0 auto;box-shadow:none;filter:none}
 
+/* book side-by-side */
+.book-cols{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;max-width:760px;margin:0 auto;text-align:center}
+@media(min-width:700px){.book-cols{grid-template-columns:.85fr 1.15fr;text-align:left;max-width:860px}}
+.book-cols .cover img{width:100%;max-width:260px;margin:0 auto;box-shadow:0 20px 44px rgba(0,0,0,.28);border-radius:3px}
+@media(min-width:700px){.book-cols .cover img{margin:0}}
+.book-cols .cta-block{margin:22px 0 0;text-align:inherit}
+
 /* order buttons */
 .order{display:inline-block;max-width:680px;width:100%;background:linear-gradient(#3fbf6b,#1e8449);color:#fff;text-decoration:none;border-radius:10px;padding:18px 26px;font-family:'Oswald',sans-serif;font-weight:700;text-align:center;box-shadow:0 8px 22px rgba(30,132,73,.35);transition:transform .12s, box-shadow .12s;text-transform:uppercase}
 .order:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(30,132,73,.45);color:#fff}
@@ -189,17 +196,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- BOOK -->
 <section class="section">
-  <div class="wrap narrow center">
-    <div class="media ph book">
-      <img src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – das Rheuma-Buch von Andreas Sadlowski" width="300" height="405" loading="lazy" decoding="async">
-    </div>
-    <p>Um dir zu zeigen, wie du deine Bewegungsfreiheit Schritt für Schritt zurückgewinnen kannst, hat Andreas Sadlowski diesen 113-seitigen Praxis-Leitfaden für dich erstellt:</p>
-    <h2 class="red">„Dekonstruktion im Menschen –<br>Das Verständnis der aufbauenden und zerstörenden Prozesse im Körper als Schlüssel zur wahren Gesundheit“</h2>
-    <div class="cta-block">
-      <a class="order" href="/kaufen">
-        <span class="big">Buch bestellen</span>
-        <span class="small">Zum regulären Preis von 39,95&nbsp;€</span>
-      </a>
+  <div class="wrap">
+    <div class="book-cols">
+      <div class="cover">
+        <img src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – das Rheuma-Buch von Andreas Sadlowski" width="300" height="405" loading="lazy" decoding="async">
+      </div>
+      <div>
+        <p>Um dir zu zeigen, wie du deine Bewegungsfreiheit Schritt für Schritt zurückgewinnen kannst, hat Andreas Sadlowski diesen 113-seitigen Praxis-Leitfaden für dich erstellt:</p>
+        <h2 class="red">„Dekonstruktion im Menschen –<br>Das Verständnis der aufbauenden und zerstörenden Prozesse im Körper als Schlüssel zur wahren Gesundheit“</h2>
+        <div class="cta-block">
+          <a class="order" href="/kaufen">
+            <span class="big">Buch bestellen</span>
+            <span class="small">Zum regulären Preis von 39,95&nbsp;€</span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
