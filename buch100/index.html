@@ -78,6 +78,12 @@ p{margin:0 0 18px}
 @media(min-width:700px){.book-cols .cover img{margin:0}}
 .book-cols .cta-block{margin:22px 0 0;text-align:inherit}
 
+/* expert photo + text side-by-side */
+.expert-cols{display:grid;grid-template-columns:1fr;gap:24px;align-items:start;max-width:900px;margin:0 auto}
+@media(min-width:700px){.expert-cols{grid-template-columns:.75fr 1.25fr}}
+.expert-cols .photo img{width:100%;max-width:260px;margin:0 auto;display:block}
+@media(min-width:700px){.expert-cols .photo img{margin:0}}
+
 /* order buttons */
 .order{display:inline-block;max-width:680px;width:100%;background:linear-gradient(#3fbf6b,#1e8449);color:#fff;text-decoration:none;border-radius:10px;padding:18px 26px;font-family:'Oswald',sans-serif;font-weight:700;text-align:center;box-shadow:0 8px 22px rgba(30,132,73,.35);transition:transform .12s, box-shadow .12s;text-transform:uppercase}
 .order:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(30,132,73,.45);color:#fff}
@@ -184,12 +190,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="section alt">
   <div class="wrap narrow">
     <h2 class="center">Dein Wegweiser bei Autoimmunprozessen und chronischen Entzündungen</h2>
-    <div class="media" style="max-width:260px">
-      <img src="/assets/img/andreas-sadlowski.jpg" alt="Andreas Sadlowski – Autor und Rheuma-Coach" width="260" height="303" loading="lazy" style="border-radius:10px;box-shadow:0 10px 26px rgba(12,58,82,.22);aspect-ratio:6/7;object-fit:cover">
+    <div class="expert-cols">
+      <div class="photo">
+        <img src="/assets/img/andreas-sadlowski.jpg" alt="Andreas Sadlowski – Autor und Rheuma-Coach" width="260" height="303" loading="lazy" style="border-radius:10px;box-shadow:0 10px 26px rgba(12,58,82,.22);aspect-ratio:6/7;object-fit:cover">
+      </div>
+      <div class="text">
+        <p>Andreas Sadlowski hat durch seine jahrzehntelange Forschung und Erfahrung einen Ansatz entwickelt, der auf anerkannten, wissenschaftlichen Naturgesetzen beruht.</p>
+        <p>Auch Mediziner und Therapeuten greifen heute auf sein Wissen zurück, um tiefere Zusammenhänge im Körper zu verstehen. Was Andreas Sadlowski von klassischen Theoretikern unterscheidet: Seine Erkenntnisse basieren auf über 20 Jahren intensivem Selbststudium, seiner Ausbildung zum Industriemeister und Technischen Betriebswirt (IHK-Abschlüsse auf Bachelor- und Master-Niveau) sowie einem ganz persönlichen Erfolg. Es gelang ihm, seiner damaligen Partnerin nach einem jahrelangen, schweren Leidensweg wieder zu einem völlig schmerzfreien, aktiven Leben zu verhelfen.</p>
+        <p>Was im ersten Moment ungewöhnlich klingt, ist sein größter Vorteil: Er blickt mit dem unbestechlichen Auge eines System-Analytikers auf den Organismus. Während im Alltag oft nur die Symptome im Fokus stehen, betrachtet er die biologischen Prozesse wie ein komplexes System. Er sucht nach den eigentlichen Störquellen, um diese Schritt für Schritt und systematisch zu entlasten. Genau dieses strukturierte, logische Denken steckt in der KSG H+ Methode.</p>
+      </div>
     </div>
-    <p>Andreas Sadlowski hat durch seine jahrzehntelange Forschung und Erfahrung einen Ansatz entwickelt, der auf anerkannten, wissenschaftlichen Naturgesetzen beruht.</p>
-    <p>Auch Mediziner und Therapeuten greifen heute auf sein Wissen zurück, um tiefere Zusammenhänge im Körper zu verstehen. Was Andreas Sadlowski von klassischen Theoretikern unterscheidet: Seine Erkenntnisse basieren auf über 20 Jahren intensivem Selbststudium, seiner Ausbildung zum Industriemeister und Technischen Betriebswirt (IHK-Abschlüsse auf Bachelor- und Master-Niveau) sowie einem ganz persönlichen Erfolg. Es gelang ihm, seiner damaligen Partnerin nach einem jahrelangen, schweren Leidensweg wieder zu einem völlig schmerzfreien, aktiven Leben zu verhelfen.</p>
-    <p>Was im ersten Moment ungewöhnlich klingt, ist sein größter Vorteil: Er blickt mit dem unbestechlichen Auge eines System-Analytikers auf den Organismus. Während im Alltag oft nur die Symptome im Fokus stehen, betrachtet er die biologischen Prozesse wie ein komplexes System. Er sucht nach den eigentlichen Störquellen, um diese Schritt für Schritt und systematisch zu entlasten. Genau dieses strukturierte, logische Denken steckt in der KSG H+ Methode.</p>
     <p>Seither durften tausende Menschen mit seiner Methode erfahren, wie sich der Körper selbst regenerieren kann, wenn man ihm die richtigen Impulse gibt. Das zeigt: Hier erwartet dich kein theoretisches Lehrbuchwissen, sondern eine praxiserprobte Schritt-für-Schritt-Anleitung für deinen Alltag.</p>
   </div>
 </section>
