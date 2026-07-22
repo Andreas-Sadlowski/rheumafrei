@@ -94,6 +94,12 @@ p{margin:0 0 18px}
 @media(min-width:700px){.book-cols .cover img{margin:0}}
 .book-cols .cta-block{margin:22px 0 0;text-align:inherit}
 
+/* corona/immun-trigger text + image side-by-side (image right) */
+.corona-cols{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;max-width:900px;margin:30px auto 0}
+@media(min-width:700px){.corona-cols{grid-template-columns:1.15fr .85fr}}
+.corona-cols .img-wrap img{width:100%;max-width:340px;margin:0 auto;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+@media(min-width:700px){.corona-cols .img-wrap img{margin:0 0 0 auto}}
+
 /* expert photo + text side-by-side */
 .expert-cols{display:grid;grid-template-columns:1fr;gap:24px;align-items:start;max-width:900px;margin:0 auto}
 @media(min-width:700px){.expert-cols{grid-template-columns:.75fr 1.25fr}}
@@ -400,9 +406,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="section dark">
   <div class="wrap narrow">
     <h2 class="center">Plötzliche Gelenkbeschwerden nach neuartigen Belastungen oder Immun-Triggern?</h2>
-    <p>In den letzten Jahren beobachten wir einen drastischen Anstieg von hartnäckigen Gelenk- und Autoimmunbeschwerden, die oft völlig überraschend nach intensiven biologischen Belastungen oder äußeren Einflüssen auftreten.</p>
-    <p>Wir haben auf diesem Gebiet bereits tiefgehende Erfahrungen gesammelt. Betroffene, die nach solchen einschneidenden Ereignissen mit unserem Programm gestartet sind, berichten von herausragenden Fortschritten. Die KSG H+ Methode aus dem Buch „Dekonstruktion im Menschen“ setzt genau an den tiefen Regulationsstörungen an, die durch solche massiven Reize im Immunsystem ausgelöst werden.</p>
-    <p>Viele unserer Leser hatten zuvor bereits 20.000 Euro und mehr in kostspielige Behandlungen, aufwendige Laboruntersuchungen, alternative Therapieverfahren oder unzählige Nahrungsergänzungsmittel investiert – leider völlig ohne nennenswerten Erfolg. Erst die gezielte Entlastung und biologische Dekonstruktion der eigentlichen Ursachen brachte ihnen die lang ersehnte Erleichterung und spürbare Beweglichkeit zurück.</p>
+  </div>
+  <div class="wrap">
+    <div class="corona-cols">
+      <div>
+        <p>In den letzten Jahren beobachten wir einen drastischen Anstieg von hartnäckigen Gelenk- und Autoimmunbeschwerden, die oft völlig überraschend nach intensiven biologischen Belastungen oder äußeren Einflüssen auftreten.</p>
+        <p>Wir haben auf diesem Gebiet bereits tiefgehende Erfahrungen gesammelt. Betroffene, die nach solchen einschneidenden Ereignissen mit unserem Programm gestartet sind, berichten von herausragenden Fortschritten. Die KSG H+ Methode aus dem Buch „Dekonstruktion im Menschen“ setzt genau an den tiefen Regulationsstörungen an, die durch solche massiven Reize im Immunsystem ausgelöst werden.</p>
+        <p>Viele unserer Leser hatten zuvor bereits 20.000 Euro und mehr in kostspielige Behandlungen, aufwendige Laboruntersuchungen, alternative Therapieverfahren oder unzählige Nahrungsergänzungsmittel investiert – leider völlig ohne nennenswerten Erfolg. Erst die gezielte Entlastung und biologische Dekonstruktion der eigentlichen Ursachen brachte ihnen die lang ersehnte Erleichterung und spürbare Beweglichkeit zurück.</p>
+      </div>
+      <div class="img-wrap">
+        <img src="/assets/img/immun-trigger.jpg" alt="Immunzellen umschließen einen Erreger – Darstellung eines Immun-Triggers" loading="lazy">
+      </div>
+    </div>
   </div>
 </section>
 
