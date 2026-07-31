@@ -94,6 +94,14 @@ p{margin:0 0 18px}
 .order.orange{background:linear-gradient(#ff9a3d,#e8730b);box-shadow:0 8px 22px rgba(232,115,11,.35)}
 .cta-block{text-align:center;margin:34px 0}
 .price-note{font-size:.95rem;color:#7a8a86;margin-top:10px}
+.trust-line{font-size:.82rem;color:#8a9a96;text-align:center;margin-top:12px;letter-spacing:.01em}
+
+/* book cover + text side-by-side */
+.book-cols{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;max-width:760px;margin:0 auto;text-align:center}
+@media(min-width:700px){.book-cols{grid-template-columns:.85fr 1.15fr;text-align:left;max-width:860px}}
+.book-cols .cover img{width:100%;max-width:260px;margin:0 auto;filter:drop-shadow(0 20px 30px rgba(0,0,0,.32))}
+@media(min-width:700px){.book-cols .cover img{margin:0}}
+.book-cols .cta-block{margin:22px 0 0;text-align:inherit}
 
 /* bullets */
 .facts{max-width:860px;margin:0 auto;list-style:none;padding:0}
@@ -174,17 +182,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- BOOK -->
 <section class="section">
-  <div class="wrap narrow center">
-    <div class="media ph book">
-      <img src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – das Rheuma-Buch von Andreas Sadlowski" width="300" height="405" loading="lazy" decoding="async">
-    </div>
-    <p>Um Dir zu helfen, Dein Rheuma zu besiegen, hat Andreas Sadlowski diesen 113-seitigen Schritt-für-Schritt-Leitfaden für Dich erstellt:</p>
-    <h2 class="red">„Dekonstruktion im Menschen –<br>Das Verständnis der aufbauenden und zerstörenden Prozesse im Körper als Schlüssel zur wahren Gesundheit“</h2>
-    <div class="cta-block">
-      <a class="order" href="https://www.digistore24.com/product/300163.html?aff=rheumafrei">
-        <span class="big">Buch bestellen</span>
-        <span class="small">Zum regulären Preis von 39,95&nbsp;€</span>
-      </a>
+  <div class="wrap">
+    <div class="book-cols">
+      <div class="cover">
+        <img src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – das Rheuma-Buch von Andreas Sadlowski" width="300" height="405" loading="lazy" decoding="async">
+      </div>
+      <div>
+        <p>Keine dicken, unverständlichen 500-Seiten-Medizinwälzer: Andreas Sadlowski hat die Erkenntnisse aus über 20 Jahren Forschung auf die hocheffiziente, sofort im Alltag umsetzbare Essenz komprimiert. Weniger lesen, schneller handeln – mit diesem 113-seitigen Praxis-Leitfaden:</p>
+        <h2 class="red">„Dekonstruktion im Menschen –<br>Das Verständnis der aufbauenden und zerstörenden Prozesse im Körper als Schlüssel zur wahren Gesundheit“</h2>
+        <p>Dekonstruktion bedeutet für dich: Wir zerlegen den Entzündungsprozess systematisch in seine Einzelteile, um den Fehler im System zu finden und gezielt zu beheben.</p>
+        <div class="cta-block">
+          <a class="order" href="https://www.digistore24.com/product/300163.html?aff=rheumafrei">
+            <span class="big">Ja, ich will mir das Buch jetzt sichern!</span>
+            <span class="small">Inkl. 30 Tage Geld-zurück-Garantie – Für nur 39,95&nbsp;€</span>
+          </a>
+          <p class="trust-line">🔒 Sichere Bezahlung &nbsp;|&nbsp; 🚚 Schnelle Post-Lieferung &nbsp;|&nbsp; 🚫 Kein Abo</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
