@@ -47,6 +47,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preload" as="image" href="/assets/img/rheuma-apfel.jpg" fetchpriority="high">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap"></noscript>
+<link rel="stylesheet" type="text/css" href="https://www.provenexpert.com/css/widget_landing.css" media="screen,print">
 <style>
 /* ===== ClickFunnels-style classic long-form sales page ===== */
 *{box-sizing:border-box}
@@ -87,11 +88,10 @@ p{margin:0 0 18px}
 .ph.book img{width:300px;max-width:80%;margin:0 auto;box-shadow:none;filter:none}
 
 /* order buttons */
-.order{display:inline-block;max-width:680px;width:100%;background:linear-gradient(#3fbf6b,#1e8449);color:#fff;text-decoration:none;border-radius:10px;padding:18px 26px;font-family:'Oswald',sans-serif;font-weight:700;text-align:center;box-shadow:0 8px 22px rgba(30,132,73,.35);transition:transform .12s, box-shadow .12s;text-transform:uppercase}
-.order:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(30,132,73,.45);color:#fff}
+.order{display:inline-block;max-width:680px;width:100%;background:#2189da;color:#fff;text-decoration:none;border-radius:10px;padding:18px 26px;font-family:'Oswald',sans-serif;font-weight:700;text-align:center;box-shadow:0 8px 22px rgba(33,137,218,.35);transition:transform .12s, box-shadow .12s;text-transform:uppercase}
+.order:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(33,137,218,.45);color:#fff}
 .order .big{display:block;font-size:1.45rem;line-height:1.15}
 .order .small{display:block;font-size:.92rem;font-weight:600;opacity:.95;text-transform:none;margin-top:4px}
-.order.orange{background:linear-gradient(#ff9a3d,#e8730b);box-shadow:0 8px 22px rgba(232,115,11,.35)}
 .cta-block{text-align:center;margin:34px 0}
 .price-note{font-size:.95rem;color:#7a8a86;margin-top:10px}
 .trust-line{font-size:.82rem;color:#8a9a96;text-align:center;margin-top:12px;letter-spacing:.01em}
@@ -117,10 +117,24 @@ p{margin:0 0 18px}
 .faq .q{font-family:'Oswald',sans-serif;font-weight:700;color:#16313a;font-size:1.15rem;margin:24px 0 6px}
 .faq .a{margin:0 0 8px;color:#3a4a4e}
 
-/* testimonials */
-.testi{max-width:820px;margin:0 auto}
-.testi .t{font-style:italic;color:#3a4a4e}
-.testi .name{font-style:normal;font-weight:700;color:#16313a;margin-top:6px}
+/* testimonials (cards) */
+.testi-grid{display:grid;gap:18px;max-width:1040px;margin:0 auto}
+@media(min-width:680px){.testi-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1020px){.testi-grid{grid-template-columns:repeat(3,1fr)}}
+.t-card{background:#fff;border:1px solid #e3e9e7;border-radius:12px;padding:20px 22px;box-shadow:0 2px 10px rgba(15,49,58,.05)}
+.t-card .stars{color:#e8a900;letter-spacing:2px;margin-bottom:8px;font-size:.95rem}
+.t-card .t{font-style:italic;color:#3a4a4e;margin:0 0 14px;font-size:.98rem}
+.t-card .meta{display:flex;align-items:center;gap:10px;padding-top:10px;border-top:1px dashed #e3e9e7}
+.t-card .avatar{flex:0 0 38px;width:38px;height:38px;border-radius:50%;background:#e5f2f8;color:#0c3a52;display:grid;place-items:center;font-weight:700;font-family:'Oswald',sans-serif;font-size:.85rem}
+.t-card .name{font-weight:700;color:#0c3a52;font-size:.92rem}
+.t-card.dark{background:#123f5c;border-color:#1d5a78}
+.t-card.dark .t{color:#dbe7e9}
+.t-card.dark .meta{border-top-color:#1d5a78}
+
+/* final CTA with background photo */
+.final-cta{background:linear-gradient(rgba(20,20,20,.6),rgba(20,20,20,.6)),url('/assets/img/final-cta-hintergrund.webp') center/cover no-repeat;color:#fff;padding:60px 0}
+.final-cta h1{color:#cab82a}
+.final-cta .sub{font-size:1.3rem;color:#fff}
 
 /* guarantee box */
 .guarantee{max-width:820px;margin:0 auto;background:#fff;border:2px solid #1e8449;border-radius:12px;padding:26px 28px;text-align:center}
@@ -266,9 +280,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="center" style="margin-top:24px">Das ist nur eine sehr kleine Auswahl von Dingen, die Du in diesem Lehrgang entdecken wirst. Insgesamt sind es <b>10 Kapitel</b> mit unbezahlbaren Informationen, die Du sofort anwenden kannst.</p>
     <div class="cta-block">
       <a class="order" href="https://www.digistore24.com/product/300163.html?aff=rheumafrei">
-        <span class="big">Zum Rheuma-Buch</span>
-        <span class="small">Zum regulären Preis von 39,95&nbsp;€</span>
+        <span class="big">Ja, ich will das komplette Wissen sichern!</span>
+        <span class="small">Buch jetzt für nur 39,95&nbsp;€ bestellen &amp; direkt nach Hause geliefert bekommen</span>
       </a>
+      <p class="trust-line">🔒 Sichere Bezahlung &nbsp;|&nbsp; 🚚 Schnelle Post-Lieferung &nbsp;|&nbsp; 🚫 Kein Abo</p>
     </div>
   </div>
 </section>
@@ -297,14 +312,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap narrow">
     <h2 class="center">Vererbtes Rheuma überwinden: Die ganzheitliche Methode für genetisch bedingte Erkrankungen</h2>
     <div class="media">
-      <img src="/assets/img/genetik-verandern.jpg" alt="Genetik / DNA – vererbtes Rheuma überwinden" width="365" height="250" loading="lazy">
+      <img src="/assets/img/genetik-dna.png" alt="Genetik / DNA – vererbtes Rheuma überwinden" width="365" height="250" loading="lazy">
     </div>
     <p>Menschen mit vererbter Veranlagung zu Rheuma können dauerhaft heilen, indem sie die Ursachen ihrer Erkrankung beheben.</p>
     <p>Es ist zwar möglich, dass bestimmte Gene die Anfälligkeit für Rheuma erhöhen können, aber es ist auch bekannt, dass bestimmte Faktoren wie Umwelt, Ernährung, Stress und Lebensstil die Entstehung und Verschlimmerung von rheumatischen Erkrankungen beeinflussen können.</p>
     <p>Durch eine ganzheitliche Herangehensweise, wie sie Andreas Sadlowski mit seiner Methode verfolgt, können diese Faktoren identifiziert und angegangen werden, um die Entzündungsreaktionen im Körper zu reduzieren und das Immunsystem zu regulieren.</p>
     <p>Selbstverständlich ist es wichtig, dass sich die betroffene Person engagiert und bereit ist, die notwendigen Änderungen in ihrem Leben vorzunehmen, um den Heilungsprozess zu fördern. Mit der richtigen Einstellung und Motivation ist es also auch bei vererbten rheumatischen Erkrankungen möglich, eine Heilung zu erreichen! Dies haben zahlreiche unserer Kunden bewiesen.</p>
     <div class="cta-block">
-      <a class="order orange" href="https://www.digistore24.com/product/300163.html?aff=rheumafrei">
+      <a class="order" href="https://www.digistore24.com/product/300163.html?aff=rheumafrei">
         <span class="big">Zum Anti-Rheuma-Buch</span>
         <span class="small">Klicke hier, um die Schritt-für-Schritt-Anleitung sofort zu erhalten!</span>
       </a>
@@ -337,6 +352,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="section dark">
   <div class="wrap narrow">
     <h2 class="center">Rheuma nach Corona oder Impfung?</h2>
+    <div class="media">
+      <img src="/assets/img/immun-trigger.jpg" alt="Immunzellen umschließen einen Erreger – Darstellung eines Immun-Triggers" width="356" height="250" loading="lazy">
+    </div>
     <p>Seit den Corona-Impfmaßnahmen steigen die Rheuma-Erkrankungen drastisch an. Wir haben hier bereits Erfahrungen, und bis jetzt haben Leser dieses Buches sehr gute Erfolge mit diesem Programm. Ausnahmslos jeder Anwender bestätigt, dass die KSG H+ Methode aus dem Buch „Dekonstruktion im Menschen“ das Einzige ist, was ihnen geholfen hat. Viele investierten vorher 20.000 Euro und mehr in Ärzte, Blutwäsche, Heilpraktiker und Nahrungsergänzungen – ohne jeglichen Erfolg!</p>
   </div>
 </section>
@@ -386,7 +404,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="a">Sehr gerne. Schreib uns eine Nachricht an <a href="mailto:service@rheumafrei.de">service@rheumafrei.de</a> (bitte den vollen Namen angeben). Bitte nicht anrufen, da auch wir unsere Zeiten einplanen müssen.</div>
     </div>
     <div class="cta-block">
-      <a class="order orange" href="https://www.digistore24.com/product/300163.html?aff=rheumafrei">
+      <a class="order" href="https://www.digistore24.com/product/300163.html?aff=rheumafrei">
         <span class="big">Zum Anti-Rheuma-Buch</span>
         <span class="small">Klicke hier, um die Schritt-für-Schritt-Anleitung sofort zu erhalten!</span>
       </a>
@@ -398,39 +416,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="section">
   <div class="wrap">
     <h2 class="center">Was weitere Anwender des Buches sagen:</h2>
-    <div class="testi">
-      <p class="t">„…aber ich will Ihnen noch mal schreiben, dass ich dank Ihnen – nach 4 Jahren keine Probleme mehr mit Rheuma habe. Und nicht nur das – ich fühle mich 20 Jahre jünger. Es hat alles funktioniert, wie Sie beschrieben haben. DANKE!“</p>
-      <p class="name">– Mira Dopczynska</p>
-      <hr class="hr-sep">
-      <p class="t">„Vor mehr als einem Jahr lag ich mit stärksten Schmerzen in einer Fachklinik für Rheumaerkrankungen. Die Ärzte sagten sinngemäß, dass Rheuma bzw. Arthritis nicht heilbar sei und ich mit diesen Einschränkungen leben müsste. Inzwischen bin ich geheilt! Das habe ich Ihnen und Ihrem Programm zu verdanken. Jeder, der eine Person mit rheumatischen Erkrankungen kennt, sollte sofort Ihr Programm empfehlen.“</p>
-      <p class="name">– Rolf A.</p>
-      <hr class="hr-sep">
-      <p class="t">„Es fing alles mit meinem Mann Günther an. Er hatte immer wieder heftige Gichtanfälle. Nach deiner Kur war es der Wahnsinn, was wir alles nicht mehr hatten: keine Rückenschmerzen, kein Bluthochdruck, keine Gichtattacken. Ich bin frei wie ein Vogel. Nebenbei haben wir noch jeder 14 Kilo abgenommen. Ich danke dir, dass du uns quasi geheilt hast.“</p>
-      <p class="name">– Vierkorn Rosi</p>
-      <hr class="hr-sep">
-      <p class="t">„Ich habe Ihr Programm durchgeführt und bin nun schon ziemlich lange schmerzfrei und fühle mich wieder gesund. Man hat mir gesagt, dass ich Polymyalgia habe, und die Tabletten hatten viele Nebenwirkungen, die ich nicht vertragen konnte. Dann habe ich Ihr Programm gefunden. So vielen Dank für alles.“</p>
-      <p class="name">– Anita Clements</p>
-      <hr class="hr-sep">
-      <p class="t">„Ich habe seit ca. 10 Jahren mit deinem Programm Erfolg; die Gelenkschmerzen und die Gicht in den Füßen sind innerhalb eines Jahres vollständig abgeheilt und bis heute nicht wieder zurückgekehrt. Medikamente habe ich von Anfang an keine genommen. Ich habe dein Buch und dein Programm auch schon vielfach weiterempfohlen.“</p>
-      <p class="name">– Bernhard Endlichhofer</p>
-      <hr class="hr-sep">
-      <p class="t">„Seit 2015 fingen bei mir die Gelenke an zu schmerzen – am schlimmsten die Hände, dann die Schultern, die Knie, sogar das Kiefergelenk. Mit 46 hatte es mich erwischt. Nach etwa vier Wochen mit deiner Kur ging es steil bergauf, und dann konnte ich wieder wandern gehen! Nun sind eineinhalb Jahre vergangen, meine Hände sind wieder wunderbar, Klavierspielen und Handwerken machen wieder Freude. Endlich wieder schmerzfrei gehen – allein das ist etwas sooooo Wunderbares! Nur Mut, das Durchhalten dieser Kuren rentiert sich!“</p>
-      <p class="name">– Claudia</p>
-      <hr class="hr-sep">
-      <p class="t">„Ich hatte sehr daran gezweifelt, als ich begann, diese natürliche Therapie durchzuführen. Ich hatte 6 Jahre lang starkes Rheuma. Meine Gelenkschmerzen und starken Schwellungen, besonders an den Füßen, sind verschwunden, und ich kann mich endlich wieder frei und wie ein junger Mensch fühlen. Die schlaflosen Nächte sind Vergangenheit. Vielen Dank!“</p>
-      <p class="name">– Alexander W., Lohmar</p>
-      <hr class="hr-sep">
-      <p class="t">„Welch unglaubliche Wirkung Ihr Programm hat! Warum kennt es nicht die ganze Welt? Warum kennt es mein Arzt nicht? Zwei Monate nach Beginn des Programms bin ich nun ganz weg von meinen Medikamenten. Es hat mich vor einer weiteren Ausgabe von Tonnen an Geld gerettet. Gott segne Sie!“</p>
-      <p class="name">– Ralf K., 63, Schweiz</p>
-      <hr class="hr-sep">
-      <p class="t">„Was ich bisher sagen kann: Seit Beginn musste ich keine Medikamente, sprich Voltaren oder Ibuprofen, mehr nehmen. Bis dahin herzliche Grüße.“</p>
-      <p class="name">– Beate Knippel</p>
-      <hr class="hr-sep">
-      <p class="t">„Ich möchte mich ganz herzlich bei Ihnen bedanken. Ich muss nun keine Medikamente mehr nehmen und bin geheilt. Ich wusste, es dauert bei mir länger, aber nun nach 3 Jahren fühle ich mich super. Sie haben mir das Leben gerettet. Kein Arzt dieser Welt hätte das gekonnt.“</p>
-      <p class="name">– Daniela B., Schweiz</p>
-      <hr class="hr-sep">
-      <p class="t">„Ich hatte vor einer Woche damit angefangen. Es gab eine Erstverschlimmerung, die sich noch eine Woche hielt. Seit gestern geht es mir erstaunlich gut …“</p>
-      <p class="name">– Steineman, Österreich</p>
+    <div class="testi-grid">
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="t">„…aber ich will Ihnen noch mal schreiben, dass ich dank Ihnen – nach 4 Jahren keine Einschränkungen mehr durch die Gelenke habe. Und nicht nur das – ich fühle mich 20 Jahre jünger. Es hat alles funktioniert, wie Sie beschrieben haben. DANKE!“</p>
+        <div class="meta"><div class="avatar">MD</div><div class="name">Mira Dopczynska</div></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="t">„Vor mehr als einem Jahr lag ich mit stärksten Schmerzen in einer Fachklinik für Rheumaerkrankungen. Die Ärzte sagten sinngemäß, dass Rheuma bzw. Arthritis nicht weggeht und ich mit diesen Einschränkungen leben müsste. Inzwischen bin ich beschwerdefrei! Das habe ich Ihnen und Ihrem Programm zu verdanken. Jeder, der eine Person mit rheumatischen Erkrankungen kennt, sollte sofort Ihr Programm empfehlen.“</p>
+        <div class="meta"><div class="avatar">RA</div><div class="name">Rolf A.</div></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="t">„Es fing alles mit meinem Mann Günther an. Er hatte immer wieder heftige Gichtanfälle. Nach deiner Kur war es der Wahnsinn, was wir alles nicht mehr hatten: keine Rückenschmerzen, kein Bluthochdruck, keine Gichtattacken. Ich bin frei wie ein Vogel. Nebenbei haben wir noch jeder 14 Kilo abgenommen. Ich danke dir, dass du uns quasi gesund gemacht hast.“</p>
+        <div class="meta"><div class="avatar">VR</div><div class="name">Vierkorn Rosi</div></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="t">„Ich habe Ihr Programm durchgeführt und bin nun schon ziemlich lange schmerzfrei und fühle mich wieder gesund. Man hat mir gesagt, dass ich Polymyalgia habe, und die Tabletten hatten viele Nebenwirkungen, die ich nicht vertragen konnte. Dann habe ich Ihr Programm gefunden. So vielen Dank für alles.“</p>
+        <div class="meta"><div class="avatar">AC</div><div class="name">Anita Clements</div></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="t">„Ich habe seit ca. 10 Jahren mit deinem Programm Erfolg; die Gelenkschmerzen und die Gicht in den Füßen sind innerhalb eines Jahres vollständig verschwunden und bis heute nicht wieder zurückgekehrt. Medikamente habe ich von Anfang an keine genommen. Ich habe dein Buch und dein Programm auch schon vielfach weiterempfohlen.“</p>
+        <div class="meta"><div class="avatar">BE</div><div class="name">Bernhard Endlichhofer</div></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="t">„Seit 2015 fingen bei mir die Gelenke an zu schmerzen – am schlimmsten die Hände, dann die Schultern, die Knie, sogar das Kiefergelenk. Mit 46 hatte es mich erwischt. Nach etwa vier Wochen mit deiner Kur ging es steil bergauf, und dann konnte ich wieder wandern gehen! Nun sind eineinhalb Jahre vergangen, meine Hände sind wieder wunderbar, Klavierspielen und Handwerken machen wieder Freude. Endlich wieder schmerzfrei gehen – allein das ist etwas sooooo Wunderbares! Nur Mut, das Durchhalten dieser Kuren rentiert sich!“</p>
+        <div class="meta"><div class="avatar">C</div><div class="name">Claudia</div></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="t">„Ich hatte sehr daran gezweifelt, als ich begann, diese natürliche Therapie durchzuführen. Ich hatte 6 Jahre lang mit schwerem Rheuma zu kämpfen. Meine Gelenkschmerzen und starken Schwellungen, besonders an den Füßen, sind so gut wie weg, und ich kann mich endlich wieder frei und wie ein junger Mensch fühlen. Die schlaflosen Nächte sind Vergangenheit. Vielen Dank!“</p>
+        <div class="meta"><div class="avatar">AW</div><div class="name">Alexander W., Lohmar</div></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="t">„Welch unglaubliche Wirkung Ihr Programm hat! Warum kennt es nicht die ganze Welt? Warum kennt es mein Arzt nicht? Zwei Monate nach Beginn des Programms brauche ich meine Schmerzmittel nicht mehr. Es hat mich vor einer weiteren Ausgabe von Tonnen an Geld gerettet. Gott segne Sie!“</p>
+        <div class="meta"><div class="avatar">RK</div><div class="name">Ralf K., 63, Schweiz</div></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="t">„Was ich bisher sagen kann: Seit Beginn musste ich keine Medikamente, sprich Voltaren oder Ibuprofen, mehr nehmen. Bis dahin herzliche Grüße.“</p>
+        <div class="meta"><div class="avatar">BK</div><div class="name">Beate Knippel</div></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="t">„Ich möchte mich ganz herzlich bei Ihnen bedanken. Ich komme mittlerweile völlig ohne Medikamente aus und bin meine Beschwerden los. Ich wusste, es dauert bei mir länger, aber nun nach 3 Jahren fühle ich mich super. Sie haben mir das Leben gerettet. Kein Arzt dieser Welt hätte das gekonnt.“</p>
+        <div class="meta"><div class="avatar">DB</div><div class="name">Daniela B., Schweiz</div></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p class="t">„Ich hatte vor einer Woche damit angefangen. Es gab eine Erstverschlimmerung, die sich noch eine Woche hielt. Seit gestern geht es mir erstaunlich gut …“</p>
+        <div class="meta"><div class="avatar">ST</div><div class="name">Steineman, Österreich</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -438,19 +479,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- AUTHORITY QUOTE -->
 <section class="section dark">
   <div class="wrap narrow center">
-    <h2>„Seit über 15 Jahren haben wir mehr Rheuma-Erkrankten geholfen als alle Rheumatologen im ganzen Land zusammen.“</h2>
-    <div class="media">
-      <img src="/assets/img/erfolg-hande.jpg" alt="Erfolg – Hände nach überwundenem Rheuma" width="356" height="250" loading="lazy">
+    <h2>„Seit über 20 Jahren widmen wir uns mit Leidenschaft der Begleitung von Betroffenen – mit einem ganzheitlichen Erfahrungsschatz, der in dieser Form einzigartig ist.“</h2>
+    <div style="max-width:760px;margin:26px auto">
+      <!-- ProvenExpert Bewertungssiegel -->
+      <div id="pewl"></div>
+      <script type="text/javascript" src="https://www.provenexpert.com/widget/landing_andreas-sadlowski.js?feedback=1&amp;avatar=1&amp;competence=1&amp;language=de-de&amp;style=white" async></script>
+      <!-- ProvenExpert Bewertungssiegel Ende -->
     </div>
-    <div class="testi" style="color:#dbe7e9">
-      <p class="t" style="color:#dbe7e9">„Ich bin 47 Jahre alt und habe seit 21 Jahren Rheuma. Vorher war ich kurz vor dem Rollstuhl. Ich bin in der 3. Woche und bereits kortisonfrei. Ich werde das ganze Programm durchziehen, weil ich weiß, dass Sie mir das letzte Puzzlestück zu meinen Erfahrungen geliefert haben. Vielen Dank hierfür!“</p>
-      <p class="name" style="color:#fff">– Marina Mühle</p>
-      <hr class="hr-sep" style="border-color:#2c5f55">
-      <p class="t" style="color:#dbe7e9">„Es ist ein so tolles Gefühl, meiner Tochter auf einem so schonenden Weg vom Rheuma zu befreien. Ich glaube, dass mich ein Engel auf Ihre Internetseite geführt hat.“</p>
-      <p class="name" style="color:#fff">– Bernadette A., München</p>
-      <hr class="hr-sep" style="border-color:#2c5f55">
-      <p class="t" style="color:#dbe7e9">„Mein Fazit nach dem Programm: keine Laktoseintoleranz mehr, keine Fructoseintoleranz mehr, kein Durchfall, meine andauernde Müdigkeit ist weg und kein Zwicken mehr in Schulter oder Rücken. Ich kann endlich wieder normal essen. Wie schön ist das denn? Vielen Dank!“</p>
-      <p class="name" style="color:#fff">– Edyta G.</p>
+    <div class="testi-grid">
+      <div class="t-card dark">
+        <div class="stars">★★★★★</div>
+        <p class="t">„Ich bin 47 Jahre alt und habe seit 21 Jahren mit Rheuma zu kämpfen. Vorher stand ich kurz vor dem Rollstuhl. Ich bin jetzt in der 3. Woche und konnte in Absprache mit meinem Arzt bereits die schweren Präparate drastisch reduzieren. Ich werde das ganze Programm durchziehen, weil ich weiß, dass Sie mir das letzte Puzzlestück geliefert haben. Vielen Dank hierfür!“</p>
+        <div class="meta"><div class="avatar">MM</div><div class="name">Marina Mühle</div></div>
+      </div>
+      <div class="t-card dark">
+        <div class="stars">★★★★★</div>
+        <p class="t">„Es ist ein so tolles Gefühl, meiner Tochter auf einem so schonenden Weg wieder zu unbeschwerter Bewegungsfreiheit zu verhelfen. Ich glaube, dass mich ein Engel auf Ihre Internetseite geführt hat.“</p>
+        <div class="meta"><div class="avatar">BA</div><div class="name">Bernadette A., München</div></div>
+      </div>
+      <div class="t-card dark">
+        <div class="stars">★★★★★</div>
+        <p class="t">„Mein Fazit nach dem Programm: Keine Unverträglichkeiten mehr, mein Magen-Darm-Trakt ist völlig ruhig, meine andauernde Müdigkeit ist weg und kein Zwicken mehr in Schulter oder Rücken. Ich kann endlich wieder normal essen. Wie schön ist das denn? Vielen Dank!“</p>
+        <div class="meta"><div class="avatar">EG</div><div class="name">Edyta G.</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -459,17 +510,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="section alt">
   <div class="wrap">
     <div class="guarantee">
-      <h3 class="green" style="margin-top:0">Unsere Geld-zurück-Garantie</h3>
-      <p style="margin-bottom:0">Solltest Du meinen, dass dieses Buch nicht absolut jeden Cent wert war, erhältst Du eine sofortige Rückzahlung – <b>garantiert, ohne lästige Fragen und ohne unangenehme Gefühle.</b></p>
+      <h3 class="green" style="margin-top:0">Unsere 30-Tage-Geld-zurück-Garantie</h3>
+      <p style="margin-bottom:0">Solltest du innerhalb von 30 Tagen nach dem Kauf der Meinung sein, dass dieses Buch nicht absolut jeden Cent wert war, erhältst du eine sofortige Rückzahlung des Kaufpreises – <b>garantiert, ohne lästige Fragen und ohne unangenehme Gefühle.</b> Schreib uns dafür einfach eine kurze Nachricht an unseren Support. Wir stehen zu 100&nbsp;% hinter der Qualität unserer Inhalte.</p>
     </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
-<section class="section">
+<section class="section final-cta">
   <div class="wrap narrow center">
-    <h1 class="red">Worauf wartest Du noch?</h1>
-    <p style="font-size:1.2rem">Jetzt mit 113 Seiten geballtem Anti-Rheuma-Know-how das Rheuma besiegen!</p>
+    <h1>Worauf wartest Du noch?</h1>
+    <p class="sub">👉 <b>Jetzt mit 113 Seiten geballtem Anti-Rheuma-Know-how das Rheuma besiegen!</b></p>
     <div class="media ph book">
       <img src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – Buchcover" width="300" height="405" loading="lazy" decoding="async">
     </div>
