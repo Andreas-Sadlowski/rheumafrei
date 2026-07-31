@@ -84,8 +84,6 @@ p{margin:0 0 18px}
 .ph{position:relative;border-radius:8px;overflow:hidden;background:linear-gradient(135deg,#e8f3ef,#fbf0e4);border:1px solid #d7e2dd;display:grid;place-items:center;color:#1e8449;text-align:center;min-height:230px;padding:24px}
 .ph svg{width:54px;height:54px;opacity:.5;margin-bottom:10px}
 .ph .lbl{font-size:.8rem;color:#7a8a86;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
-.ph.book{background:linear-gradient(135deg,#eef5ff,#f6efe2);min-height:auto;padding:0;border:0}
-.ph.book img{width:300px;max-width:80%;margin:0 auto;box-shadow:none;filter:none}
 
 /* order buttons */
 .order{display:inline-block;max-width:680px;width:100%;background:#2189da;color:#fff;text-decoration:none;border-radius:10px;padding:18px 26px;font-family:'Oswald',sans-serif;font-weight:700;text-align:center;box-shadow:0 8px 22px rgba(33,137,218,.35);transition:transform .12s, box-shadow .12s;text-transform:uppercase}
@@ -131,10 +129,22 @@ p{margin:0 0 18px}
 .t-card.dark .t{color:#dbe7e9}
 .t-card.dark .meta{border-top-color:#1d5a78}
 
+/* corona/immun-trigger image + text side-by-side (image left) */
+.corona-cols{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;max-width:900px;margin:30px auto 0}
+@media(min-width:700px){.corona-cols{grid-template-columns:.85fr 1.15fr}}
+.corona-cols .img-wrap img{width:100%;margin:0 auto;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+@media(min-width:700px){.corona-cols .img-wrap img{max-width:340px}}
+
 /* final CTA with background photo */
-.final-cta{background:linear-gradient(rgba(20,20,20,.6),rgba(20,20,20,.6)),url('/assets/img/final-cta-hintergrund.webp') center/cover no-repeat;color:#fff;padding:60px 0}
+.final-cta{background:linear-gradient(rgba(15,15,15,.35),rgba(15,15,15,.35)),url('/assets/img/final-cta-hintergrund.webp') center/cover no-repeat;background-attachment:fixed;color:#fff;padding:60px 0}
 .final-cta h1{color:#cab82a}
 .final-cta .sub{font-size:1.3rem;color:#fff}
+.final-cta-row{display:flex;flex-direction:column;align-items:center;gap:24px;margin-top:24px}
+@media(min-width:700px){.final-cta-row{flex-direction:row;justify-content:center;gap:40px}}
+.final-cta-cover{max-width:220px;margin:0 auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.55))}
+.final-cta .cta-block{margin:0}
+@keyframes wobble{0%,100%{transform:rotate(0)}25%{transform:rotate(-1.5deg)}75%{transform:rotate(1.5deg)}}
+.final-cta a.order{animation:wobble 2.4s ease-in-out infinite}
 
 /* guarantee box */
 .guarantee{max-width:820px;margin:0 auto;background:#fff;border:2px solid #1e8449;border-radius:12px;padding:26px 28px;text-align:center}
@@ -352,10 +362,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="section dark">
   <div class="wrap narrow">
     <h2 class="center">Rheuma nach Corona oder Impfung?</h2>
-    <div class="media">
-      <img src="/assets/img/immun-trigger.jpg" alt="Immunzellen umschließen einen Erreger – Darstellung eines Immun-Triggers" width="356" height="250" loading="lazy">
+    <div class="corona-cols">
+      <div class="img-wrap">
+        <img src="/assets/img/immun-trigger.jpg" alt="Immunzellen umschließen einen Erreger – Darstellung eines Immun-Triggers" width="356" height="250" loading="lazy">
+      </div>
+      <p>Seit den Corona-Impfmaßnahmen steigen die Rheuma-Erkrankungen drastisch an. Wir haben hier bereits Erfahrungen, und bis jetzt haben Leser dieses Buches sehr gute Erfolge mit diesem Programm. Ausnahmslos jeder Anwender bestätigt, dass die KSG H+ Methode aus dem Buch „Dekonstruktion im Menschen“ das Einzige ist, was ihnen geholfen hat. Viele investierten vorher 20.000 Euro und mehr in Ärzte, Blutwäsche, Heilpraktiker und Nahrungsergänzungen – ohne jeglichen Erfolg!</p>
     </div>
-    <p>Seit den Corona-Impfmaßnahmen steigen die Rheuma-Erkrankungen drastisch an. Wir haben hier bereits Erfahrungen, und bis jetzt haben Leser dieses Buches sehr gute Erfolge mit diesem Programm. Ausnahmslos jeder Anwender bestätigt, dass die KSG H+ Methode aus dem Buch „Dekonstruktion im Menschen“ das Einzige ist, was ihnen geholfen hat. Viele investierten vorher 20.000 Euro und mehr in Ärzte, Blutwäsche, Heilpraktiker und Nahrungsergänzungen – ohne jeglichen Erfolg!</p>
   </div>
 </section>
 
@@ -521,14 +533,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap narrow center">
     <h1>Worauf wartest Du noch?</h1>
     <p class="sub">👉 <b>Jetzt mit 113 Seiten geballtem Anti-Rheuma-Know-how das Rheuma besiegen!</b></p>
-    <div class="media ph book">
-      <img src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – Buchcover" width="300" height="405" loading="lazy" decoding="async">
-    </div>
-    <div class="cta-block">
-      <a class="order" href="https://www.digistore24.com/product/300163.html?aff=rheumafrei">
-        <span class="big">Ja, ich will mehr darüber erfahren und endlich gesund werden!</span>
-        <span class="small">Klicke hier, um die Schritt-für-Schritt-Anleitung sofort zu erhalten!</span>
-      </a>
+    <div class="final-cta-row">
+      <img class="final-cta-cover" src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – Buchcover" width="300" height="405" loading="lazy" decoding="async">
+      <div class="cta-block">
+        <a class="order" href="https://www.digistore24.com/product/300163.html?aff=rheumafrei">
+          <span class="big">Ja, ich will mehr darüber erfahren und endlich gesund werden!</span>
+          <span class="small">Klicke hier, um die Schritt-für-Schritt-Anleitung sofort zu erhalten!</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
