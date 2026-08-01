@@ -95,6 +95,9 @@ p{margin:0 0 1em}
 .btn--ghost:hover{background:var(--bg-2);border-color:#cbd5e1}
 .btn .arrow{transition:transform .2s}
 .btn:hover .arrow{transform:translateX(4px)}
+.btn--stacked{flex-direction:column;gap:3px;line-height:1.3;padding-top:16px;padding-bottom:16px}
+.btn--stacked.btn--lg{padding-top:20px;padding-bottom:20px}
+.btn--stacked .line2{font-size:.72em;font-weight:500;opacity:.92}
 .price-pill{display:inline-flex;align-items:baseline;gap:8px;color:#fff;background:rgba(255,255,255,.16);padding:5px 12px;border-radius:999px;font-size:.85rem;font-weight:600}
 .price-pill s{opacity:.7}
 
@@ -361,16 +364,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-visual">
         <div class="book-shot">
           <img src="/assets/img/buch-cover.png" alt="Buch ‚Dekonstruktion im Menschen‘ von Andreas Sadlowski – Cover" width="440" height="594" loading="eager" fetchpriority="high">
+          <div class="badge-float bf-2">⭐⭐⭐⭐⭐ <div><b>4,9 / 5,0</b><br><small style="color:#6B7280">Leser-Bewertung</small></div></div>
         </div>
       </div>
 
       <div class="hero-body">
         <p style="font-size:1.08rem;color:var(--ink-2)">Du bist es leid, jeden Tag mit den Schmerzen und Einschränkungen deines Rheumas zu kämpfen? Bist du es leid, dass dein Leben von diesem Zustand beherrscht wird? Wir verstehen dich und wir wissen, wie es dir geht. <b>Doch es gibt Hoffnung!</b></p>
         <div class="cta-row">
-          <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg btn--pulse">Ja, ich will mir das Buch jetzt sichern! <span class="arrow">→</span></a>
+          <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg btn--pulse btn--stacked">
+            <span class="line1">Ja, ich will mir das Buch jetzt sichern! <span class="arrow">→</span></span>
+            <span class="line2">Inkl. 30 Tage Geld-zurück-Garantie – Für nur 39,95 €</span>
+          </a>
         </div>
-        <div style="margin-top:12px;font-size:.95rem;color:var(--ink-2)">Inkl. 30 Tage Geld-zurück-Garantie – Für nur 39,95 €</div>
-        <div style="margin-top:6px;font-size:.85rem;color:var(--muted)">🔒 Sichere Bezahlung &nbsp;|&nbsp; 🚚 Schnelle Post-Lieferung &nbsp;|&nbsp; 🚫 Kein Abo</div>
+        <div style="margin-top:12px;font-size:.85rem;color:var(--muted)">🔒 Sichere Bezahlung &nbsp;|&nbsp; 🚚 Schnelle Post-Lieferung &nbsp;|&nbsp; 🚫 Kein Abo</div>
       </div>
     </div>
   </div>
@@ -447,9 +453,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="text-center" style="margin-top:46px">
-      <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg">Ja, ich will das komplette Wissen sichern! <span class="arrow">→</span></a>
-      <div style="margin-top:12px;font-size:.95rem;color:var(--ink-2)">Buch jetzt für nur 39,95&nbsp;€ bestellen &amp; direkt nach Hause geliefert bekommen</div>
-      <div style="margin-top:6px;font-size:.85rem;color:var(--muted)">🔒 Sichere Bezahlung &nbsp;|&nbsp; 🚚 Schnelle Post-Lieferung &nbsp;|&nbsp; 🚫 Kein Abo</div>
+      <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg btn--stacked">
+        <span class="line1">Ja, ich will das komplette Wissen sichern! <span class="arrow">→</span></span>
+        <span class="line2">Buch jetzt für nur 39,95&nbsp;€ bestellen &amp; direkt nach Hause geliefert bekommen</span>
+      </a>
+      <div style="margin-top:12px;font-size:.85rem;color:var(--muted)">🔒 Sichere Bezahlung &nbsp;|&nbsp; 🚚 Schnelle Post-Lieferung &nbsp;|&nbsp; 🚫 Kein Abo</div>
     </div>
   </div>
 </section>
@@ -547,8 +555,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Andreas Sadlowski ist der absolute Experte auf diesem Gebiet und hat durch seine jahrelange Forschung und Erfahrung eine Methode entwickelt, die auf anerkannten wissenschaftlichen Fundamenten beruht.</p>
         <p>Viele Ärzte und Heilpraktiker haben von ihm gelernt. Was Andreas Sadlowski von anderen Experten unterscheidet, ist, dass er weder Arzt noch Heilpraktiker ist. Seine Erfahrungen beruhen auf einem 20-jährigen Studium und auf der Tatsache, dass er seine eigene Frau geheilt hat, nachdem sie jahrelang an Rheuma litt. Danach haben tausende ihr Rheuma mit Hilfe seiner Methode heilen können.</p>
         <p>Das zeigt, dass er nicht nur theoretisches Wissen hat, sondern auch praktische Erfahrung, um Menschen wie dir zu helfen.</p>
-        <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn">Zum Anti-Rheuma-Buch <span class="arrow">→</span></a>
-        <div style="margin-top:10px;font-size:.9rem;color:var(--muted)">Klicke hier, um die Schritt-für-Schritt-Anleitung sofort zu erhalten!</div>
+        <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--stacked">
+          <span class="line1">Zum Anti-Rheuma-Buch <span class="arrow">→</span></span>
+          <span class="line2">Klicke hier, um die Schritt-für-Schritt-Anleitung sofort zu erhalten!</span>
+        </a>
       </div>
     </div>
     <div class="author-stats full">
@@ -704,8 +714,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div style="font-size:.92rem;color:#A7F3D0;margin-bottom:2px">Nur ein sinnloses Medikament oder Nahrungsergänzungsmittel weniger, und Du hast das Geld wieder raus</div>
           <div class="now">39,95 €</div>
           <div class="once">einmalig · kein Abo · keine versteckten Kosten</div>
-          <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg btn--pulse">Zum Anti-Rheuma-Kompakt-Buch <span class="arrow">→</span></a>
-          <div style="margin-top:8px;font-size:.85rem;color:#A7F3D0">Klicke hier, um die Schritt-für-Schritt-Anleitung sofort zu erhalten!</div>
+          <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg btn--pulse btn--stacked">
+            <span class="line1">Zum Anti-Rheuma-Kompakt-Buch <span class="arrow">→</span></span>
+            <span class="line2">Klicke hier, um die Schritt-für-Schritt-Anleitung sofort zu erhalten!</span>
+          </a>
           <div class="guarantee-line">🛡️ 30 Tage Geld-zurück-Garantie · 100 % Risiko bei uns</div>
         </div>
         </div>
@@ -801,9 +813,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="eyebrow">Letzte Worte</span>
     <h2 style="margin-top:14px">Worauf wartest du noch?</h2>
     <p>Jetzt mit 113 Seiten geballtem Anti-Rheuma-Know-how das Rheuma besiegen!</p>
-    <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg btn--pulse">Ja, ich will mehr darüber erfahren und endlich gesund werden! <span class="arrow">→</span></a>
-    <div style="margin-top:14px;font-size:.92rem;color:var(--ink-2)">Klicke hier, um die Schritt-für-Schritt-Anleitung sofort zu erhalten!</div>
-    <div style="margin-top:8px;font-size:.85rem;color:var(--muted)">🔒 Sichere Bezahlung &nbsp;|&nbsp; 🚚 Schnelle Post-Lieferung &nbsp;|&nbsp; 🚫 Kein Abo</div>
+    <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg btn--pulse btn--stacked">
+      <span class="line1">Ja, ich will mehr darüber erfahren und endlich gesund werden! <span class="arrow">→</span></span>
+      <span class="line2">Klicke hier, um die Schritt-für-Schritt-Anleitung sofort zu erhalten!</span>
+    </a>
+    <div style="margin-top:14px;font-size:.85rem;color:var(--muted)">🔒 Sichere Bezahlung &nbsp;|&nbsp; 🚚 Schnelle Post-Lieferung &nbsp;|&nbsp; 🚫 Kein Abo</div>
   </div>
 </section>
 
