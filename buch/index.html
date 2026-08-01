@@ -41,8 +41,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/favicon-512.png">
 <link rel="apple-touch-icon" href="/assets/img/favicon-180.png">
 <link rel="canonical" href="https://www.rheumafrei.de/buch/">
-<link rel="preconnect" href="https://www.youtube-nocookie.com">
-<link rel="preconnect" href="https://i.ytimg.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="/assets/img/buch-cover.png" fetchpriority="high">
@@ -209,25 +207,15 @@ section{padding:80px 0}
 .chapter .n::before{content:counter(ch,decimal-leading-zero)}
 .chapter h4{margin:0;font-family:'Inter',sans-serif;font-size:1rem;color:var(--ink)}
 .chapter small{color:var(--muted);font-size:.86rem}
+.book-facts{list-style:none;padding:0;margin:0;display:grid;gap:2px;max-height:640px;overflow-y:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+.book-facts li{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;padding:9px 16px;border-bottom:1px dashed var(--line)}
+.book-facts li:last-child{border-bottom:0}
+.book-facts .check{flex:0 0 20px;width:20px;height:20px;border-radius:50%;background:var(--teal-50);color:var(--teal-700);display:grid;place-items:center;margin-top:1px;font-weight:800;font-size:.72rem}
 .bookpedestal{position:relative;display:grid;place-items:center;padding:30px;border-radius:24px;background:linear-gradient(160deg,#ECFDF5,#FFF7ED);min-height:480px}
 .bookpedestal img{width:min(330px,80%);transform:rotate(-2deg);filter:drop-shadow(0 28px 60px rgba(11,31,28,.25))}
 .bookpedestal .stamp{position:absolute;bottom:24px;left:24px;background:#fff;border-radius:14px;padding:12px 16px;border:1px solid var(--line);box-shadow:var(--shadow-sm);display:flex;gap:12px;align-items:center}
 .bookpedestal .stamp .big{font-family:'Lora',serif;font-weight:700;font-size:1.6rem;color:var(--ink);line-height:1}
 .bookpedestal .stamp .lbl{font-size:.78rem;color:var(--muted)}
-
-/* ===== Videos ===== */
-.video-grid{display:grid;grid-template-columns:1fr;gap:26px;max-width:960px;margin:0 auto}
-@media(min-width:760px){.video-grid{grid-template-columns:repeat(2,1fr)}}
-.video-card{background:#000;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);position:relative;aspect-ratio:16/9;cursor:pointer}
-.video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:4}
-.video-thumb{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .3s}
-.video-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.5))}
-.video-card:hover .video-thumb{transform:scale(1.03)}
-.play{position:absolute;inset:0;margin:auto;z-index:2;width:86px;height:60px;border-radius:14px;background:#FF0000;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .15s}
-.video-card:hover .play{transform:scale(1.07)}
-.play svg{margin-left:2px;fill:#fff;width:34px;height:34px}
-.video-meta{position:absolute;z-index:2;bottom:0;left:0;right:0;padding:30px 18px 14px;color:#fff;font-weight:600;font-size:1.05rem;line-height:1.3;text-shadow:0 1px 8px rgba(0,0,0,.6);background:linear-gradient(180deg,transparent,rgba(0,0,0,.6))}
-.video-meta small{display:block;font-weight:500;opacity:.9;font-size:.8rem;margin-top:3px}
 
 /* ===== Testimonials ===== */
 .t-grid{columns:1;column-gap:22px}
@@ -361,11 +349,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="grid">
       <div class="hero-head">
         <span class="eyebrow">Die KSG H+ Methode · 113 Seiten Praxis-Know-how</span>
-        <h1 style="margin-top:18px">Den biologischen Ursachen von <span class="hl">Rheuma natürlich entgegenwirken.</span>
+        <h1 style="margin-top:18px">Rheuma besiegen in nur 3-24 Monaten: <span class="hl">Mit der KSG H+ Methode von Andreas Sadlowski.</span>
           <span class="h1-sub">
-            <span class="item"><span class="cross">✕</span>Ohne schwere Medikamente</span>
-            <span class="item"><span class="cross">✕</span>Ohne Operationen</span>
-            <span class="item"><span class="cross">✕</span>Ohne Nahrungsergänzungsmittel</span>
+            <span class="item"><span class="cross">✕</span>Nicht mit Medikamenten</span>
+            <span class="item"><span class="cross">✕</span>Keine Operationen</span>
+            <span class="item"><span class="cross">✕</span>Keine Nahrungsergänzungsmittel</span>
           </span>
         </h1>
       </div>
@@ -373,18 +361,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-visual">
         <div class="book-shot">
           <img src="/assets/img/buch-cover.png" alt="Buch ‚Dekonstruktion im Menschen‘ von Andreas Sadlowski – Cover" width="440" height="594" loading="eager" fetchpriority="high">
-          <div class="badge-float bf-2">⭐⭐⭐⭐⭐ <div><b>4,9 / 5,0</b><br><small style="color:#6B7280">Leser-Bewertung</small></div></div>
         </div>
       </div>
 
       <div class="hero-body">
-        <ul class="benefits">
-          <li><span class="check">✓</span><div><b>Die wahren 5 biologischen Ursachen</b> – und wie du sie der Reihe nach auflöst.</div></li>
-          <li><span class="check">✓</span><div><b>Einfache Schritt-für-Schritt-Anleitung</b>, von jung bis alt (6 bis 95 Jahre) erfolgreich erprobt.</div></li>
-          <li><span class="check">✓</span><div><b>Entwickelt für tiefgreifende Entlastung</b> – selbst nach jahrzehntelanger Belastung des Immunsystems.</div></li>
-        </ul>
+        <p style="font-size:1.08rem;color:var(--ink-2)">Du bist es leid, jeden Tag mit den Schmerzen und Einschränkungen deines Rheumas zu kämpfen? Bist du es leid, dass dein Leben von diesem Zustand beherrscht wird? Wir verstehen dich und wir wissen, wie es dir geht. <b>Doch es gibt Hoffnung!</b></p>
         <div class="cta-row">
-          <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg btn--pulse">Buch jetzt sichern – 39,95 € <span class="arrow">→</span></a>
+          <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg btn--pulse">Ja, ich will mir das Buch jetzt sichern! <span class="arrow">→</span></a>
         </div>
         <div style="margin-top:12px;font-size:.95rem;color:var(--ink-2)">einmalig · kein Abo · keine versteckten Kosten</div>
       </div>
@@ -397,9 +380,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="row">
       <div class="cell"><div class="num">20+ Jahre</div><div class="lbl">Forschung & Praxis</div></div>
-      <div class="cell"><div class="num">10.000+</div><div class="lbl">begleitete Betroffene</div></div>
+      <div class="cell"><div class="num">Tausende</div><div class="lbl">begleitete Betroffene</div></div>
       <div class="cell"><div class="num">3–24 Monate</div><div class="lbl">für tiefgreifende Regeneration</div></div>
-      <div class="cell"><div class="num">6 → 95 Jahre</div><div class="lbl">anwendbar in jedem Alter</div></div>
+      <div class="cell"><div class="num">6 → 94 Jahre</div><div class="lbl">anwendbar in jedem Alter</div></div>
     </div>
   </div>
 </div>
@@ -409,39 +392,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="section-title">
       <span class="eyebrow">Wenn du das kennst, ist dieses Buch für dich</span>
-      <h2 style="margin-top:14px">Du hast alles versucht — und nichts hat die Gelenkbeschwerden <em style="font-style:italic">dauerhaft</em> beruhigt.</h2>
-      <p>Wenn du dich in einem dieser Punkte wiedererkennst, bist du nicht allein. Über 10.000 Menschen sind genau hier gestartet — und konnten ihren Alltag wieder unbeschwert genießen.</p>
+      <h2 style="margin-top:14px">Du bist es leid, dass Schmerzen und Einschränkungen dein Leben beherrschen.</h2>
+      <p>Wenn du dich in einem dieser Punkte wiedererkennst, bist du nicht allein.</p>
     </div>
     <div class="pain-grid">
       <div class="pain-card">
         <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="10"/></svg></div>
-        <h3>Schmerzen, die immer wiederkommen</h3>
-        <p>Gelenke, die morgens steif sind. Phasen, die ohne Vorwarnung kommen. Kurzfristige Hilfen, die den Magen belasten und auf Dauer keine Lösung sind.</p>
-      </div>
-      <div class="pain-card">
-        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M3 10h18M5 6h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z"/></svg></div>
-        <h3>Schwere Präparate — ohne Ausweg</h3>
-        <p>Die Dosis wird erhöht und die Liste der Begleiterscheinungen wird länger. Und selten spricht jemand darüber, wie du <b>den Körper so stärkst</b>, dass er wieder aus eigener Kraft regulieren kann.</p>
+        <h3>Schmerzen und Einschränkungen, die dich jeden Tag begleiten</h3>
+        <p>Du kämpfst jeden Tag mit den Schmerzen und Einschränkungen deines Rheumas – und dein Leben wird von diesem Zustand beherrscht.</p>
       </div>
       <div class="pain-card">
         <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
-        <h3>„Damit müssen Sie leben."</h3>
-        <p>Ein Satz, der dich seit deiner Diagnose begleitet. Aber kaum jemand erklärt dir verständlich, <b>warum</b> dein Immunsystem so intensiv reagiert — und wie du es wieder beruhigen kannst.</p>
+        <h3>„Rheuma bzw. Arthritis geht nicht weg, damit müssen Sie leben"</h3>
+        <p>Ein Satz, den viele Ärzte sagen. Aber die Ursachen der rheumatoiden Arthritis sind meist viel zu tief verwurzelt, um sie allein mit dieser Aussage abzutun.</p>
       </div>
       <div class="pain-card">
         <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-5-6.5 5 2-7L2 9h7z"/></svg></div>
-        <h3>Viel Geld in „Versprechen" investiert</h3>
-        <p>Unzählige Präparate, teure Pakete, strenge Diäten oder Kuren — und am Ende war nur dein Konto leichter, während die Belastung im Körper blieb.</p>
-      </div>
-      <div class="pain-card">
-        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l5 5 13-13"/></svg></div>
-        <h3>Das Leben zieht an dir vorbei</h3>
-        <p>Wandern, Reisen, mit den Enkeln spielen, Klavier — Dinge, die du liebst, fallen dir immer schwerer. Und der Frust blockiert dich von innen heraus.</p>
-      </div>
-      <div class="pain-card">
-        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>Du fragst dich: „Kann ich das wieder in den Griff bekommen?"</h3>
-        <p>Die Antwort, die dir im Wartezimmer oft fehlt: <b>Ja, es ist möglich.</b> Vorausgesetzt, du packst das Problem an den biologischen Ursachen an — statt nur die Symptome zu überdecken. Und genau das zeigt dir dieser Weg.</p>
+        <h3>Schon so viel ausprobiert, ohne Erfolg</h3>
+        <p>Viele investierten vorher 20.000 Euro und mehr in Ärzte, Blutwäsche, Heilpraktiker und Nahrungsergänzungen – ohne jeglichen Erfolg.</p>
       </div>
     </div>
   </div>
@@ -452,8 +420,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="section-title">
       <span class="eyebrow">Die KSG H+ Methode</span>
-      <h2 style="margin-top:14px">Drei Hebel, um die biologischen Entzündungsprozesse im Körper gezielt zu beruhigen.</h2>
-      <p>Andreas Sadlowski hat in über 20 Jahren intensiver Arbeit mit tausenden Betroffenen die entscheidenden Belastungsfaktoren identifiziert. Das Ergebnis: ein praxiserprobtes Modell aus drei aufeinander aufbauenden Säulen, dem jeder im Alltag ganz einfach folgen kann.</p>
+      <h2 style="margin-top:14px">KSG H+ Methode: Die höchste Erfolgsquote weltweit.</h2>
+      <p>Unser Buch „Dekonstruktion im Menschen" bietet eine ganzheitliche Methode, um Rheuma nicht nur zu behandeln, sondern zu besiegen. Wir haben seit 2006 auf diesem Gebiet gearbeitet und tausenden Menschen geholfen, ihr Rheuma zu besiegen. Wir zeigen dir, wie du alle Ursachen von Rheuma auflösen, die Wurzeln von Rheuma enttarnen, Autoimmunerkrankungen stoppen und dein Immunsystem in die richtige Bahn lenken kannst.</p>
     </div>
 
     <div class="method-grid">
@@ -461,24 +429,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="step">1</div>
         <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4-8-12a8 8 0 1116 0c0 8-8 12-8 12z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <h3>Die 3 kritischen Organe entlasten</h3>
-        <p>Leber, Nieren und Darm steuern maßgeblich, wie dein Immunsystem reagiert. Du lernst, wie du diese Entgiftungsorgane Schritt für Schritt entlastest, um blockierende Stoffwechselrückstände auf natürlichem Weg auszuleiten.</p>
+        <p>Welche 3 Organe versagt haben (bzw. viel zu stark überlastet worden sind) und wie man sie wieder zu voller Leistung ankurbelt. Die Funktionsweise von Leber, Nieren und Darm und deren Zusammenhänge mit rheumatischen und anderen Erkrankungen.</p>
       </div>
       <div class="pillar">
         <div class="step">2</div>
         <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12l-2 9 4 4v6H4v-6l4-4z"/></svg></div>
         <h3>Die 6 Schadstoffquellen minimieren</h3>
-        <p>Zahnherde, Schwermetalle, Belastungen durch Mikroorganismen und versteckte Umweltgifte – das sind die Trigger, die dein Immunsystem in ständigem Dauer-Alarm halten. Inklusive praktischem Leitfaden zur richtigen Zahnarztwahl.</p>
+        <p>Die 6 Schadstoffquellen, die Du unbedingt vermeiden solltest. Über Zahnherde, Schwermetalle und Mikroorganismen im Körper – inklusive Leitfaden, wie Du einen Zahnarzt findest, der Deine Probleme ernst nimmt.</p>
       </div>
       <div class="pillar">
         <div class="step">3</div>
         <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4-7-11a5 5 0 0110-0 5 5 0 0110 0c0 7-7 11-7 11"/></svg></div>
         <h3>Mentale und emotionale Trigger auflösen</h3>
-        <p>Stress, unbewusste Blockaden und emotionale Belastungen sind wissenschaftlich messbare Faktoren, die Entzündungsreaktionen im Körper befeuern können. Das Buch zeigt, wie du einschränkende Glaubensmuster ablegst, um dein Nervensystem wieder auf Entspannung und Regeneration auszurichten.</p>
+        <p>Wie Ärger, Hass, Furcht, Eifersucht, Ablehnung, Depression, Selbstmitleid und Hoffnungslosigkeit Deine Gesundheit in die Knie zwingen können – und wie Du negative Glaubensmuster zu positiven Einstellungen formst.</p>
       </div>
     </div>
 
     <div class="text-center" style="margin-top:46px">
-      <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg">Methode komplett im Buch sichern <span class="arrow">→</span></a>
+      <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg">Ja, ich will das komplette Wissen sichern! <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -488,8 +456,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="section-title">
       <span class="eyebrow">Inhaltsverzeichnis</span>
-      <h2 style="margin-top:14px">10 Kapitel. 113 Seiten. <em style="font-style:italic">Ein klarer Weg.</em></h2>
-      <p>Kein trockenes medizinisches Fachbuch. Kein Esoterik-Geschwafel. Sondern eine verständliche Anleitung, die du an einem Wochenende liest — und ab Tag 1 umsetzen kannst.</p>
+      <h2 style="margin-top:14px">Hier sind nur einige interessante Fakten, die Du in diesem Buch lernen wirst.</h2>
+      <p>Das ist nur eine sehr kleine Auswahl von Dingen, die Du in diesem Lehrgang entdecken wirst. Insgesamt sind es 10 Kapitel mit unbezahlbaren Informationen, die Du sofort anwenden kannst.</p>
     </div>
     <div class="inside">
       <div class="bookpedestal">
@@ -501,42 +469,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
       </div>
-      <div class="chapters">
-        <div class="chapter"><div class="n"></div><div><h4>Konstruktive und destruktive Charaktereigenschaften</h4><small>Warum dein Körper intensiv reagiert — und wie du das Immunsystem wieder beruhigst.</small></div></div>
-        <div class="chapter"><div class="n"></div><div><h4>Die 3 Faktoren der Regenerationsgeschwindigkeit</h4><small>Wovon dein Fortschritt abhängt und wie du die Regeneration optimal unterstützt.</small></div></div>
-        <div class="chapter"><div class="n"></div><div><h4>Ernährung & der Übersäuerungs-Mythos</h4><small>Was Entzündungsbereitschaft wirklich fördert — und was nur Marketing ist.</small></div></div>
-        <div class="chapter"><div class="n"></div><div><h4>Die Leber: dein vergessenes Hauptorgan</h4><small>Stoffwechselrückstände, Gallefluss, natürliche Entgiftung — Schritt für Schritt.</small></div></div>
-        <div class="chapter"><div class="n"></div><div><h4>Die Nieren: still, aber entscheidend</h4><small>Die natürliche Funktion verstehen und ohne Belastung stärken.</small></div></div>
-        <div class="chapter"><div class="n"></div><div><h4>Der Darm: 80% deines Immunsystems</h4><small>Das Gleichgewicht im Mikrobiom, Unverträglichkeiten erkennen und die Barriere stärken.</small></div></div>
-        <div class="chapter"><div class="n"></div><div><h4>Mikroorganismen & Zahnherde</h4><small>Die oft unterschätzten Belastungsfaktoren — inklusive Amalgam-Leitfaden.</small></div></div>
-        <div class="chapter"><div class="n"></div><div><h4>Schwermetalle betrachten — sicher und sanft</h4><small>Quecksilber, Blei, Aluminium, Cadmium. Ohne belastende Regulationskrisen.</small></div></div>
-        <div class="chapter"><div class="n"></div><div><h4>Emotionale Faktoren & Glaubensmuster</h4><small>Stress, Sorgen und mentale Blockaden — wie du sie sicher transformierst.</small></div></div>
-        <div class="chapter"><div class="n"></div><div><h4>Sport, Knorpelregeneration & die Schritt-für-Schritt-Anleitung</h4><small>Dein 24-Wochen-Plan, mit dem du sofort startest.</small></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEOS -->
-<section id="video">
-  <div class="container">
-    <div class="section-title">
-      <span class="eyebrow">Echte Geschichten · echte Menschen</span>
-      <h2 style="margin-top:14px">Schau dir an, wie der Weg zurück in ein aktives Leben <em style="font-style:italic">wirklich</em> aussieht.</h2>
-      <p>Klicke auf ein Video — keine Schauspieler, keine Skripte. Betroffene berichten ganz offen über ihre Erfahrungen und wie sie ihre Bewegungsfreiheit zurückgewonnen haben.</p>
-    </div>
-
-    <div class="video-grid">
-      <div class="video-card" data-yt="hSeP8oogr9M">
-        <div class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/hSeP8oogr9M/hqdefault.jpg')"></div>
-        <div class="play"><svg width="28" height="28" viewBox="0 0 24 24" fill="#0F766E"><path d="M8 5v14l11-7z"/></svg></div>
-        <div class="video-meta">Erfahrungen mit Andreas Sadlowski<small>Erfahrungsbericht · YouTube</small></div>
-      </div>
-      <div class="video-card" data-yt="_c4BD3S3wJ0">
-        <div class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/_c4BD3S3wJ0/hqdefault.jpg')"></div>
-        <div class="play"><svg width="28" height="28" viewBox="0 0 24 24" fill="#0F766E"><path d="M8 5v14l11-7z"/></svg></div>
-        <div class="video-meta">Zurück in ein aktives Leben – Interview<small>Erfahrungsbericht · YouTube</small></div>
-      </div>
+      <ul class="book-facts">
+        <li><span class="check">✓</span>Wie du dein Rheuma von Zuhause aus <b>Schritt für Schritt</b> besiegen kannst</li>
+        <li><span class="check">✓</span>Über die konstruktive (aufbauende) und destruktive (zerstörende) Wirkung der Charaktereigenschaften und wie man bei der Veränderung vorgehen sollte</li>
+        <li><span class="check">✓</span>Warum es von Vorteil ist, keinem der 4 Temperamente den Vorrang zu geben</li>
+        <li><span class="check">✓</span>Wie man negative Glaubensmuster zu positiven Einstellungen formt</li>
+        <li><span class="check">✓</span>Über die wissenschaftlichen Gesetze der Gedanken – mit verschiedenen Beispielen</li>
+        <li><span class="check">✓</span>Warum die meisten Rheumatiker mit einer Ernährungsumstellung allein keinen Heilungsprozess hervorrufen können</li>
+        <li><span class="check">✓</span>Die <b>3 Faktoren</b>, von denen die Geschwindigkeit Deines Erfolgs abhängt</li>
+        <li><span class="check">✓</span>Welche <b>3 Organe</b> versagt haben und wie man sie wieder zu voller Leistung ankurbeln muss</li>
+        <li><span class="check">✓</span>Warum Du anstatt Besserung – Enttäuschung erleben kannst und wie Du von Anfang an dagegen steuern solltest</li>
+        <li><span class="check">✓</span>Wie Du festgesetzte Schlacken, Biofilme, Kalk, Ablagerungen und Säuren/Basen aus dem Körper (auf)lösen und abtransportieren musst</li>
+        <li><span class="check">✓</span>Die Funktionsweise und der Aufbau eines Gelenks und dessen Krankheitsentstehung</li>
+        <li><span class="check">✓</span>Sind die Ursachen von Autoimmunerkrankungen tatsächlich unbekannt?</li>
+        <li><span class="check">✓</span><b>3 Gründe</b>, warum die eine Gruppe mit einer Giftbelastung gesund bleibt – und die andere unter schlimmen rheumatischen Schmerzen leidet</li>
+        <li><span class="check">✓</span>Der Mythos über die Übersäuerung – warum Schulmediziner darüber lächeln, und zwar mit Recht</li>
+        <li><span class="check">✓</span>Der Kreislauf der Ablagerungen und der Entzündungen – und wie Du ihn durchbrechen musst</li>
+        <li><span class="check">✓</span>Welche Parameter Deine Atmung, den Kreislauf, die Verdauung, die Abwehrkraft und den Hormonhaushalt beeinflussen</li>
+        <li><span class="check">✓</span>Über die ausgeglichene Ernährung</li>
+        <li><span class="check">✓</span>Eine Antwort auf die Frage: „Warum gerade ich?"</li>
+        <li><span class="check">✓</span>Die Funktionsweise der Nieren und was passiert, wenn sie ihren Aufgaben nicht mehr nachkommen</li>
+        <li><span class="check">✓</span>Mit welcher erstaunlichen Methode Du die Nieren wieder auf Vordermann bringst</li>
+        <li><span class="check">✓</span>Die Funktionsweise der Leber und deren Zusammenhänge mit rheumatischen und anderen Erkrankungen</li>
+        <li><span class="check">✓</span>Warum es kaum einen Rheumatiker gibt, bei dem die Leber richtig funktioniert, und was Du dagegen unternehmen musst</li>
+        <li><span class="check">✓</span>Welches Kontroll- und Vernichtungssystem im Körper versagt haben könnte, so dass Giftstoffe wie Schwermetalle, Schädlingsbekämpfungsmittel, Medikamente, Bakterien, Pilze und Parasiten den Organismus infizieren konnten</li>
+        <li><span class="check">✓</span>Warum Schwermetallausleitungen selten sinnvoll sind bzw. warum sie nicht langfristig helfen</li>
+        <li><span class="check">✓</span>Das Problem der intrahepatischen Steine in der Leber und was Du dagegen unternehmen musst</li>
+        <li><span class="check">✓</span>Wie Ärger, Hass, Furcht, Eifersucht, Ablehnung, Depression, Selbstmitleid und Hoffnungslosigkeit Deine Gesundheit in die Knie zwingen und welche Lösung Du in Anspruch nehmen kannst</li>
+        <li><span class="check">✓</span>Warum diese Kur mit ABSTAND die stärkste und effektivste Methode weltweit ist</li>
+        <li><span class="check">✓</span><b>10 Gründe</b>, warum die Leberentstauung unumgänglich ist</li>
+        <li><span class="check">✓</span>Die Funktionsweise des Darms und die Zusammenhänge mit Rheuma, Arthritis und anderen entzündlichen Autoimmunerkrankungen</li>
+        <li><span class="check">✓</span><b>80&nbsp;% des Immunsystems</b> sind vom Darm abhängig! Und doch setzt kaum jemand den Verdauungstrakt richtig instand</li>
+        <li><span class="check">✓</span>Wie im Laufe vieler Jahre Ablagerungen und Schlacken im Dünn- und Dickdarm entstanden sind und wie Du diese wieder loswirst</li>
+        <li><span class="check">✓</span>Von der Eubiose, Dysbiose und der Darmflora – und welche wichtigen Vorarbeiten geleistet werden müssen, bis man diese positiv beeinflussen kann</li>
+        <li><span class="check">✓</span>Die einfachste, schnellste und effektivste Methode herauszufinden, welche Nahrungsmittel Du nicht verträgst</li>
+        <li><span class="check">✓</span>Wichtige Informationen zur Ernährung eines Rheumatikers</li>
+        <li><span class="check">✓</span>Wie Du die Grundlage von Parasiten zerstören kannst und auch solltest</li>
+        <li><span class="check">✓</span>Warum die Ursachen NICHT in den Gelenken zu suchen sind</li>
+        <li><span class="check">✓</span><b>48 Symptome</b> von Parasitenbefall</li>
+        <li><span class="check">✓</span>Innere und äußere Pilze – so müssen sie eliminiert werden</li>
+        <li><span class="check">✓</span>Die Ursachen von Rheuma in Zähnen, Zahnwurzeln und im Kiefer – und wie Du dabei entscheiden solltest</li>
+        <li><span class="check">✓</span>In welchem Fall Amalgamfüllungen NICHT sofort entfernt werden dürfen</li>
+        <li><span class="check">✓</span>Die <b>6 Schadstoffquellen</b>, die Du unbedingt vermeiden solltest</li>
+        <li><span class="check">✓</span>Welche Zahnfüllungen sich für Dich am besten eignen – Vor- und Nachteile der üblichen Zahnfüllungen</li>
+        <li><span class="check">✓</span>Die Implantologie – wann und welches Implantat</li>
+        <li><span class="check">✓</span>Achtung Entgiftungskrisen … und wie Du damit umgehen sollst</li>
+        <li><span class="check">✓</span>Über die (Schwermetall-)Vergiftungen von Quecksilber, Blei, Aluminium und Cadmium</li>
+        <li><span class="check">✓</span>Die <b>3 Arten von Zahnherden</b>, warum sie mitschuldig an rheumatischen Erkrankungen sein können</li>
+        <li><span class="check">✓</span>Wie Du einen Zahnarzt findest, der Dich versteht und Dir auf dem Weg zum Ex-Rheumatiker behilflich sein kann</li>
+        <li><span class="check">✓</span><b>2 Beispiele</b> über die Wirkung von Amalgam auf die rheumatoide Arthritis</li>
+        <li><span class="check">✓</span>Eine Methode, wie Du Zahnfleischprobleme wie Parodontose, Parodontitis und freie Zahnwurzeln in den Griff bekommst</li>
+        <li><span class="check">✓</span>Welche sportlichen Aktivitäten auch ein Rheumatiker ausüben kann und nach Möglichkeit sollte</li>
+        <li><span class="check">✓</span>Kann Knorpel wieder nachwachsen?</li>
+        <li><span class="check">✓</span>Die komplette <b>Schritt-für-Schritt-Anleitung</b></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -550,20 +536,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="author">
       <div class="author-photo">
-        <span class="ribbon">★ Seit 2002 im Dienst der Gesundheit</span>
+        <span class="ribbon">★ Seit 2006 im Dienst der Gesundheit</span>
         <img src="/assets/img/andreas-sadlowski.jpg" alt="Andreas Sadlowski – Autor und Rheuma-Coach" loading="lazy">
       </div>
       <div>
-        <h3 style="font-size:1.55rem;margin-bottom:12px">„Es gibt biologische Belastungen im Körper, die sich gezielt und systematisch entlasten lassen."</h3>
-        <p>2002 erkrankte seine damalige Partnerin an schwerer rheumatoider Arthritis. Was als verzweifelte Suche nach Antworten begann, wurde zur Lebensaufgabe: Andreas Sadlowski recherchierte, analysierte und kombinierte – und entwickelte über 20 Jahre die <b>KSG H+ Methode</b>. Heute blickt er auf einen ganzheitlichen Erfahrungsschatz zurück, durch den bereits tausende Betroffene neue Hoffnung und Lebensqualität schöpfen durften.</p>
-        <p>Er ist <b>kein Arzt</b> und <b>kein Heilpraktiker</b>. Andreas Sadlowski ist Industriemeister und Technischer Betriebswirt (IHK-Abschlüsse auf Bachelor- und Master-Niveau).</p>
-        <p>Was im ersten Moment ungewöhnlich klingt, ist sein größter Vorteil: Er blickt mit dem unbestechlichen Auge eines System-Analytikers auf den Organismus. Während im Alltag oft nur die Symptome im Fokus stehen, betrachtet er die biologischen Prozesse wie ein komplexes System. Er sucht nach den eigentlichen Störquellen, um diese Schritt für Schritt und systematisch zu entlasten. Genau dieses strukturierte, logische Denken steckt in der KSG H+ Methode.</p>
+        <h3 style="font-size:1.55rem;margin-bottom:12px">Ein Experte auf dem Gebiet Rheuma und Autoimmunerkrankungen.</h3>
+        <p>Andreas Sadlowski ist der absolute Experte auf diesem Gebiet und hat durch seine jahrelange Forschung und Erfahrung eine Methode entwickelt, die auf anerkannten wissenschaftlichen Fundamenten beruht.</p>
+        <p>Viele Ärzte und Heilpraktiker haben von ihm gelernt. Was Andreas Sadlowski von anderen Experten unterscheidet, ist, dass er weder Arzt noch Heilpraktiker ist. Seine Erfahrungen beruhen auf einem 20-jährigen Studium und auf der Tatsache, dass er seine eigene Frau geheilt hat, nachdem sie jahrelang an Rheuma litt. Danach haben tausende ihr Rheuma mit Hilfe seiner Methode heilen können.</p>
+        <p>Das zeigt, dass er nicht nur theoretisches Wissen hat, sondern auch praktische Erfahrung, um Menschen wie dir zu helfen.</p>
         <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn">Das Buch von Andreas sichern <span class="arrow">→</span></a>
       </div>
     </div>
     <div class="author-stats full">
       <div class="s"><div class="num">20+</div><div class="lbl">Jahre Forschung</div></div>
-      <div class="s"><div class="num">10.000+</div><div class="lbl">begleitete Klienten</div></div>
+      <div class="s"><div class="num">Tausende</div><div class="lbl">begleitete Klienten</div></div>
       <div class="s"><div class="num">113</div><div class="lbl">Seiten gebündeltes Wissen</div></div>
       <div class="s"><div class="num">6 Sprachen</div><div class="lbl">DE · EN · ES · FR · NL · RU</div></div>
     </div>
@@ -584,45 +570,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="vs-row">
-        <div class="vs-crit">Fokus der Anwendung</div>
+        <div class="vs-crit">Herangehensweise</div>
         <div class="vs-pair">
-          <div class="vs-cell no">Symptome im Alltag dämpfen</div>
-          <div class="vs-cell yes">Tiefe biologische Ursachen regulieren</div>
+          <div class="vs-cell no">Die magische Pille oder das Medikament gegen Rheuma gibt es nicht</div>
+          <div class="vs-cell yes">Die Ursachen Schritt für Schritt auf körperlicher, psychischer und geistiger Ebene auflösen</div>
         </div>
       </div>
       <div class="vs-row">
-        <div class="vs-crit">Umgang mit Präparaten</div>
+        <div class="vs-crit">Ernährungsumstellung allein</div>
         <div class="vs-pair">
-          <div class="vs-cell no">Oft als dauerhafte Lösung gedacht</div>
-          <div class="vs-cell yes">Begleitend, mit dem Ziel der körpereigenen Entlastung</div>
+          <div class="vs-cell no">Reicht bei den meisten Rheumatikern allein nicht aus</div>
+          <div class="vs-cell yes">Ganzheitliche Methode, die alle Ursachen gleichzeitig angeht</div>
         </div>
       </div>
       <div class="vs-row">
-        <div class="vs-crit">Körperliche Belastung</div>
+        <div class="vs-crit">Bisherige Investitionen</div>
         <div class="vs-pair">
-          <div class="vs-cell no">Mögliche Belastung für Magen, Leber und das Immunsystem</div>
-          <div class="vs-cell yes">Natürliche, schonende Schritte zur Stärkung des Organismus</div>
-        </div>
-      </div>
-      <div class="vs-row">
-        <div class="vs-crit">Eignung je nach Phase</div>
-        <div class="vs-pair">
-          <div class="vs-cell no">Oft je nach Schweregrad eingeschränkt</div>
-          <div class="vs-cell yes">Ja – für jede Phase und auch bei langfristiger Belastung geeignet</div>
-        </div>
-      </div>
-      <div class="vs-row">
-        <div class="vs-crit">Kostenaufwand</div>
-        <div class="vs-pair">
-          <div class="vs-cell no">Fortlaufende Kosten für Hilfsmittel & Präparate (über Jahre)</div>
-          <div class="vs-cell yes">Einmalige Investition in wertvolles Praxis-Wissen</div>
-        </div>
-      </div>
-      <div class="vs-row">
-        <div class="vs-crit">Das angestrebte Ziel</div>
-        <div class="vs-pair">
-          <div class="vs-cell no">Kurzfristige Linderung der Beschwerden</div>
-          <div class="vs-cell yes">Natürliche Bewegungsfreiheit, Vitalität und ein aktives Leben</div>
+          <div class="vs-cell no">Oft 20.000 € und mehr in Ärzte, Blutwäsche, Heilpraktiker und Nahrungsergänzungen – ohne Erfolg</div>
+          <div class="vs-cell yes">Einmalig 39,95 € für die komplette KSG H+ Methode</div>
         </div>
       </div>
     </div>
@@ -633,115 +598,75 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="bg-alt" id="stimmen">
   <div class="container">
     <div class="section-title">
-      <span class="eyebrow">Über 10.000 positive Erfahrungen · Auszug</span>
+      <span class="eyebrow">Was weitere Anwender des Buches sagen</span>
       <h2 style="margin-top:14px">Diese Menschen waren genau da, wo du jetzt bist.</h2>
-      <p>Alle Stimmen sind dokumentiert auf rheumafrei.de/kundenstimmen. Hier eine Auswahl — original und für dich aufbereitet.</p>
     </div>
     <div class="t-grid">
 
       <div class="t-card">
-        <div class="t-tag">Enorme Erleichterung nach 3 Wochen</div>
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">Ich bin in der 3. Woche und konnte in Absprache mit meinem Arzt meine Präparate bereits drastisch reduzieren. Nach 21 Jahren mit schweren Gelenkbeschwerden. Ich hatte mich fast schon aufgegeben — heute reite ich wieder."</p>
-        <div class="t-meta"><div class="t-avatar">MM</div><div><div class="t-name">Marina Mühle, 47</div><div class="t-condition">21 Jahre Rheuma · ehem. Leistungssportlerin</div></div></div>
+        <p class="t-quote">…aber ich will Ihnen noch mal schreiben, dass ich dank Ihnen – nach 4 Jahren keine Einschränkungen mehr durch die Gelenke habe. Und nicht nur das – ich fühle mich 20 Jahre jünger. Es hat alles funktioniert, wie Sie beschrieben haben. DANKE!"</p>
+        <div class="t-meta"><div class="t-avatar">MD</div><div><div class="t-name">Mira Dopczynska</div></div></div>
       </div>
 
       <div class="t-card">
-        <div class="t-tag">Großer Fortschritt nach 2 Monaten</div>
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">Zwei Monate nach Beginn des Programms benötige ich unter ärztlicher Begleitung meine schweren Mittel nicht mehr. Ich hätte nie gedacht, dass das so schnell geht."</p>
-        <div class="t-meta"><div class="t-avatar">RK</div><div><div class="t-name">Ralf K., 63</div><div class="t-condition">Schweiz</div></div></div>
+        <p class="t-quote">Vor mehr als einem Jahr lag ich mit stärksten Schmerzen in einer Fachklinik für Rheumaerkrankungen. Die Ärzte sagten sinngemäß, dass Rheuma bzw. Arthritis nicht weggeht und ich mit diesen Einschränkungen leben müsste. Inzwischen bin ich beschwerdefrei! Das habe ich Ihnen und Ihrem Programm zu verdanken."</p>
+        <div class="t-meta"><div class="t-avatar">RA</div><div><div class="t-name">Rolf A.</div></div></div>
       </div>
 
       <div class="t-card">
-        <div class="t-tag">Aus der Fachklinik zurück im Leben</div>
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">Vor mehr als einem Jahr lag ich mit stärksten Schmerzen in einer Fachklinik. Inzwischen bin ich völlig beschwerdefrei! Ihnen und Ihrem Programm habe ich das zu verdanken."</p>
-        <div class="t-meta"><div class="t-avatar">RA</div><div><div class="t-name">Rolf A.</div><div class="t-condition">Rheumatoide Arthritis</div></div></div>
+        <p class="t-quote">Es fing alles mit meinem Mann Günther an. Er hatte immer wieder heftige Gichtanfälle. Nach deiner Kur war es der Wahnsinn, was wir alles nicht mehr hatten: keine Rückenschmerzen, kein Bluthochdruck, keine Gichtattacken. Ich bin frei wie ein Vogel. Nebenbei haben wir noch jeder 14 Kilo abgenommen."</p>
+        <div class="t-meta"><div class="t-avatar">VR</div><div><div class="t-name">Vierkorn Rosi</div></div></div>
       </div>
 
       <div class="t-card">
-        <div class="t-tag">Seit 4 Jahren beschwerdefrei</div>
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">Seit 4 Jahren habe ich keine Einschränkungen mehr durch die Gelenke. Und nicht nur das — ich fühle mich 20 Jahre jünger."</p>
-        <div class="t-meta"><div class="t-avatar">MD</div><div><div class="t-name">Mira Dopczynska</div><div class="t-condition">Rheuma</div></div></div>
+        <p class="t-quote">Ich habe Ihr Programm durchgeführt und bin nun schon ziemlich lange schmerzfrei und fühle mich wieder gesund. Man hat mir gesagt, dass ich Polymyalgia habe, und die Tabletten hatten viele Nebenwirkungen, die ich nicht vertragen konnte. Dann habe ich Ihr Programm gefunden."</p>
+        <div class="t-meta"><div class="t-avatar">AC</div><div><div class="t-name">Anita Clements</div></div></div>
       </div>
 
       <div class="t-card">
-        <div class="t-tag">Wandern statt Stillstand</div>
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">Nach etwa vier Wochen ging es dann steil bergauf — und dann konnte ich wieder wandern gehen!! Endlich wieder unbeschwert gehen: allein das ist etwas sooooo Wunderbares!"</p>
-        <div class="t-meta"><div class="t-avatar">CL</div><div><div class="t-name">Claudia, 46</div><div class="t-condition">Rheuma · Hände, Schultern, Knie</div></div></div>
+        <p class="t-quote">Ich habe seit ca. 10 Jahren mit deinem Programm Erfolg; die Gelenkschmerzen und die Gicht in den Füßen sind innerhalb eines Jahres vollständig verschwunden und bis heute nicht wieder zurückgekehrt. Medikamente habe ich von Anfang an keine genommen."</p>
+        <div class="t-meta"><div class="t-avatar">BE</div><div><div class="t-name">Bernhard Endlichhofer</div></div></div>
       </div>
 
       <div class="t-card">
-        <div class="t-tag">Seit 10 Jahren unbelastet</div>
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">Die Gelenkbeschwerden und die Gicht in den Füßen sind innerhalb eines Jahres vollständig verschwunden — und bis heute, 10 Jahre später, nicht zurückgekehrt."</p>
-        <div class="t-meta"><div class="t-avatar">BE</div><div><div class="t-name">Bernhard Endlichhofer</div><div class="t-condition">Gicht, Gelenkschmerzen</div></div></div>
+        <p class="t-quote">Seit 2015 fingen bei mir die Gelenke an zu schmerzen – am schlimmsten die Hände, dann die Schultern, die Knie, sogar das Kiefergelenk. Mit 46 hatte es mich erwischt. Nach etwa vier Wochen mit deiner Kur ging es steil bergauf, und dann konnte ich wieder wandern gehen! Endlich wieder schmerzfrei gehen – allein das ist etwas sooooo Wunderbares!"</p>
+        <div class="t-meta"><div class="t-avatar">C</div><div><div class="t-name">Claudia</div></div></div>
       </div>
 
       <div class="t-card">
-        <div class="t-tag">Neue Vitalität mit 95 Jahren</div>
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">Wenn er mit 95 Jahren seine Beweglichkeit zurückgewinnen konnte … dann kannst du es auch schaffen."</p>
-        <div class="t-meta"><div class="t-avatar">HS</div><div><div class="t-name">Harry Simon, 95</div><div class="t-condition">Rheuma</div></div></div>
+        <p class="t-quote">Ich hatte sehr daran gezweifelt, als ich begann, diese natürliche Therapie durchzuführen. Ich hatte 6 Jahre lang mit schwerem Rheuma zu kämpfen. Meine Gelenkschmerzen und starken Schwellungen, besonders an den Füßen, sind so gut wie weg, und ich kann mich endlich wieder frei und wie ein junger Mensch fühlen."</p>
+        <div class="t-meta"><div class="t-avatar">AW</div><div><div class="t-name">Alexander W.</div><div class="t-condition">Lohmar</div></div></div>
       </div>
 
       <div class="t-card">
-        <div class="t-tag">Schwellungen deutlich zurückgegangen</div>
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">Meine Gelenkschmerzen und starken Schwellungen, besonders an den Füßen, sind so gut wie weg. Nach 6 Jahren — ich kann mich endlich wieder frei fühlen."</p>
-        <div class="t-meta"><div class="t-avatar">AW</div><div><div class="t-name">Alexander W., Lohmar</div><div class="t-condition">6 Jahre Rheuma</div></div></div>
+        <p class="t-quote">Welch unglaubliche Wirkung Ihr Programm hat! Warum kennt es nicht die ganze Welt? Warum kennt es mein Arzt nicht? Zwei Monate nach Beginn des Programms brauche ich meine Schmerzmittel nicht mehr. Es hat mich vor einer weiteren Ausgabe von Tonnen an Geld gerettet."</p>
+        <div class="t-meta"><div class="t-avatar">RK</div><div><div class="t-name">Ralf K.</div><div class="t-condition">63 Jahre, Schweiz</div></div></div>
       </div>
 
       <div class="t-card">
-        <div class="t-tag">Nach 3 Jahren ein neues Lebensgefühl</div>
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">Nach 3 Jahren fühle ich mich super. Ich komme mittlerweile völlig ohne Medikamente aus und bin meine Beschwerden los."</p>
+        <p class="t-quote">Was ich bisher sagen kann: Seit Beginn musste ich keine Medikamente, sprich Voltaren oder Ibuprofen, mehr nehmen."</p>
+        <div class="t-meta"><div class="t-avatar">BK</div><div><div class="t-name">Beate Knippel</div></div></div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">Ich möchte mich ganz herzlich bei Ihnen bedanken. Ich komme mittlerweile völlig ohne Medikamente aus und bin meine Beschwerden los. Ich wusste, es dauert bei mir länger, aber nun nach 3 Jahren fühle ich mich super."</p>
         <div class="t-meta"><div class="t-avatar">DB</div><div><div class="t-name">Daniela B.</div><div class="t-condition">Schweiz</div></div></div>
       </div>
 
       <div class="t-card">
-        <div class="t-tag">Seit 10 Jahren beschwerdefrei</div>
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">Vor mehr als 10 Jahren hat sich mein Zustand stabilisiert — und seitdem lebe ich unbeschwert. Morbus Bechterew galt für mich als unüberwindbar. Heute weiß ich es besser."</p>
-        <div class="t-meta"><div class="t-avatar">TB</div><div><div class="t-name">Tim Berg</div><div class="t-condition">Morbus Bechterew</div></div></div>
-      </div>
-
-      <div class="t-card">
-        <div class="t-tag">Zurück in die aktive Bewegung</div>
-        <div class="t-stars">★★★★★</div>
-        <p class="t-quote">Sie war körperlich extrem eingeschränkt und völlig verzweifelt. Doch sie hat ihre Mobilität zurückgewonnen und die chronischen Entzündungen hinter sich gelassen!"</p>
-        <div class="t-meta"><div class="t-avatar">KH</div><div><div class="t-name">Kyung Herrlich</div><div class="t-condition">RA + Fibromyalgie</div></div></div>
-      </div>
-
-      <div class="t-card">
-        <div class="t-tag">Psoriasis-Arthritis im Griff</div>
-        <div class="t-stars">★★★★★</div>
-        <p class="t-quote">Ich habe Psoriasis-Arthritis — meine Gelenke werden von Tag zu Tag besser, und meine Haut regeneriert sich auch. Endlich packt mal eine Methode das Problem an der Wurzel."</p>
-        <div class="t-meta"><div class="t-avatar">MB</div><div><div class="t-name">Markus Barth</div><div class="t-condition">Psoriasis Arthritis</div></div></div>
-      </div>
-
-      <div class="t-card">
-        <div class="t-tag">14 kg leichter & voller Energie</div>
-        <div class="t-stars">★★★★★</div>
-        <p class="t-quote">Ich fühle mich frei wie ein Vogel. Keine Rückenschmerzen, kein Bluthochdruck, keine Gichtattacken mehr — und wir haben jeder 14 Kilo abgenommen."</p>
-        <div class="t-meta"><div class="t-avatar">RV</div><div><div class="t-name">Rosi Vierkorn</div><div class="t-condition">Gicht, Bluthochdruck</div></div></div>
-      </div>
-
-      <div class="t-card">
-        <div class="t-tag">Mehr Leichtigkeit für meine Tochter</div>
-        <div class="t-stars">★★★★★</div>
-        <p class="t-quote">Es ist ein so tolles Gefühl, meiner Tochter auf einem so schonenden Weg zu unbeschwerter Bewegungsfreiheit zu verhelfen — ganz ohne schwere Präparate."</p>
-        <div class="t-meta"><div class="t-avatar">BA</div><div><div class="t-name">Bernadette A.</div><div class="t-condition">Mutter, Tochter Francesca</div></div></div>
-      </div>
-
-      <div class="t-card">
-        <div class="t-tag">Erste spürbare Entlastung nach 7 Tagen</div>
-        <div class="t-stars">★★★★★</div>
-        <p class="t-quote">Die Belastung im Fußgelenk ist spürbar zurückgegangen. Ich fühle mich sehr gut. Nach 7 Tagen mit dem Buch!"</p>
-        <div class="t-meta"><div class="t-avatar">FG</div><div><div class="t-name">F. Giotta</div><div class="t-condition">Fußgelenkschmerzen</div></div></div>
+        <p class="t-quote">Ich hatte vor einer Woche damit angefangen. Es gab eine Erstverschlimmerung, die sich noch eine Woche hielt. Seit gestern geht es mir erstaunlich gut …"</p>
+        <div class="t-meta"><div class="t-avatar">ST</div><div><div class="t-name">Steineman</div><div class="t-condition">Österreich</div></div></div>
       </div>
 
     </div>
@@ -759,26 +684,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="offer-grid">
         <div>
           <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.2)">Dein Komplett-Paket</span>
-          <h2 style="margin-top:14px">Dekonstruktion im Menschen — das gesamte System auf 113 Seiten.</h2>
-          <p>Du bekommst <b>das einzige Buch</b>, das die KSG H+ Methode komplett dokumentiert. Keine versteckten Zusatzverkäufe, kein Abo, keine Folgekosten.</p>
+          <h2 style="margin-top:14px">Dekonstruktion im Menschen — Das Verständnis der aufbauenden und zerstörenden Prozesse im Körper als Schlüssel zur wahren Gesundheit.</h2>
+          <p>Keine dicken, unverständlichen 500-Seiten-Medizinwälzer: Andreas Sadlowski hat die Erkenntnisse aus über 20 Jahren Forschung auf die hocheffiziente, sofort im Alltag umsetzbare Essenz komprimiert.</p>
           <ul class="includes">
-            <li><span class="check">✓</span>Das gedruckte Buch (113 Seiten, hochwertig produziert)</li>
+            <li><span class="check">✓</span>Das gedruckte Buch (113 Seiten, 10 Kapitel)</li>
             <li><span class="check">✓</span>Die komplette KSG H+ Schritt-für-Schritt-Anleitung</li>
-            <li><span class="check">✓</span>Das 6-Schadstoffe-Protokoll inkl. Zahnarzt-Checkliste</li>
-            <li><span class="check">✓</span>Das Leber-/Nieren-/Darm-Entlastungs-Schema</li>
-            <li><span class="check">✓</span>Der alltagstaugliche Anti-Entzündungs-Ernährungs-Leitfaden</li>
-            <li><span class="check">✓</span>Bonus: Zugang zur kostenlosen Facebook-Support-Gruppe</li>
-            <li><span class="check">✓</span>Auch direkt erhältlich als <b>E-Book & Hörbuch</b></li>
+            <li><span class="check">✓</span>Auch erhältlich als <b>E-Book & Hörbuch</b></li>
+            <li><span class="check">✓</span>Support per E-Mail und in unserer Facebook-Gruppe</li>
           </ul>
           <div style="font-size:.86rem;color:#A7F3D0">Versand: 1–4 Werktage in DE · weltweit lieferbar</div>
         </div>
         <div>
         <img src="/assets/img/buch-cover.png" alt="Buch ‚Dekonstruktion im Menschen‘" width="220" height="297" loading="lazy" style="display:block;width:min(220px,60%);margin:0 auto 24px;transform:rotate(-3deg);filter:drop-shadow(0 22px 44px rgba(0,0,0,.45))">
         <div class="price-box">
-          <div style="font-size:.92rem;color:#A7F3D0;margin-bottom:2px">Weniger als eine Monatspackung Nahrungsergänzungsmittel</div>
+          <div style="font-size:.92rem;color:#A7F3D0;margin-bottom:2px">Nur ein sinnloses Medikament oder Nahrungsergänzungsmittel weniger, und Du hast das Geld wieder raus</div>
           <div class="now">39,95 €</div>
           <div class="once">einmalig · kein Abo · keine versteckten Kosten</div>
-          <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg btn--pulse">Jetzt für 39,95 € bestellen <span class="arrow">→</span></a>
+          <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg btn--pulse">Ja, ich will das komplette Wissen sichern! <span class="arrow">→</span></a>
           <div class="guarantee-line">🛡️ 30 Tage Geld-zurück-Garantie · 100 % Risiko bei uns</div>
         </div>
         </div>
@@ -796,8 +718,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#92400E" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
         </div>
         <div>
-          <h3 style="margin-bottom:6px">Unsere ehrliche 30-Tage-Zufriedenheitsgarantie</h3>
-          <p style="margin:0;color:var(--muted)">Lies das Buch. Lerne die ersten Schritte kennen. Wenn du nicht absolut davon überzeugt bist, dass dieses Praxiswissen jeden Cent wert war — schreib uns einfach eine kurze Nachricht. Du erhältst deine Investition zurück. Ohne lästige Fragen. Ohne unangenehme Gefühle. Und das Buch darfst du als Dankeschön für dein Vertrauen trotzdem behalten.</p>
+          <h3 style="margin-bottom:6px">Unsere 30-Tage-Geld-zurück-Garantie</h3>
+          <p style="margin:0;color:var(--muted)">Solltest du innerhalb von 30 Tagen nach dem Kauf der Meinung sein, dass dieses Buch nicht absolut jeden Cent wert war, erhältst du eine sofortige Rückzahlung des Kaufpreises – garantiert, ohne lästige Fragen und ohne unangenehme Gefühle. Schreib uns dafür einfach eine kurze Nachricht an unseren Support. Wir stehen zu 100 % hinter der Qualität unserer Inhalte.</p>
         </div>
       </div>
     </div>
@@ -813,44 +735,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="faq">
       <details open>
-        <summary>Ist der Preis wirklich einmalig — oder kommt da noch was?</summary>
-        <div class="answer">Ja. Das Buch kostet <b>einmalig 39,95 €</b> — kein Abo, keine zusätzlichen Verkäufe, keine versteckten Kosten. Den Betrag zahlst du genau einmal.</div>
+        <summary>Ist der Preis in Höhe von 39,95 EUR einmalig?</summary>
+        <div class="answer">Ja, einmalig. Kein Abo. Keine versteckten Kosten.</div>
       </details>
       <details>
-        <summary>Funktioniert das auch ohne offizielle Diagnose?</summary>
-        <div class="answer">Ja. Das Buch setzt an den <b>biologischen Grundlagen</b> an — und diese Regulationsprozesse sind im Kern sehr ähnlich, unabhängig davon, welche spezifische Diagnose im Bereich der Gelenk- und Autoimmunbelastungen gestellt wurde. Auch ohne Diagnose hervorragend anwendbar.</div>
+        <summary>Ich habe noch keine genaue Diagnose, ist es dann trotzdem das Richtige für mich?</summary>
+        <div class="answer">Es spielt keine Rolle, welchen Namen der Arzt Deinen Beschwerden gibt. Tatsache ist, dass der Körper streikt und SOS ruft. Auch wenn es 400 Arten von rheumatischen Erkrankungen gibt – die Methode, sie an der Wurzel Schritt für Schritt anzugreifen, ist immer die gleiche. Denn die Hauptfundamente aller Erkrankungen sind immer wieder die gleichen.</div>
       </details>
       <details>
-        <summary>Ich nehme verschriebene Präparate. Muss ich diese absetzen?</summary>
-        <div class="answer">Nein, auf keinen Fall eigenmächtig. Du fängst <b>parallel</b> an, deinen Körper ganzheitlich aufzubauen. Im Buch wird beschrieben, wie viele Anwender ihren Körper so weit stärken konnten, dass sie <b>in enger Absprache und Kooperation mit ihrem behandelnden Arzt</b> ihre Präparate schrittweise anpassen oder reduzieren konnten, wenn sich die Labor- und Entzündungswerte stabilisiert haben.</div>
+        <summary>Ich habe schon so viel ausprobiert, aber keinen Erfolg gehabt.</summary>
+        <div class="answer">Als Thomas A. Edison die Glühlampe erfand, scheiterte er 10.000 Mal. Doch anstatt aufzugeben, sagte er: „Ich habe nicht versagt. Ich habe nur 10.000 Wege gefunden, die nicht funktionieren." Beim 10.001. Versuch hatte er Erfolg. Das Gleiche gilt für dich: Du weißt bereits, was nicht funktioniert – also gib nicht auf! Solltest du Unterstützung bei der Umsetzung brauchen, sind wir für dich da: per E-Mail und in unserer Facebook-Gruppe.</div>
       </details>
       <details>
-        <summary>Ich habe schon alles probiert. Warum sollte das anders sein?</summary>
-        <div class="answer">Weil die meisten Ansätze nur an einem einzigen Rädchen drehen (z. B. reine Ernährungsumstellung, Darmaufbau oder Entspannung). Die KSG H+ Methode kombiniert <b>alle wesentlichen Belastungs-Ebenen gleichzeitig</b> — das ist der Grund, warum sie dort ansetzt, wo isolierte Einzel-Methoden oft an ihre Grenzen stoßen.</div>
+        <summary>Gibt es das Buch auch in anderen Sprachen?</summary>
+        <div class="answer">Ja, und zwar in Englisch, Spanisch, Französisch, Niederländisch und Russisch. In diesem Fall bitte ich Dich, Kontakt mit uns aufzunehmen. Die Kontaktdaten findest Du im Impressum.</div>
       </details>
       <details>
-        <summary>Wie lange dauert es, bis ich eine spürbare Entlastung erfahre?</summary>
-        <div class="answer">Realistisch betrachtet sprechen wir von einem Zeitraum von 3–24 Monaten für eine tiefgreifende Regeneration. Das Tempo hängt von individuellen Faktoren ab (die im Buch genau erklärt werden): wie lange die Belastung schon besteht, wie konsequent du die Schritte im Alltag umsetzt und welche zusätzlichen Trigger bei dir aktiv sind. Erste positive Veränderungen und mehr Wohlbefinden bemerken viele Leser bereits nach 2–4 Wochen.</div>
+        <summary>Ist es möglich, das Buch auch als Hörbuch und E-Book zu erhalten?</summary>
+        <div class="answer">Ja, bei der Buchbestellung erhältst Du die Möglichkeit, es auch in dieser Form zu beziehen.</div>
       </details>
       <details>
-        <summary>Funktioniert das auch bei Belastungen, die nach Infekten oder Impfungen aufgetreten sind?</summary>
-        <div class="answer">Ja. Im Buch wird ausführlich beschrieben, wie sich sekundär getriggerte Entzündungsprozesse vom klassischen Verlauf unterscheiden — und wie du das Immunsystem in diesen spezifischen Fällen gezielt unterstützen und entlasten kannst.</div>
+        <summary>Muss ich meine Medikamente weglassen, um mit dieser Methode beginnen zu können?</summary>
+        <div class="answer">Nein, das musst Du nicht.</div>
       </details>
       <details>
-        <summary>Ich bin sehr beschäftigt — passt das in meinen Alltag?</summary>
-        <div class="answer">Ja, absolut. Die Anleitung ist so konzipiert, dass sie sich wunderbar mit <b>Beruf und Familie</b> vereinbaren lässt. Es geht hier nicht um radikales Heilfasten oder zeitaufwendige Kuren, sondern um alltagstaugliche, integrierbare Schritte.</div>
+        <summary>Ich habe keine Gallenblase oder Schilddrüse mehr. Kann es mir auch helfen?</summary>
+        <div class="answer">Ja, auch dann macht es Sinn, die Methode durchzuführen. Oder besser gesagt: Dann erst recht!</div>
       </details>
       <details>
-        <summary>Was ist mit genetischen Faktoren oder „erblichem" Rheuma?</summary>
-        <div class="answer">Andreas Sadlowski beleuchtet im Buch die Epigenetik. Vererbt wird oft nicht die biologische Zwangsläufigkeit einer Erkrankung, sondern eine Kombination aus Lebensgewohnheiten, Umweltbelastungen und emotionalen Prägungen. Das Buch zeigt, wie man diese vererbten Muster aktiv durchbricht.</div>
+        <summary>Bei mir hat es mit den Wechseljahren begonnen – hilft die Methode in solchen Fällen auch?</summary>
+        <div class="answer">Hier handelt es sich um ein Ungleichgewicht des Hormonhaushalts. Idealerweise solltest Du die Ursachen davon beheben. Halte Dich in dem Fall genau an die Schritt-für-Schritt-Anleitung im Buch.</div>
       </details>
       <details>
-        <summary>Gibt's das Buch auch digital?</summary>
-        <div class="answer">Ja. Verfügbare Formate: gedrucktes Buch, E-Book, Hörbuch. Sprachen: DE, EN, ES, FR, NL, RU.</div>
+        <summary>Ich habe es vererbt bekommen, da kann man doch nichts machen, oder?</summary>
+        <div class="answer">Das Märchen von der Vererbung benutzt man immer dann sehr gerne, wenn man keine Antwort auf die Fragen findet. Werde zum Wissenden und erkenne, dass Deine einzige Vererbung die wahre Gesundheit ist.</div>
       </details>
       <details>
-        <summary>Was ist, wenn es bei mir doch nicht funktioniert?</summary>
-        <div class="answer">Du hast unsere ehrliche <b>30-Tage-Zufriedenheitsgarantie</b>. Schreibe uns einfach eine kurze E-Mail an <a href="mailto:service@rheumafrei.de">service@rheumafrei.de</a> — du bekommst dein Geld zurück und das Buch darfst du behalten.</div>
+        <summary>Bei mir sind die Ursachen psychischer Natur. Komme ich mit diesem Buch auch weiter?</summary>
+        <div class="answer">In dem Fall würden wir Dir das Buch ganz besonders ans Herz legen.</div>
+      </details>
+      <details>
+        <summary>Ist es möglich, das Programm auch während der normalen Arbeitstage als vielbeschäftigter Mensch durchzuführen?</summary>
+        <div class="answer">Ja, selbst vielbeschäftigte Menschen können das Programm problemlos während der Arbeit und dem Alltagsstress durchführen.</div>
+      </details>
+      <details>
+        <summary>Ab welchem Alter kann man das Programm durchführen?</summary>
+        <div class="answer">Unser jüngster Ex-Rheumatiker war damals 6 Jahre alt, als er begonnen hat. Unser ältester war 94 Jahre jung und ist mittlerweile über 100 Jahre jung und rheumafrei! (Nachweislich)</div>
+      </details>
+      <details>
+        <summary>Ich habe noch eine Frage. Kann ich mit euch in Kontakt treten?</summary>
+        <div class="answer">Sehr gerne. Schreib uns eine Nachricht an <a href="mailto:service@rheumafrei.de">service@rheumafrei.de</a> (bitte den vollen Namen angeben). Bitte nicht anrufen, da auch wir unsere Zeiten einplanen müssen.</div>
       </details>
     </div>
   </div>
@@ -860,10 +794,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="final">
   <div class="container">
     <span class="eyebrow">Letzte Worte</span>
-    <h2 style="margin-top:14px">In 6 Monaten bist du entweder dort, wo du heute bist —<br>oder du hast ein neues Gefühl von <em style="font-style:italic">Leichtigkeit und Bewegungsfreiheit</em> zurückgewonnen.</h2>
-    <p>Tausende Betroffene haben die Entscheidung bereits getroffen. Heute erleben sie ihren Alltag wieder aktiv, stabil und unbeschwert. Du kannst der Nächste sein.</p>
-    <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg btn--pulse">Buch jetzt sichern <span class="arrow">→</span></a>
-    <div style="margin-top:18px;font-size:.88rem;color:var(--muted)">🛡️ 30 Tage Geld-zurück-Garantie · 📦 Versandkostenfrei DE · ⚡ In 2–4 Werktagen bei dir</div>
+    <h2 style="margin-top:14px">Worauf wartest du noch?</h2>
+    <p>Jetzt mit 113 Seiten geballtem Anti-Rheuma-Know-how das Rheuma besiegen!</p>
+    <a href="https://www.digistore24.com/product/300163.html?aff=rheumafrei" class="btn btn--lg btn--pulse">Ja, ich will mehr darüber erfahren und endlich gesund werden! <span class="arrow">→</span></a>
+    <div style="margin-top:18px;font-size:.88rem;color:var(--muted)">🛡️ 30 Tage Geld-zurück-Garantie · 📦 Versandkostenfrei DE</div>
   </div>
 </section>
 
@@ -893,22 +827,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <script>
-// Lazy-load YouTube iframes only on click (privacy + performance)
-document.querySelectorAll('.video-card').forEach(card => {
-  card.addEventListener('click', () => {
-    const id = card.dataset.yt;
-    if (!id || card.querySelector('iframe')) return;
-    const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
-    iframe.title = card.querySelector('.video-meta')?.textContent || 'Video';
-    iframe.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-    iframe.setAttribute('allowfullscreen','');
-    iframe.style.position='absolute';iframe.style.inset='0';iframe.style.zIndex='4';
-    card.appendChild(iframe);
-    card.querySelectorAll('.video-thumb,.play,.video-meta').forEach(el => el.style.display='none');
-  });
-});
-
 // Smooth-scroll offset for sticky header
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
