@@ -25,8 +25,9 @@
   <style>
 :root{
   --teal:#0F766E; --teal-700:#115E59; --teal-50:#ECFDF5;
+  --orange:#F97316;
   --ink:#0B1F1C; --ink-2:#1F2937; --muted:#4B5563; --line:#E5E7EB;
-  --bg:#FFFFFF; --bg-2:#F6FAF9;
+  --bg:#FFFFFF; --bg-2:#F6FAF9; --bg-3:#0B1F1C;
   --cta:#0c3a52; --cta-700:#082a3d; --cta-shadow:0 10px 30px rgba(12,58,82,.35);
   --gold:#D4A017;
   --radius:14px; --radius-lg:22px;
@@ -35,6 +36,7 @@
   --maxw:980px;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
 h1,h2,h3{font-family:'Lora',Georgia,serif;color:var(--ink);line-height:1.18;letter-spacing:-.01em;margin:0 0 .5em}
@@ -49,12 +51,23 @@ p{margin:0 0 1em}
 .btn .big{font-size:1.15rem;line-height:1.25}
 .btn .small{font-size:.76rem;font-weight:500;opacity:.92}
 
-header{padding:20px 0;text-align:center;border-bottom:1px solid var(--line)}
-.logo{display:inline-flex;align-items:center;gap:9px;text-decoration:none}
-.logo img{width:30px;height:30px}
+/* announce + header */
+.announce{background:#083335;color:#fff;font-size:.83rem;text-align:center;padding:9px 16px}
+@media(max-width:760px){.announce{display:none}}
+.header{background:#fff;border-bottom:1px solid var(--line)}
+.header .row{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.logo img{width:30px;height:30px;display:block}
 .logo span{font-family:'Lora',serif;font-weight:700;font-size:1.1rem;color:var(--ink)}
+.nav{display:none;gap:24px;font-weight:500;color:var(--ink-2);font-size:.95rem}
+.nav a{color:inherit;text-decoration:none}
+.nav a:hover{color:var(--teal-700)}
+@media(min-width:820px){.nav{display:flex}}
+.header .btn{width:auto;max-width:none;padding:10px 18px;font-size:.92rem;box-shadow:none;background:transparent;color:var(--orange);border:1.5px solid var(--orange);flex-direction:row;gap:6px}
+.header .btn:hover{background:rgba(249,115,22,.08);color:var(--orange);transform:none}
+.header .btn .small{display:none}
 
-/* HERO - two column like /buch */
+/* HERO */
 .hero{padding:44px 0 8px;background:radial-gradient(900px 400px at 90% -10%,#D1FAE5 0%, transparent 60%),linear-gradient(180deg,#fff,#F6FAF9)}
 .hero .grid{display:grid;grid-template-columns:1fr;gap:30px;align-items:center}
 @media(min-width:860px){.hero .grid{grid-template-columns:1.05fr .95fr;gap:44px}}
@@ -68,7 +81,7 @@ header{padding:20px 0;text-align:center;border-bottom:1px solid var(--line)}
 .trust-line{font-size:.8rem;color:var(--muted);margin-top:12px}
 .cta-block{margin-top:22px}
 
-/* Product info section */
+/* Product info */
 .stat-line{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin:0 0 22px;font-size:.92rem;color:var(--teal-700);font-weight:700}
 .benefits{margin:0 0 26px;padding:0;list-style:none;display:grid;gap:12px}
 .benefits li{display:flex;gap:11px;align-items:flex-start;font-size:.98rem}
@@ -81,7 +94,41 @@ header{padding:20px 0;text-align:center;border-bottom:1px solid var(--line)}
 
 section{padding:40px 0}
 .section-title{text-align:center;margin-bottom:24px}
+.section-title p{color:var(--muted);font-size:1rem;margin-top:10px;max-width:620px;margin-left:auto;margin-right:auto}
 .bg-alt{background:var(--bg-2)}
+
+/* facts list */
+.book-facts{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:2px;max-height:520px;overflow-y:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+.book-facts li{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;padding:9px 16px;border-bottom:1px dashed var(--line)}
+.book-facts li:last-child{border-bottom:0}
+.book-facts .check{flex:0 0 20px;width:20px;height:20px;border-radius:50%;background:var(--teal-50);color:var(--teal-700);display:grid;place-items:center;margin-top:1px;font-weight:800;font-size:.72rem}
+.book-facts .txt{flex:1;min-width:0}
+
+/* video */
+.video-card{position:relative;max-width:640px;margin:0 auto;background:#000;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/9;cursor:pointer}
+.video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:4}
+.video-thumb{position:absolute;inset:0;background-size:cover;background-position:center}
+.video-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.45))}
+.play{position:absolute;inset:0;margin:auto;z-index:2;width:74px;height:52px;border-radius:13px;background:#FF0000;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.45)}
+.play svg{margin-left:2px;fill:#fff;width:28px;height:28px}
+.video-title{text-align:center;font-family:'Lora',serif;font-weight:700;font-size:1.1rem;margin:16px auto 0;max-width:560px}
+
+/* author */
+.author{display:grid;grid-template-columns:1fr;gap:30px;align-items:center;max-width:820px;margin:0 auto}
+@media(min-width:760px){.author{grid-template-columns:.8fr 1.2fr}}
+.author-photo{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);background:#ECFDF5}
+.author-photo img{width:100%;aspect-ratio:6/7;object-fit:cover}
+.author p{font-size:.97rem}
+
+/* faq */
+.faq{max-width:720px;margin:0 auto}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.faq details[open]{box-shadow:var(--shadow-sm);border-color:#CBD5E1}
+.faq summary{list-style:none;cursor:pointer;padding:16px 20px;font-weight:600;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:.96rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.4rem;color:var(--teal-700);font-weight:400}
+.faq details[open] summary::after{content:"−"}
+.faq .answer{padding:0 20px 18px;color:var(--muted);font-size:.93rem}
 
 .guarantee{max-width:560px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px 28px;text-align:center;box-shadow:var(--shadow-sm)}
 .guarantee h3{color:var(--teal-700);font-size:1.1rem}
@@ -99,8 +146,21 @@ footer a{color:var(--muted);text-decoration:none;margin:0 6px}
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <header>
-    <a href="/" class="logo"><img src="/assets/img/logo-icon-final.png" alt=""> <span>rheumafrei.de</span></a>
+  <!-- Announcement bar -->
+  <div class="announce">📦 Versandkostenfrei in DE · 🛡️ 30 Tage Geld-zurück-Garantie · ⚡ Heute bestellen, in 1–4 Werktagen lesen</div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container row">
+      <a href="/" class="logo"><img src="/assets/img/logo-icon-final.png" alt=""> <span>rheumafrei<span style="color:#00A8E8">.de</span></span></a>
+      <nav class="nav">
+        <a href="#inhalt">Inhalt</a>
+        <a href="#video">Video</a>
+        <a href="#autor">Autor</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="https://www.digistore24.com/product/700832.html?aff=rheumafrei" class="btn"><span class="big">Jetzt bestellen →</span></a>
+    </div>
   </header>
 
   <!-- HERO -->
@@ -162,6 +222,172 @@ footer a{color:var(--muted);text-decoration:none;margin:0 6px}
     </div>
   </section>
 
+  <!-- FACTS / INHALT -->
+  <section id="inhalt">
+    <div class="container" style="max-width:720px">
+      <div class="section-title">
+        <h2>Hier sind nur einige interessante Fakten, die Du in diesem Buch lernen wirst</h2>
+        <p>Das ist nur eine sehr kleine Auswahl von Dingen, die Du in diesem Lehrgang entdecken wirst. Insgesamt sind es 10 Kapitel mit unbezahlbaren Informationen, die Du sofort anwenden kannst.</p>
+      </div>
+      <ul class="book-facts">
+        <li><span class="check">✓</span><span class="txt">Wie du deine Beschwerden von Zuhause aus <b>Schritt für Schritt</b> in den Griff bekommst</span></li>
+        <li><span class="check">✓</span><span class="txt">Über die konstruktive (aufbauende) und destruktive (zerstörende) Wirkung der Charaktereigenschaften und wie man bei der Veränderung vorgehen sollte</span></li>
+        <li><span class="check">✓</span><span class="txt">Warum es von Vorteil ist, keinem der 4 Temperamente den Vorrang zu geben</span></li>
+        <li><span class="check">✓</span><span class="txt">Wie man negative Glaubensmuster zu positiven Einstellungen formt</span></li>
+        <li><span class="check">✓</span><span class="txt">Über die wissenschaftlichen Gesetze der Gedanken – mit verschiedenen Beispielen</span></li>
+        <li><span class="check">✓</span><span class="txt">Warum die meisten Betroffenen mit einer Ernährungsumstellung allein keinen Heilungsprozess hervorrufen können</span></li>
+        <li><span class="check">✓</span><span class="txt">Die <b>3 Faktoren</b>, von denen die Geschwindigkeit Deines Erfolgs abhängt</span></li>
+        <li><span class="check">✓</span><span class="txt">Welche <b>3 Organe</b> versagt haben und wie man sie wieder zu voller Leistung ankurbeln muss</span></li>
+        <li><span class="check">✓</span><span class="txt">Warum Du anstatt Besserung – Enttäuschung erleben kannst und wie Du von Anfang an dagegen steuern solltest</span></li>
+        <li><span class="check">✓</span><span class="txt">Wie Du festgesetzte Schlacken, Biofilme, Kalk, Ablagerungen und Säuren/Basen aus dem Körper (auf)lösen und abtransportieren musst</span></li>
+        <li><span class="check">✓</span><span class="txt">Die Funktionsweise und der Aufbau eines Gelenks und dessen Krankheitsentstehung</span></li>
+        <li><span class="check">✓</span><span class="txt">Sind die Ursachen von Autoimmunerkrankungen tatsächlich unbekannt?</span></li>
+        <li><span class="check">✓</span><span class="txt"><b>3 Gründe</b>, warum die eine Gruppe mit einer Giftbelastung gesund bleibt – und die andere unter schlimmen chronischen Beschwerden leidet</span></li>
+        <li><span class="check">✓</span><span class="txt">Der Mythos über die Übersäuerung – warum Schulmediziner darüber lächeln, und zwar mit Recht. Die Beschwerden werden dadurch sogar noch stärker</span></li>
+        <li><span class="check">✓</span><span class="txt">Der Kreislauf der Ablagerungen und der Entzündungen – und wie Du ihn durchbrechen musst</span></li>
+        <li><span class="check">✓</span><span class="txt">Welche Parameter Deine Atmung, den Kreislauf, die Verdauung, die Abwehrkraft und den Hormonhaushalt beeinflussen</span></li>
+        <li><span class="check">✓</span><span class="txt">Über die ausgeglichene Ernährung</span></li>
+        <li><span class="check">✓</span><span class="txt">Eine Antwort auf die Frage: „Warum gerade ich?"</span></li>
+        <li><span class="check">✓</span><span class="txt">Die Funktionsweise der Nieren und was passiert, wenn sie ihren Aufgaben nicht mehr nachkommen</span></li>
+        <li><span class="check">✓</span><span class="txt">Mit welcher erstaunlichen Methode Du die Nieren wieder auf Vordermann bringst</span></li>
+        <li><span class="check">✓</span><span class="txt">Die Funktionsweise der Leber und deren Zusammenhänge mit chronisch-entzündlichen und anderen Erkrankungen</span></li>
+        <li><span class="check">✓</span><span class="txt">Warum es kaum einen Betroffenen gibt, bei dem die Leber richtig funktioniert, und was Du dagegen unternehmen musst</span></li>
+        <li><span class="check">✓</span><span class="txt">Welches Kontroll- und Vernichtungssystem im Körper versagt haben könnte, so dass Giftstoffe wie Schwermetalle, Schädlingsbekämpfungsmittel, Medikamente, Bakterien, Pilze und Parasiten den Organismus infizieren konnten</span></li>
+        <li><span class="check">✓</span><span class="txt">Warum Schwermetallausleitungen selten sinnvoll sind bzw. warum sie nicht langfristig helfen</span></li>
+        <li><span class="check">✓</span><span class="txt">Das Problem der intrahepatischen Steine in der Leber und was Du dagegen unternehmen musst</span></li>
+        <li><span class="check">✓</span><span class="txt">Wie Ärger, Hass, Furcht, Eifersucht, Ablehnung, Depression, Selbstmitleid und Hoffnungslosigkeit Deine Gesundheit in die Knie zwingen und welche Lösung Du in Anspruch nehmen kannst</span></li>
+        <li><span class="check">✓</span><span class="txt">Warum diese Kur mit ABSTAND die stärkste und effektivste Methode weltweit ist</span></li>
+        <li><span class="check">✓</span><span class="txt"><b>10 Gründe</b>, warum die Leberentstauung unumgänglich ist</span></li>
+        <li><span class="check">✓</span><span class="txt">Die Funktionsweise des Darms und die Zusammenhänge mit chronischen Entzündungen und Autoimmunerkrankungen</span></li>
+        <li><span class="check">✓</span><span class="txt"><b>80&nbsp;% des Immunsystems</b> sind vom Darm abhängig! Und doch setzt kaum jemand den Verdauungstrakt richtig instand</span></li>
+        <li><span class="check">✓</span><span class="txt">Wie im Laufe vieler Jahre Ablagerungen und Schlacken im Dünn- und Dickdarm entstanden sind und wie Du diese wieder loswirst</span></li>
+        <li><span class="check">✓</span><span class="txt">Von der Eubiose, Dysbiose und der Darmflora – und welche wichtigen Vorarbeiten geleistet werden müssen, bis man diese positiv beeinflussen kann</span></li>
+        <li><span class="check">✓</span><span class="txt">Die einfachste, schnellste und effektivste Methode herauszufinden, welche Nahrungsmittel Du nicht verträgst</span></li>
+        <li><span class="check">✓</span><span class="txt">Wichtige Informationen zur Ernährung bei chronischen Entzündungserkrankungen</span></li>
+        <li><span class="check">✓</span><span class="txt">Wie Du die Grundlage von Parasiten zerstören kannst und auch solltest. Parasiten sind oft das Grundübel vieler chronisch-entzündlicher Erkrankungen</span></li>
+        <li><span class="check">✓</span><span class="txt">Warum die Ursachen NICHT in den Gelenken zu suchen sind</span></li>
+        <li><span class="check">✓</span><span class="txt"><b>48 Symptome</b> von Parasitenbefall</span></li>
+        <li><span class="check">✓</span><span class="txt">Innere und äußere Pilze – so müssen sie eliminiert werden</span></li>
+        <li><span class="check">✓</span><span class="txt">Die Ursachen chronischer Beschwerden in Zähnen, Zahnwurzeln und im Kiefer – und wie Du dabei entscheiden solltest</span></li>
+        <li><span class="check">✓</span><span class="txt">In welchem Fall Amalgamfüllungen NICHT sofort entfernt werden dürfen</span></li>
+        <li><span class="check">✓</span><span class="txt">Die <b>6 Schadstoffquellen</b>, die Du unbedingt vermeiden solltest</span></li>
+        <li><span class="check">✓</span><span class="txt">Welche Zahnfüllungen sich für Dich am besten eignen – Vor- und Nachteile der üblichen Zahnfüllungen</span></li>
+        <li><span class="check">✓</span><span class="txt">Die Implantologie – wann und welches Implantat</span></li>
+        <li><span class="check">✓</span><span class="txt">Achtung Entgiftungskrisen … und wie Du damit umgehen sollst</span></li>
+        <li><span class="check">✓</span><span class="txt">Über die (Schwermetall-)Vergiftungen von Quecksilber, Blei, Aluminium und Cadmium</span></li>
+        <li><span class="check">✓</span><span class="txt">Die <b>3 Arten von Zahnherden</b>, warum sie mitschuldig an chronisch-entzündlichen Erkrankungen sein können</span></li>
+        <li><span class="check">✓</span><span class="txt">Wie Du einen Zahnarzt findest, der Dich versteht und Dir auf deinem Weg zurück in ein beschwerdefreies Leben behilflich sein kann</span></li>
+        <li><span class="check">✓</span><span class="txt"><b>2 Beispiele</b> über die Wirkung von Amalgam auf Autoimmunerkrankungen</span></li>
+        <li><span class="check">✓</span><span class="txt">Eine Methode, wie Du Zahnfleischprobleme wie Parodontose, Parodontitis und freie Zahnwurzeln in den Griff bekommst</span></li>
+        <li><span class="check">✓</span><span class="txt">Welche sportlichen Aktivitäten auch bei chronischen Beschwerden möglich sind und nach Möglichkeit gemacht werden sollten</span></li>
+        <li><span class="check">✓</span><span class="txt">Kann Knorpel wieder nachwachsen?</span></li>
+        <li><span class="check">✓</span><span class="txt">Die komplette <b>Schritt-für-Schritt-Anleitung</b></span></li>
+      </ul>
+      <div style="text-align:center">
+        <a class="btn" style="display:inline-flex" href="https://www.digistore24.com/product/700832.html?aff=rheumafrei">
+          <span class="big">Ja, ich will das komplette Wissen sichern!</span>
+          <span class="small">Buch jetzt für nur 39,95&nbsp;€ bestellen &amp; direkt nach Hause geliefert bekommen</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="bg-alt" id="video">
+    <div class="container">
+      <div class="section-title">
+        <h2>Gegen welche Krankheiten hilft das Buch?</h2>
+      </div>
+      <div class="video-card" data-yt="i2idwaQ9nps">
+        <div class="video-thumb" style="background-image:url('https://i.ytimg.com/vi/i2idwaQ9nps/hqdefault.jpg')"></div>
+        <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHOR -->
+  <section id="autor">
+    <div class="container">
+      <div class="section-title">
+        <span class="eyebrow">Der Mann hinter der Methode</span>
+        <h2 style="margin-top:14px">Andreas Sadlowski</h2>
+      </div>
+      <div class="author">
+        <div class="author-photo">
+          <img src="/assets/img/andreas-sadlowski.jpg" alt="Andreas Sadlowski – Autor" loading="lazy">
+        </div>
+        <div>
+          <p>2002 erkrankte seine damalige Partnerin schwer an einer Autoimmunerkrankung. Was als verzweifelte Suche nach Antworten begann, wurde zur Lebensaufgabe: Andreas Sadlowski recherchierte, analysierte und kombinierte – und entwickelte über 20 Jahre die <b>KSG H+ Methode</b>. Heute blickt er auf einen ganzheitlichen Erfahrungsschatz zurück, durch den bereits tausende Betroffene neue Hoffnung und Lebensqualität schöpfen durften.</p>
+          <p>Er ist <b>kein Arzt</b> und <b>kein Heilpraktiker</b>. Andreas Sadlowski ist Industriemeister und Technischer Betriebswirt (IHK-Abschlüsse auf Bachelor- und Master-Niveau).</p>
+          <p>Was im ersten Moment ungewöhnlich klingt, ist sein größter Vorteil: Er blickt mit dem unbestechlichen Auge eines System-Analytikers auf den Organismus. Während im Alltag oft nur die Symptome im Fokus stehen, betrachtet er die biologischen Prozesse wie ein komplexes System. Er sucht nach den eigentlichen Störquellen, um diese Schritt für Schritt und systematisch zu entlasten. Genau dieses strukturierte, logische Denken steckt in der KSG H+ Methode.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-alt" id="faq">
+    <div class="container">
+      <div class="section-title">
+        <h2>Häufig gestellte Fragen und Antworten</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Ist der Preis in Höhe von 39,95&nbsp;EUR einmalig?</summary>
+          <div class="answer">Ja, einmalig. Kein Abo. Keine versteckten Kosten.</div>
+        </details>
+        <details>
+          <summary>Ich habe noch keine genaue Diagnose, ist es dann trotzdem das Richtige für mich?</summary>
+          <div class="answer">Es spielt keine Rolle, welchen Namen der Arzt Deinen Beschwerden gibt. Tatsache ist, dass der Körper streikt und SOS ruft. Auch wenn es hunderte Arten von chronisch-entzündlichen und autoimmunen Erkrankungen gibt – die Methode, sie an der Wurzel Schritt für Schritt anzugreifen, ist immer die gleiche. Denn die Hauptfundamente aller Erkrankungen sind immer wieder die gleichen.</div>
+        </details>
+        <details>
+          <summary>Ich habe schon so viel ausprobiert, aber keinen Erfolg gehabt.</summary>
+          <div class="answer">Als Thomas A. Edison die Glühlampe erfand, scheiterte er 10.000 Mal. Doch anstatt aufzugeben, sagte er: „Ich habe nicht versagt. Ich habe nur 10.000 Wege gefunden, die nicht funktionieren." Beim 10.001. Versuch hatte er Erfolg. Das Gleiche gilt für dich: Du weißt bereits, was nicht funktioniert – also gib nicht auf! Solltest du Unterstützung bei der Umsetzung brauchen, sind wir für dich da: per E-Mail und in unserer Facebook-Gruppe.</div>
+        </details>
+        <details>
+          <summary>Gibt es das Buch auch in anderen Sprachen?</summary>
+          <div class="answer">Ja, und zwar in Englisch, Spanisch, Französisch, Niederländisch und Russisch. In diesem Fall bitte ich Dich, Kontakt mit uns aufzunehmen. Die Kontaktdaten findest Du im Impressum.</div>
+        </details>
+        <details>
+          <summary>Ist es möglich, das Buch auch als Hörbuch und E-Book zu erhalten?</summary>
+          <div class="answer">Ja, bei der Buchbestellung erhältst Du die Möglichkeit, es auch in dieser Form zu beziehen.</div>
+        </details>
+        <details>
+          <summary>Muss ich meine Medikamente weglassen, um mit dieser Methode beginnen zu können?</summary>
+          <div class="answer">Nein, das musst Du nicht.</div>
+        </details>
+        <details>
+          <summary>Ich habe keine Gallenblase oder Schilddrüse mehr. Kann es mir auch helfen?</summary>
+          <div class="answer">Ja, auch dann macht es Sinn, die Methode durchzuführen. Oder besser gesagt: Dann erst recht!</div>
+        </details>
+        <details>
+          <summary>Bei mir hat es mit den Wechseljahren begonnen – hilft die Methode in solchen Fällen auch?</summary>
+          <div class="answer">Hier handelt es sich um ein Ungleichgewicht des Hormonhaushalts. Idealerweise solltest Du die Ursachen davon beheben. Halte Dich in dem Fall genau an die Schritt-für-Schritt-Anleitung im Buch.</div>
+        </details>
+        <details>
+          <summary>Ich habe es vererbt bekommen, da kann man doch nichts machen, oder?</summary>
+          <div class="answer">Das Märchen von der Vererbung benutzt man immer dann sehr gerne, wenn man keine Antwort auf die Fragen findet. Werde zum Wissenden und erkenne, dass Deine einzige Vererbung die wahre Gesundheit ist.</div>
+        </details>
+        <details>
+          <summary>Bei mir sind die Ursachen psychischer Natur. Komme ich mit diesem Buch auch weiter?</summary>
+          <div class="answer">In dem Fall würden wir Dir das Buch ganz besonders ans Herz legen.</div>
+        </details>
+        <details>
+          <summary>Ist es möglich, das Programm auch während der normalen Arbeitstage als vielbeschäftigter Mensch durchzuführen?</summary>
+          <div class="answer">Ja, selbst vielbeschäftigte Menschen können das Programm problemlos während der Arbeit und dem Alltagsstress durchführen.</div>
+        </details>
+        <details>
+          <summary>Ab welchem Alter kann man das Programm durchführen?</summary>
+          <div class="answer">Unser jüngster Leser war damals 6 Jahre alt, als er begonnen hat. Unser ältester war 94 Jahre jung und ist mittlerweile über 100 Jahre jung und beschwerdefrei! (Nachweislich)</div>
+        </details>
+        <details>
+          <summary>Ich habe noch eine Frage. Kann ich mit euch in Kontakt treten?</summary>
+          <div class="answer">Sehr gerne. Schreib uns eine Nachricht an <a href="mailto:service@rheumafrei.de">service@rheumafrei.de</a> (bitte den vollen Namen angeben). Bitte nicht anrufen, da auch wir unsere Zeiten einplanen müssen.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- GUARANTEE -->
   <section>
     <div class="container">
@@ -189,5 +415,23 @@ footer a{color:var(--muted);text-decoration:none;margin:0 6px}
     <a href="/datenschutz/">Datenschutz</a> ·
     <a href="/agb/">AGB</a>
   </footer>
+
+  <script>
+  document.querySelectorAll('.video-card').forEach(function(card){
+    card.addEventListener('click', function(){
+      var id = card.dataset.yt;
+      if (!id || card.querySelector('iframe')) return;
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+      iframe.title = 'Gegen welche Krankheiten hilft das Buch?';
+      iframe.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      iframe.setAttribute('allowfullscreen','');
+      card.appendChild(iframe);
+      var thumb = card.querySelector('.video-thumb'), play = card.querySelector('.play');
+      if (thumb) thumb.style.display = 'none';
+      if (play) play.style.display = 'none';
+    });
+  });
+  </script>
 </body>
 </html>
