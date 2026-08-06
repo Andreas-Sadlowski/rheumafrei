@@ -32,62 +32,64 @@
   --radius:14px; --radius-lg:22px;
   --shadow-sm:0 1px 2px rgba(11,31,28,.06), 0 2px 8px rgba(11,31,28,.04);
   --shadow:0 10px 30px rgba(11,31,28,.08), 0 2px 8px rgba(11,31,28,.04);
-  --maxw:640px;
+  --maxw:980px;
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
 h1,h2,h3{font-family:'Lora',Georgia,serif;color:var(--ink);line-height:1.18;letter-spacing:-.01em;margin:0 0 .5em}
-h1{font-size:clamp(1.6rem,4.4vw,2.3rem);font-weight:700}
-h2{font-size:clamp(1.3rem,3vw,1.7rem);font-weight:700}
+h1{font-size:clamp(1.6rem,3.6vw,2.3rem);font-weight:700}
+h2{font-size:clamp(1.3rem,3vw,1.6rem);font-weight:700}
 p{margin:0 0 1em}
 .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;color:var(--teal-700);background:var(--teal-50);padding:6px 12px;border-radius:999px;border:1px solid #BBF7D0}
 .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal)}
-.btn{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:var(--cta);color:#fff;font-weight:700;padding:20px 30px;border-radius:12px;border:0;text-decoration:none;cursor:pointer;box-shadow:var(--cta-shadow);width:100%;max-width:440px;transition:transform .15s, box-shadow .15s}
+.btn{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:var(--cta);color:#fff;font-weight:700;padding:19px 28px;border-radius:12px;border:0;text-decoration:none;cursor:pointer;box-shadow:var(--cta-shadow);width:100%;max-width:440px;transition:transform .15s, box-shadow .15s}
 .btn:hover{background:var(--cta-700);transform:translateY(-1px)}
-.btn .big{font-size:1.2rem;line-height:1.25}
-.btn .small{font-size:.78rem;font-weight:500;opacity:.92}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(12,58,82,.55)}50%{box-shadow:0 0 0 12px rgba(12,58,82,0)}}
-.btn--pulse{animation:pulse 2.2s infinite}
+.btn .big{font-size:1.15rem;line-height:1.25}
+.btn .small{font-size:.76rem;font-weight:500;opacity:.92}
 
-header{padding:22px 0;text-align:center}
+header{padding:20px 0;text-align:center;border-bottom:1px solid var(--line)}
 .logo{display:inline-flex;align-items:center;gap:9px;text-decoration:none}
 .logo img{width:30px;height:30px}
 .logo span{font-family:'Lora',serif;font-weight:700;font-size:1.1rem;color:var(--ink)}
 
-.hero{padding:8px 0 34px;text-align:center;background:radial-gradient(900px 400px at 50% -10%,#D1FAE5 0%, transparent 60%),linear-gradient(180deg,#fff,#F6FAF9)}
-.hero .cover{max-width:190px;margin:22px auto;filter:drop-shadow(0 20px 34px rgba(11,31,28,.25))}
-.hero .sub{font-size:1.02rem;color:var(--muted);max-width:480px;margin:0 auto 26px}
+/* HERO - two column like /buch */
+.hero{padding:44px 0 8px;background:radial-gradient(900px 400px at 90% -10%,#D1FAE5 0%, transparent 60%),linear-gradient(180deg,#fff,#F6FAF9)}
+.hero .grid{display:grid;grid-template-columns:1fr;gap:30px;align-items:center}
+@media(min-width:860px){.hero .grid{grid-template-columns:1.05fr .95fr;gap:44px}}
+.h1-sub{display:flex;flex-direction:column;gap:8px;font-size:.98rem;font-weight:600;margin-top:16px;color:var(--ink-2)}
+.h1-sub .item{display:flex;align-items:center;gap:9px}
+.h1-sub .cross{flex:0 0 21px;width:21px;height:21px;border-radius:50%;background:#FEE2E2;color:#DC2626;display:grid;place-items:center;font-weight:800;font-size:.7rem}
+.hero .sub{font-size:1.02rem;color:var(--muted);margin-top:16px}
+.hero-visual{position:relative;display:flex;justify-content:center}
+.book-shot{position:relative;filter:drop-shadow(0 24px 40px rgba(11,31,28,.22));max-width:230px}
+.badge-float{position:absolute;bottom:6%;right:-6px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;box-shadow:var(--shadow);font-size:.82rem;display:flex;gap:8px;align-items:center}
 .trust-line{font-size:.8rem;color:var(--muted);margin-top:12px}
+.cta-block{margin-top:22px}
 
-.trustbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;padding:16px 0}
-.trustbar .row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 0;text-align:center}
-@media(min-width:520px){.trustbar .row{grid-template-columns:repeat(4,1fr)}}
-.trustbar .num{font-family:'Lora',serif;font-size:1.2rem;font-weight:700;color:var(--ink);line-height:1}
-.trustbar .lbl{font-size:.74rem;color:var(--muted);margin-top:3px}
+/* Product info section */
+.stat-line{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin:0 0 22px;font-size:.92rem;color:var(--teal-700);font-weight:700}
+.benefits{margin:0 0 26px;padding:0;list-style:none;display:grid;gap:12px}
+.benefits li{display:flex;gap:11px;align-items:flex-start;font-size:.98rem}
+.benefits .check{flex:0 0 22px;width:22px;height:22px;border-radius:50%;background:var(--teal-50);color:var(--teal-700);display:grid;place-items:center;margin-top:2px;font-weight:800;font-size:.78rem}
+.includes-box{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px 24px}
+.includes-box h3{font-size:1.05rem;margin-bottom:12px}
+.includes{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.includes li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem;color:var(--ink-2)}
+.includes .check{flex:0 0 20px;width:20px;height:20px;border-radius:50%;background:#fff;border:1px solid #BBF7D0;color:var(--teal-700);display:grid;place-items:center;margin-top:1px;font-weight:800;font-size:.7rem}
 
-section{padding:36px 0}
-.section-title{text-align:center;margin-bottom:26px}
+section{padding:40px 0}
+.section-title{text-align:center;margin-bottom:24px}
 .bg-alt{background:var(--bg-2)}
 
-.t-grid{display:grid;gap:16px}
-@media(min-width:640px){.t-grid{grid-template-columns:repeat(3,1fr)}}
-.t-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow-sm)}
-.t-stars{color:var(--gold);font-size:.95rem;letter-spacing:2px;margin-bottom:8px}
-.t-quote{font-family:'Lora',serif;font-style:italic;color:var(--ink-2);font-size:.95rem;line-height:1.5;margin:0 0 12px}
-.t-quote::before{content:"„"}
-.t-meta{display:flex;align-items:center;gap:10px;padding-top:10px;border-top:1px dashed var(--line)}
-.t-avatar{width:36px;height:36px;border-radius:50%;background:var(--teal-50);color:var(--teal-700);display:grid;place-items:center;font-weight:700;font-family:'Lora',serif;font-size:.92rem;flex:0 0 36px}
-.t-name{font-weight:700;font-size:.88rem;color:var(--ink)}
-
-.guarantee{max-width:520px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px 28px;text-align:center;box-shadow:var(--shadow-sm)}
-.guarantee h3{color:var(--teal-700);font-size:1.15rem}
-.guarantee p{color:var(--muted);font-size:.94rem;margin:0}
+.guarantee{max-width:560px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px 28px;text-align:center;box-shadow:var(--shadow-sm)}
+.guarantee h3{color:var(--teal-700);font-size:1.1rem}
+.guarantee p{color:var(--muted);font-size:.93rem;margin:0}
 
 .final{text-align:center;background:radial-gradient(700px 340px at 50% 0%,#ECFDF5,transparent 70%),#fff}
 
-footer{padding:28px 0;text-align:center;font-size:.8rem;color:var(--muted)}
+footer{padding:26px 0;text-align:center;font-size:.8rem;color:var(--muted)}
 footer a{color:var(--muted);text-decoration:none;margin:0 6px}
   </style>
 </head>
@@ -104,54 +106,58 @@ footer a{color:var(--muted);text-decoration:none;margin:0 6px}
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <span class="eyebrow">Die KSG H+ Methode · 113 Seiten</span>
-      <h1 style="margin-top:16px">Rheuma besiegen in nur 3-24 Monaten: mit der KSG H+ Methode von Andreas Sadlowski</h1>
-      <div class="cover">
-        <img src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – das Rheuma-Buch von Andreas Sadlowski" width="300" height="405" loading="eager" fetchpriority="high">
+      <div class="grid">
+        <div>
+          <span class="eyebrow">Die KSG H+ Methode · 113 Seiten</span>
+          <h1 style="margin-top:16px">Die biologischen Ursachen chronischer Entzündungen und Autoimmunreaktionen verstehen – und gezielt auflösen</h1>
+          <div class="h1-sub">
+            <span class="item"><span class="cross">✕</span>Nicht mit Medikamenten</span>
+            <span class="item"><span class="cross">✕</span>Keine Operationen</span>
+            <span class="item"><span class="cross">✕</span>Keine Nahrungsergänzungsmittel</span>
+          </div>
+          <p class="sub">Du kommst gerade von einem unserer Videos – schön, dass du hier bist. Du bist richtig, wenn du die Ursachen deiner Beschwerden wirklich verstehen willst, statt nur Symptome zu überdecken.</p>
+          <div class="cta-block">
+            <a class="btn" href="https://www.digistore24.com/product/700832.html?aff=rheumafrei">
+              <span class="big">Ja, ich will mir das Buch jetzt sichern!</span>
+              <span class="small">Inkl. 30 Tage Geld-zurück-Garantie – Für nur 39,95&nbsp;€</span>
+            </a>
+            <p class="trust-line">🔒 Sichere Bezahlung &nbsp;|&nbsp; 🚚 Schnelle Post-Lieferung &nbsp;|&nbsp; 🚫 Kein Abo</p>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="book-shot">
+            <img src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – das Buch von Andreas Sadlowski" width="300" height="405" loading="eager" fetchpriority="high">
+            <div class="badge-float">⭐ <div><b>4,69 / 5,0</b><br><small style="color:#6B7280">330+ Bewertungen</small></div></div>
+          </div>
+        </div>
       </div>
-      <p class="sub">Das Verständnis der aufbauenden und zerstörenden Prozesse im Körper als Schlüssel zur wahren Gesundheit – jetzt als gedrucktes Buch sichern.</p>
-      <a class="btn btn--pulse" href="https://www.digistore24.com/product/700832.html?aff=rheumafrei">
-        <span class="big">Ja, ich will mir das Buch jetzt sichern!</span>
-        <span class="small">Inkl. 30 Tage Geld-zurück-Garantie – Für nur 39,95&nbsp;€</span>
-      </a>
-      <p class="trust-line">🔒 Sichere Bezahlung &nbsp;|&nbsp; 🚚 Schnelle Post-Lieferung &nbsp;|&nbsp; 🚫 Kein Abo</p>
     </div>
   </section>
 
-  <!-- TRUST BAR -->
-  <div class="trustbar">
-    <div class="container">
-      <div class="row">
-        <div><div class="num">20+ Jahre</div><div class="lbl">Forschung &amp; Praxis</div></div>
-        <div><div class="num">Tausende</div><div class="lbl">begleitete Betroffene</div></div>
-        <div><div class="num">3–24 Monate</div><div class="lbl">für tiefgreifende Regeneration</div></div>
-        <div><div class="num">6 → 94 Jahre</div><div class="lbl">anwendbar in jedem Alter</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- TESTIMONIALS -->
+  <!-- PRODUCT INFO -->
   <section class="bg-alt">
-    <div class="container">
-      <div class="section-title">
-        <h2>Das sagen Leser des Buches</h2>
+    <div class="container" style="max-width:720px">
+      <div class="stat-line">
+        <span>⭐ Bereits über 40.000-mal verkauft</span>
+        <span>⭐ 99&nbsp;% Weiterempfehlung</span>
       </div>
-      <div class="t-grid">
-        <div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">…aber ich will Ihnen noch mal schreiben, dass ich dank Ihnen – nach 4 Jahren keine Einschränkungen mehr durch die Gelenke habe. Und nicht nur das – ich fühle mich 20 Jahre jünger."</p>
-          <div class="t-meta"><div class="t-avatar">MD</div><div class="t-name">Mira Dopczynska</div></div>
-        </div>
-        <div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">Die Ärzte sagten sinngemäß, dass Rheuma bzw. Arthritis nicht weggeht und ich mit diesen Einschränkungen leben müsste. Inzwischen bin ich beschwerdefrei!"</p>
-          <div class="t-meta"><div class="t-avatar">RA</div><div class="t-name">Rolf A.</div></div>
-        </div>
-        <div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">Keine Rückenschmerzen, kein Bluthochdruck, keine Gichtattacken mehr. Ich bin frei wie ein Vogel. Ich danke dir, dass du uns quasi gesund gemacht hast."</p>
-          <div class="t-meta"><div class="t-avatar">VR</div><div class="t-name">Vierkorn Rosi</div></div>
-        </div>
+      <ul class="benefits">
+        <li><span class="check">✓</span><div><b>Die Ursache verstehen statt nur Symptome bekämpfen</b> – warum Schmerzmittel dich nicht heilen, sondern nur betäuben</div></li>
+        <li><span class="check">✓</span><div><b>Über 20 Jahre erprobt</b> – kein Trend, kein Hype, sondern ein Programm mit jahrzehntelanger Praxiserfahrung</div></li>
+        <li><span class="check">✓</span><div><b>Ganzheitlich statt Einzelsymptom</b> – Körper, Seele und Geist werden zusammen betrachtet, nicht isoliert</div></li>
+        <li><span class="check">✓</span><div><b>Schritt-für-Schritt-Anleitung</b> – du musst nicht recherchieren oder rätseln, du folgst dem System</div></li>
+        <li><span class="check">✓</span><div><b>Echte Menschen, echte Ergebnisse</b> – wie Harry, der mit 96 Jahren begann und mit 102 noch lebte. Wie Kyung und Claudia, die ihre Beschwerden in den Griff bekamen</div></li>
+        <li><span class="check">✓</span><div><b>Über 40.000 Leser</b> – du bist nicht der Erste, der es ausprobiert</div></li>
+        <li><span class="check">✓</span><div><b>Praktisch umsetzbar</b> – keine Theorie, sondern konkrete Checklisten und Umsetzungshilfen</div></li>
+        <li><span class="check">✓</span><div><b>Kein Versprechen ohne Substanz</b> – jede Aussage in diesem Buch basiert auf 20 Jahren Coaching-Erfahrung mit echten Klienten</div></li>
+      </ul>
+      <div class="includes-box">
+        <h3>Im Paket enthalten:</h3>
+        <ul class="includes">
+          <li><span class="check">✓</span>Gedrucktes Buch</li>
+          <li><span class="check">✓</span>6 Monate Coachingbriefe per Mail</li>
+          <li><span class="check">✓</span>Praktische Umsetzungshilfen &amp; Checklisten</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -169,9 +175,9 @@ footer a{color:var(--muted);text-decoration:none;margin:0 6px}
   <!-- FINAL CTA -->
   <section class="final">
     <div class="container">
-      <h2>Worauf wartest du noch?</h2>
-      <p style="color:var(--muted);max-width:440px;margin:0 auto 22px">Sichere dir jetzt dein Exemplar und starte deinen Weg zu einem Leben ohne Rheuma-Schmerzen.</p>
-      <a class="btn btn--pulse" href="https://www.digistore24.com/product/700832.html?aff=rheumafrei">
+      <h2>Bereit anzufangen?</h2>
+      <p style="color:var(--muted);max-width:440px;margin:0 auto 22px">Sichere dir jetzt dein Exemplar und starte deinen Weg zu den echten Ursachen deiner Beschwerden.</p>
+      <a class="btn" href="https://www.digistore24.com/product/700832.html?aff=rheumafrei">
         <span class="big">Jetzt Buch sichern</span>
         <span class="small">Einmalig 39,95&nbsp;€ – 30 Tage Geld-zurück-Garantie</span>
       </a>
