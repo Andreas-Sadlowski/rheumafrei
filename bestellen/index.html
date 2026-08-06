@@ -21,51 +21,74 @@
   <link rel="apple-touch-icon" href="/assets/img/favicon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,500;0,700;1,500&display=swap">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #f4f7f6;
-      color: #2b2b2b;
-      line-height: 1.6;
-    }
-    .wrap { max-width: 620px; margin: 0 auto; padding: 40px 20px 60px; text-align: center; }
-    .logo { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 28px; text-decoration: none; }
-    .logo img { width: 34px; height: 34px; display: block; }
-    .logo span { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.2rem; color: #0c3a52; }
-    h1 {
-      font-family: 'Oswald', sans-serif;
-      font-weight: 700;
-      font-size: clamp(1.5rem, 4vw, 2.1rem);
-      color: #1f2d3d;
-      line-height: 1.25;
-      margin-bottom: 24px;
-    }
-    .cover { max-width: 220px; margin: 0 auto 28px; }
-    .cover img { width: 100%; display: block; filter: drop-shadow(0 18px 30px rgba(0,0,0,.25)); }
-    p.sub { font-size: 1.05rem; color: #4a5a5e; max-width: 480px; margin: 0 auto 28px; }
-    .order {
-      display: inline-block;
-      width: 100%;
-      max-width: 420px;
-      background: #2189da;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 10px;
-      padding: 20px 26px;
-      font-family: 'Oswald', sans-serif;
-      font-weight: 700;
-      text-transform: uppercase;
-      box-shadow: 0 8px 22px rgba(33,137,218,.35);
-      transition: transform .12s, box-shadow .12s;
-    }
-    .order:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(33,137,218,.45); }
-    .order .big { display: block; font-size: 1.25rem; }
-    .order .small { display: block; font-size: .85rem; font-weight: 600; text-transform: none; opacity: .95; margin-top: 4px; }
-    .trust-line { font-size: .82rem; color: #8a9a96; margin-top: 14px; letter-spacing: .01em; }
-    footer { margin-top: 40px; font-size: .8rem; color: #8a9a96; }
-    footer a { color: #6a7b7f; text-decoration: none; margin: 0 6px; }
+:root{
+  --teal:#0F766E; --teal-700:#115E59; --teal-50:#ECFDF5;
+  --ink:#0B1F1C; --ink-2:#1F2937; --muted:#4B5563; --line:#E5E7EB;
+  --bg:#FFFFFF; --bg-2:#F6FAF9;
+  --cta:#0c3a52; --cta-700:#082a3d; --cta-shadow:0 10px 30px rgba(12,58,82,.35);
+  --gold:#D4A017;
+  --radius:14px; --radius-lg:22px;
+  --shadow-sm:0 1px 2px rgba(11,31,28,.06), 0 2px 8px rgba(11,31,28,.04);
+  --shadow:0 10px 30px rgba(11,31,28,.08), 0 2px 8px rgba(11,31,28,.04);
+  --maxw:640px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:'Lora',Georgia,serif;color:var(--ink);line-height:1.18;letter-spacing:-.01em;margin:0 0 .5em}
+h1{font-size:clamp(1.6rem,4.4vw,2.3rem);font-weight:700}
+h2{font-size:clamp(1.3rem,3vw,1.7rem);font-weight:700}
+p{margin:0 0 1em}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;color:var(--teal-700);background:var(--teal-50);padding:6px 12px;border-radius:999px;border:1px solid #BBF7D0}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal)}
+.btn{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:var(--cta);color:#fff;font-weight:700;padding:20px 30px;border-radius:12px;border:0;text-decoration:none;cursor:pointer;box-shadow:var(--cta-shadow);width:100%;max-width:440px;transition:transform .15s, box-shadow .15s}
+.btn:hover{background:var(--cta-700);transform:translateY(-1px)}
+.btn .big{font-size:1.2rem;line-height:1.25}
+.btn .small{font-size:.78rem;font-weight:500;opacity:.92}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(12,58,82,.55)}50%{box-shadow:0 0 0 12px rgba(12,58,82,0)}}
+.btn--pulse{animation:pulse 2.2s infinite}
+
+header{padding:22px 0;text-align:center}
+.logo{display:inline-flex;align-items:center;gap:9px;text-decoration:none}
+.logo img{width:30px;height:30px}
+.logo span{font-family:'Lora',serif;font-weight:700;font-size:1.1rem;color:var(--ink)}
+
+.hero{padding:8px 0 34px;text-align:center;background:radial-gradient(900px 400px at 50% -10%,#D1FAE5 0%, transparent 60%),linear-gradient(180deg,#fff,#F6FAF9)}
+.hero .cover{max-width:190px;margin:22px auto;filter:drop-shadow(0 20px 34px rgba(11,31,28,.25))}
+.hero .sub{font-size:1.02rem;color:var(--muted);max-width:480px;margin:0 auto 26px}
+.trust-line{font-size:.8rem;color:var(--muted);margin-top:12px}
+
+.trustbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;padding:16px 0}
+.trustbar .row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 0;text-align:center}
+@media(min-width:520px){.trustbar .row{grid-template-columns:repeat(4,1fr)}}
+.trustbar .num{font-family:'Lora',serif;font-size:1.2rem;font-weight:700;color:var(--ink);line-height:1}
+.trustbar .lbl{font-size:.74rem;color:var(--muted);margin-top:3px}
+
+section{padding:36px 0}
+.section-title{text-align:center;margin-bottom:26px}
+.bg-alt{background:var(--bg-2)}
+
+.t-grid{display:grid;gap:16px}
+@media(min-width:640px){.t-grid{grid-template-columns:repeat(3,1fr)}}
+.t-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow-sm)}
+.t-stars{color:var(--gold);font-size:.95rem;letter-spacing:2px;margin-bottom:8px}
+.t-quote{font-family:'Lora',serif;font-style:italic;color:var(--ink-2);font-size:.95rem;line-height:1.5;margin:0 0 12px}
+.t-quote::before{content:"„"}
+.t-meta{display:flex;align-items:center;gap:10px;padding-top:10px;border-top:1px dashed var(--line)}
+.t-avatar{width:36px;height:36px;border-radius:50%;background:var(--teal-50);color:var(--teal-700);display:grid;place-items:center;font-weight:700;font-family:'Lora',serif;font-size:.92rem;flex:0 0 36px}
+.t-name{font-weight:700;font-size:.88rem;color:var(--ink)}
+
+.guarantee{max-width:520px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px 28px;text-align:center;box-shadow:var(--shadow-sm)}
+.guarantee h3{color:var(--teal-700);font-size:1.15rem}
+.guarantee p{color:var(--muted);font-size:.94rem;margin:0}
+
+.final{text-align:center;background:radial-gradient(700px 340px at 50% 0%,#ECFDF5,transparent 70%),#fff}
+
+footer{padding:28px 0;text-align:center;font-size:.8rem;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;margin:0 6px}
   </style>
 </head>
 <body>
@@ -74,28 +97,91 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div class="wrap">
+  <header>
     <a href="/" class="logo"><img src="/assets/img/logo-icon-final.png" alt=""> <span>rheumafrei.de</span></a>
+  </header>
 
-    <h1>Dein Buch „Dekonstruktion im Menschen" – jetzt bestellen</h1>
-
-    <div class="cover">
-      <img src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – das Rheuma-Buch von Andreas Sadlowski" width="300" height="405" loading="eager">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Die KSG H+ Methode · 113 Seiten</span>
+      <h1 style="margin-top:16px">Rheuma besiegen in nur 3-24 Monaten: mit der KSG H+ Methode von Andreas Sadlowski</h1>
+      <div class="cover">
+        <img src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – das Rheuma-Buch von Andreas Sadlowski" width="300" height="405" loading="eager" fetchpriority="high">
+      </div>
+      <p class="sub">Das Verständnis der aufbauenden und zerstörenden Prozesse im Körper als Schlüssel zur wahren Gesundheit – jetzt als gedrucktes Buch sichern.</p>
+      <a class="btn btn--pulse" href="https://www.digistore24.com/product/700832.html?aff=rheumafrei">
+        <span class="big">Ja, ich will mir das Buch jetzt sichern!</span>
+        <span class="small">Inkl. 30 Tage Geld-zurück-Garantie – Für nur 39,95&nbsp;€</span>
+      </a>
+      <p class="trust-line">🔒 Sichere Bezahlung &nbsp;|&nbsp; 🚚 Schnelle Post-Lieferung &nbsp;|&nbsp; 🚫 Kein Abo</p>
     </div>
+  </section>
 
-    <p class="sub">Das Verständnis der aufbauenden und zerstörenden Prozesse im Körper als Schlüssel zur wahren Gesundheit – die KSG H+ Methode von Andreas Sadlowski auf 113 Seiten.</p>
-
-    <a class="order" href="https://www.digistore24.com/product/700832.html?aff=rheumafrei">
-      <span class="big">Ja, ich will mir das Buch jetzt sichern!</span>
-      <span class="small">Inkl. 30 Tage Geld-zurück-Garantie – Für nur 39,95&nbsp;€</span>
-    </a>
-    <p class="trust-line">🔒 Sichere Bezahlung &nbsp;|&nbsp; 🚚 Schnelle Post-Lieferung &nbsp;|&nbsp; 🚫 Kein Abo</p>
-
-    <footer>
-      <a href="/impressum/">Impressum</a> ·
-      <a href="/datenschutz/">Datenschutz</a> ·
-      <a href="/agb/">AGB</a>
-    </footer>
+  <!-- TRUST BAR -->
+  <div class="trustbar">
+    <div class="container">
+      <div class="row">
+        <div><div class="num">20+ Jahre</div><div class="lbl">Forschung &amp; Praxis</div></div>
+        <div><div class="num">Tausende</div><div class="lbl">begleitete Betroffene</div></div>
+        <div><div class="num">3–24 Monate</div><div class="lbl">für tiefgreifende Regeneration</div></div>
+        <div><div class="num">6 → 94 Jahre</div><div class="lbl">anwendbar in jedem Alter</div></div>
+      </div>
+    </div>
   </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="bg-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Das sagen Leser des Buches</h2>
+      </div>
+      <div class="t-grid">
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">…aber ich will Ihnen noch mal schreiben, dass ich dank Ihnen – nach 4 Jahren keine Einschränkungen mehr durch die Gelenke habe. Und nicht nur das – ich fühle mich 20 Jahre jünger."</p>
+          <div class="t-meta"><div class="t-avatar">MD</div><div class="t-name">Mira Dopczynska</div></div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">Die Ärzte sagten sinngemäß, dass Rheuma bzw. Arthritis nicht weggeht und ich mit diesen Einschränkungen leben müsste. Inzwischen bin ich beschwerdefrei!"</p>
+          <div class="t-meta"><div class="t-avatar">RA</div><div class="t-name">Rolf A.</div></div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">Keine Rückenschmerzen, kein Bluthochdruck, keine Gichtattacken mehr. Ich bin frei wie ein Vogel. Ich danke dir, dass du uns quasi gesund gemacht hast."</p>
+          <div class="t-meta"><div class="t-avatar">VR</div><div class="t-name">Vierkorn Rosi</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section>
+    <div class="container">
+      <div class="guarantee">
+        <h3>Unsere 30-Tage-Geld-zurück-Garantie</h3>
+        <p>Solltest du meinen, dass dieses Buch nicht absolut jeden Cent wert war, erhältst du eine sofortige Rückzahlung – garantiert, ohne lästige Fragen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <div class="container">
+      <h2>Worauf wartest du noch?</h2>
+      <p style="color:var(--muted);max-width:440px;margin:0 auto 22px">Sichere dir jetzt dein Exemplar und starte deinen Weg zu einem Leben ohne Rheuma-Schmerzen.</p>
+      <a class="btn btn--pulse" href="https://www.digistore24.com/product/700832.html?aff=rheumafrei">
+        <span class="big">Jetzt Buch sichern</span>
+        <span class="small">Einmalig 39,95&nbsp;€ – 30 Tage Geld-zurück-Garantie</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <a href="/impressum/">Impressum</a> ·
+    <a href="/datenschutz/">Datenschutz</a> ·
+    <a href="/agb/">AGB</a>
+  </footer>
 </body>
 </html>
