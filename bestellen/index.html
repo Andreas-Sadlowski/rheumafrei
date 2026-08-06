@@ -92,6 +92,12 @@ p{margin:0 0 1em}
 .includes li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem;color:var(--ink-2)}
 .includes .check{flex:0 0 20px;width:20px;height:20px;border-radius:50%;background:#fff;border:1px solid #BBF7D0;color:var(--teal-700);display:grid;place-items:center;margin-top:1px;font-weight:800;font-size:.7rem}
 
+.trustbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;padding:16px 0}
+.trustbar .row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 0;text-align:center}
+@media(min-width:640px){.trustbar .row{grid-template-columns:repeat(4,1fr)}}
+.trustbar .num{font-family:'Lora',serif;font-size:1.1rem;font-weight:700;color:var(--ink);line-height:1.2}
+.trustbar .lbl{font-size:.74rem;color:var(--muted);margin-top:3px}
+
 section{padding:40px 0}
 .section-title{text-align:center;margin-bottom:24px}
 .section-title p{color:var(--muted);font-size:1rem;margin-top:10px;max-width:620px;margin-left:auto;margin-right:auto}
@@ -152,7 +158,6 @@ footer a{color:var(--muted);text-decoration:none;margin:0 6px}
   <!-- Header -->
   <header class="header">
     <div class="container row">
-      <a href="/" class="logo"><img src="/assets/img/logo-icon-final.png" alt=""> <span>rheumafrei<span style="color:#00A8E8">.de</span></span></a>
       <nav class="nav">
         <a href="#inhalt">Inhalt</a>
         <a href="#video">Video</a>
@@ -169,28 +174,85 @@ footer a{color:var(--muted);text-decoration:none;margin:0 6px}
       <div class="grid">
         <div>
           <span class="eyebrow">Die KSG H+ Methode · 113 Seiten</span>
-          <h1 style="margin-top:16px">Die biologischen Ursachen chronischer Entzündungen und Autoimmunreaktionen verstehen – und gezielt auflösen</h1>
-          <div class="h1-sub">
-            <span class="item"><span class="cross">✕</span>Nicht mit Medikamenten</span>
-            <span class="item"><span class="cross">✕</span>Keine Operationen</span>
-            <span class="item"><span class="cross">✕</span>Keine Nahrungsergänzungsmittel</span>
-          </div>
-          <p class="sub">Du kommst gerade von einem unserer Videos – schön, dass du hier bist. Du bist richtig, wenn du die Ursachen deiner Beschwerden wirklich verstehen willst, statt nur Symptome zu überdecken.</p>
+          <h1 style="margin-top:16px">Chronische Beschwerden an der Wurzel angehen – statt ein Leben lang nur die Symptome zu behandeln</h1>
+          <p class="sub">Ob Rheuma, Arthrose, Fibromyalgie, Neurodermitis, Migräne oder andere chronische Beschwerden: Dieses Buch zeigt dir, welche grundlegenden Belastungen hinter vielen Erkrankungen stehen können – und in welcher Reihenfolge du sie Schritt für Schritt angehst.</p>
+          <div style="color:var(--gold);letter-spacing:2px;font-size:1.1rem;margin-bottom:4px">★★★★★</div>
+          <p style="font-size:.92rem;color:var(--muted);margin-bottom:18px">4,9 von 5 Sternen</p>
+          <ul class="benefits" style="margin-bottom:22px">
+            <li><span class="check">✓</span><div>Die gemeinsamen Grundlagen vieler chronischer Erkrankungen verstehen</div></li>
+            <li><span class="check">✓</span><div>Leber, Nieren und Verdauungssystem in der richtigen Reihenfolge unterstützen</div></li>
+            <li><span class="check">✓</span><div>Belastungen und Störfaktoren erkennen, die der Körper allein nicht mehr ausgleichen kann</div></li>
+            <li><span class="check">✓</span><div>Eine klare Schritt-für-Schritt-Anleitung statt immer neuer Einzelmaßnahmen</div></li>
+          </ul>
           <div class="cta-block">
             <a class="btn" href="https://www.digistore24.com/product/700832.html?aff=rheumafrei">
-              <span class="big">Ja, ich will mir das Buch jetzt sichern!</span>
-              <span class="small">Inkl. 30 Tage Geld-zurück-Garantie – Für nur 39,95&nbsp;€</span>
+              <span class="big">Buch jetzt sichern – 39,95&nbsp;€</span>
+              <span class="small">Einmalig · kein Abo · keine versteckten Kosten</span>
             </a>
-            <p class="trust-line">🔒 Sichere Bezahlung &nbsp;|&nbsp; 🚚 Schnelle Post-Lieferung &nbsp;|&nbsp; 🚫 Kein Abo</p>
+            <p class="trust-line">📦 Versandkostenfrei in Deutschland &nbsp;|&nbsp; 🛡️ 30 Tage Geld-zurück-Garantie &nbsp;|&nbsp; ⚡ In 2–4 Werktagen bei dir</p>
           </div>
         </div>
         <div class="hero-visual">
           <div class="book-shot">
             <img src="/assets/img/buch-cover.png" alt="Dekonstruktion im Menschen – das Buch von Andreas Sadlowski" width="300" height="405" loading="eager" fetchpriority="high">
-            <div class="badge-float">⭐ <div><b>4,69 / 5,0</b><br><small style="color:#6B7280">330+ Bewertungen</small></div></div>
+            <div class="badge-float">⭐ <div><b>4,9 / 5,0</b><br><small style="color:#6B7280">330+ Bewertungen</small></div></div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trustbar">
+    <div class="container">
+      <div class="row">
+        <div><div class="num">Mehr als 20 Jahre</div><div class="lbl">Forschung und praktische Erfahrung</div></div>
+        <div><div class="num">Über 40.000 Leser</div><div class="lbl">in sechs verschiedenen Sprachen</div></div>
+        <div><div class="num">10 klare Schritte</div><div class="lbl">in der richtigen Reihenfolge</div></div>
+        <div><div class="num">6 bis 95 Jahre</div><div class="lbl">für nahezu jedes Alter geeignet</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAIN -->
+  <section class="bg-alt">
+    <div class="container" style="max-width:720px">
+      <div class="section-title">
+        <h2>Vielleicht hast du schon vieles versucht – aber nichts hat das eigentliche Problem gelöst</h2>
+      </div>
+      <p>Möglicherweise bist du wegen Rheuma, Arthrose, Fibromyalgie, Neurodermitis, Migräne, Verdauungsproblemen oder einer anderen chronischen Erkrankung hier.</p>
+      <p>Die Diagnose kann unterschiedlich sein. Das Grundproblem ist häufig ähnlich: Der Körper schafft es nicht mehr, seine Belastungen aus eigener Kraft auszugleichen.</p>
+      <h3>Deine Beschwerden kommen immer wieder</h3>
+      <p>Eine Behandlung hilft kurzfristig, doch nach einiger Zeit kehren Schmerzen, Entzündungen, Hautprobleme, Erschöpfung oder andere Symptome zurück.</p>
+      <h3>Jede Fachrichtung betrachtet nur ihren eigenen Bereich</h3>
+      <p>Der Hautarzt betrachtet die Haut. Der Rheumatologe betrachtet die Gelenke. Der Neurologe betrachtet die Migräne. Der Gastroenterologe betrachtet den Darm.</p>
+      <p>Doch dein Körper besteht nicht aus voneinander getrennten Einzelteilen.</p>
+      <h3>Du hast schon vieles ausprobiert</h3>
+      <p>Ernährungsformen, Nahrungsergänzungsmittel, Medikamente, Darmkuren, Fasten, Entgiftungen oder alternative Behandlungen – häufig mit kurzfristigem oder gar keinem Erfolg.</p>
+      <h3>Niemand gibt dir eine klare Reihenfolge</h3>
+      <p>Du bekommst viele einzelne Empfehlungen, aber keinen vollständigen Plan. Dabei entscheidet gerade die richtige Reihenfolge darüber, ob eine Maßnahme den Körper wirklich weiterbringt.</p>
+      <h3>Du fragst dich, ob du damit leben musst</h3>
+      <p>Vielleicht wurde dir gesagt, deine Erkrankung sei chronisch, erblich oder nicht mehr grundlegend beeinflussbar.</p>
+      <p style="margin-bottom:0">Dieses Buch eröffnet dir eine andere Perspektive: Nicht nur die Diagnose betrachten, sondern den ganzen Menschen – Körper, Seele und Geist.</p>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section>
+    <div class="container" style="max-width:720px">
+      <div class="section-title">
+        <h2>Unterschiedliche Krankheiten – gemeinsame Grundlagen</h2>
+      </div>
+      <p>Eine Krankheit entsteht selten durch nur einen einzigen Faktor. Meist wirken mehrere Belastungen über Jahre zusammen, bis der Körper sie nicht mehr vollständig ausgleichen kann.</p>
+      <p>Die KSG H+ Methode betrachtet deshalb nicht nur das sichtbare Symptom. Sie verbindet drei Ebenen, die aufeinander aufbauen.</p>
+      <h3>1. Die körperlichen Grundlagen wiederherstellen</h3>
+      <p>Leber, Nieren und Verdauungssystem übernehmen zentrale Aufgaben bei Ausscheidung, Stoffwechsel und Regulation. Du lernst, weshalb die Reihenfolge entscheidend ist und wie du diese Organe Schritt für Schritt unterstützt.</p>
+      <h3>2. Dauerhafte Belastungsquellen erkennen</h3>
+      <p>Zahnherde, Schwermetalle, Pilze, Parasiten, Umweltbelastungen und weitere Störfaktoren können den Körper dauerhaft beanspruchen. Das Buch zeigt dir, wie du mögliche Belastungen systematisch überprüfst, statt wahllos immer neue Maßnahmen auszuprobieren.</p>
+      <h3>3. Seelische und geistige Ursachen einbeziehen</h3>
+      <p>Dauerhafter Ärger, Angst, innere Konflikte und festgefahrene Glaubensmuster wirken sich auf das Nervensystem und den gesamten Menschen aus. Du lernst, diese Ebene nicht zu unterdrücken, sondern bewusst zu verändern.</p>
+      <h3 style="margin-top:28px">Das Entscheidende ist nicht eine einzelne Maßnahme.</h3>
+      <p style="margin-bottom:0">Es ist das Zusammenspiel aller Ebenen – und die richtige Reihenfolge, in der du sie angehst.</p>
     </div>
   </section>
 
