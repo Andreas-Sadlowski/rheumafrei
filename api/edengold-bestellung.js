@@ -69,6 +69,15 @@ function zahl(wert) {
   return Number.isFinite(n) ? n : 0;
 }
 
+// Liest ein Klick-Tipp-Dezimalfeld als Cent. Je nach Antwort kommt der Wert
+// als Cent-Ganzzahl ("4837") oder als Betrag ("48.37" / "48,37").
+function centAusFeld(wert) {
+  if (wert === undefined || wert === null || wert === '') return 0;
+  const s = String(wert).trim();
+  if (/[.,]/.test(s)) return Math.round(zahl(s) * 100);
+  return Math.round(zahl(s));
+}
+
 export default async function handler(req, res) {
   const herkunft = req.headers.origin;
   if (ERLAUBTE_HERKUNFT.includes(herkunft)) {
@@ -88,7 +97,8 @@ export default async function handler(req, res) {
   }
   const email = String(daten?.email || '').trim().toLowerCase();
   const bestellnummer = String(daten?.bestellnummer || '').trim();
-  const summe = Math.round(zahl(daten?.summe) * 100) / 100;
+  // Klick-Tipp speichert Dezimalzahl-Felder in Cent (48,37 € = 4837)
+  const summeCent = Math.round(zahl(daten?.summe) * 100);
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 200) {
     return res.status(400).json({ fehler: 'Ungültige E-Mail' });
@@ -124,9 +134,9 @@ export default async function handler(req, res) {
           listid: OPTIN_PROZESS_SINGLE,
           tagid: TAG_EDENGOLD_KUNDE,
           fields: {
-            [FELD.umsatzGesamt]: summe,
+            [FELD.umsatzGesamt]: summeCent,
             [FELD.anzahlBestellungen]: 1,
-            [FELD.letzterBestellwert]: summe,
+            [FELD.letzterBestellwert]: summeCent,
             [FELD.letzteBestellungAm]: heute,
             [FELD.letzteBestellnummer]: bestellnummer,
           },
@@ -143,7 +153,7 @@ export default async function handler(req, res) {
       return res.status(200).json({ ergebnis: 'bereits erfasst' });
     }
 
-    const umsatzNeu = Math.round((zahl(felder[FELD.umsatzGesamt]) + summe) * 100) / 100;
+    const umsatzNeu = centAusFeld(felder[FELD.umsatzGesamt]) + summeCent;
     const anzahlNeu = Math.round(zahl(felder[FELD.anzahlBestellungen])) + 1;
 
     const aenderung = await klicktipp(
@@ -153,7 +163,7 @@ export default async function handler(req, res) {
         fields: {
           [FELD.umsatzGesamt]: umsatzNeu,
           [FELD.anzahlBestellungen]: anzahlNeu,
-          [FELD.letzterBestellwert]: summe,
+          [FELD.letzterBestellwert]: summeCent,
           [FELD.letzteBestellungAm]: heute,
           [FELD.letzteBestellnummer]: bestellnummer,
         },
