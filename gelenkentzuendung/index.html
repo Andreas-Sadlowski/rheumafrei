@@ -139,6 +139,14 @@ p{margin:0 0 18px}
 .cf-footer a{color:#cfe0e2;text-decoration:none;margin:0 8px}
 .cf-footer .disc{max-width:760px;margin:18px auto 0;font-size:.78rem;color:#6f8084;line-height:1.6}
 
+.callbox{max-width:680px;margin:26px auto 0;padding:18px 22px;background:#fff;border:2px solid #2189da;border-radius:12px;text-align:center;color:#1d2b2f}
+.callbox .call-q{font-family:'Oswald',sans-serif;font-size:1.35rem;font-weight:700;margin:0 0 4px}
+.callbox .call-t{margin:0 0 12px;font-size:1rem;color:#4a5b5f}
+.callbox .call-btn{display:inline-block;background:#fff;color:#2189da;border:2px solid #2189da;border-radius:10px;padding:12px 24px;font-family:'Oswald',sans-serif;font-size:1.15rem;font-weight:700;cursor:pointer}
+.callbox .call-btn:hover{background:#2189da;color:#fff}
+.callbox .call-num{display:none;font-family:'Oswald',sans-serif;font-size:1.7rem;font-weight:700;color:#2189da;text-decoration:none}
+.callbox.open .call-btn{display:none}
+.callbox.open .call-num{display:inline-block}
 </style>
 </head>
 <body>
@@ -213,6 +221,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="small">Inkl. 30 Tage Geld-zurück-Garantie – Für nur 39,95&nbsp;€</span>
       </a>
       <p class="trust-line">🔒 Sichere Bezahlung &nbsp;|&nbsp; 🚚 Schnelle Post-Lieferung &nbsp;|&nbsp; 🚫 Kein Abo</p>
+    </div>
+    <div class="callbox" data-callbox>
+      <p class="call-q">Noch Fragen? Ruf mich einfach an.</p>
+      <p class="call-t">Ich beantworte dir deine Fragen persönlich.</p>
+      <button type="button" class="call-btn" data-callreveal>&#128222; Telefonnummer anzeigen</button>
+      <a class="call-num" href="tel:+491626281837" data-callnum>+49 162 6281837</a>
     </div>
   </div>
 </section>
@@ -533,6 +547,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
       </div>
     </div>
+    <div class="callbox" data-callbox>
+      <p class="call-q">Noch Fragen? Ruf mich einfach an.</p>
+      <p class="call-t">Ich beantworte dir deine Fragen persönlich.</p>
+      <button type="button" class="call-btn" data-callreveal>&#128222; Telefonnummer anzeigen</button>
+      <a class="call-num" href="tel:+491626281837" data-callnum>+49 162 6281837</a>
+    </div>
   </div>
 </section>
 
@@ -547,5 +567,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p class="disc">This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
 </footer>
 
+<script>
+document.addEventListener('click',function(e){
+  var r=e.target.closest('[data-callreveal]');
+  if(r){var b=r.closest('[data-callbox]');b.className+=' open';(window.dataLayer=window.dataLayer||[]).push({event:'phone_reveal'});return;}
+  var n=e.target.closest('[data-callnum]');
+  if(n){(window.dataLayer=window.dataLayer||[]).push({event:'phone_click'});}
+});
+</script>
 </body>
 </html>
