@@ -68,6 +68,10 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);
   if(!vonTally||schon)return;
   gtag('event','conversion',{send_to:'AW-667197452/gwwrCOvS1L4dEIzAkr4C'});
   try{sessionStorage.setItem('rf_bewerbung_gemeldet','1');}catch(e){}
+  /* A/B-Test der Seite /programm: Bewerbung je Variante an Google Analytics melden (ab_bewerbung_a / ab_bewerbung_b). */
+  var ab='';
+  try{ab=localStorage.getItem('rf_ab')||'';}catch(e){}
+  if(ab==='a'||ab==='b'){gtag('event','ab_bewerbung_'+ab,{send_to:'G-3D9GQ07CRF'});}
 })();
 </script>
 </body>

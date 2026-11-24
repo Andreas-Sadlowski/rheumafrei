@@ -9,6 +9,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-N94TMQSZ');</script>
 <!-- End Google Tag Manager -->
 <meta charset="utf-8">
+<script>
+/* A/B-Test: A = bisherige Seite, B = zusätzlich drei Abschnitte zu den Organreinigungen (Klasse nur-b).
+   Jeder Besucher wird einmal zufällig zugeteilt und behält seine Variante. ?ab=a oder ?ab=b erzwingt eine Variante zum Ansehen. */
+(function(){var v='';try{var m=/[?&]ab=([ab])(&|$)/.exec(location.search);v=m?m[1]:(localStorage.getItem('rf_ab')||'');if(v!=='a'&&v!=='b'){v=Math.random()<0.5?'a':'b';}localStorage.setItem('rf_ab',v);}catch(e){if(v!=='a'&&v!=='b'){v='a';}}window.RF_AB=v;document.documentElement.className+=' ab-'+v;})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wie du Rheuma in 3 bis 12 Monaten besiegst: Das komplette KSG H+ Programm</title>
 <meta name="description" content="Das komplette KSG H+ Programm von Andreas Sadlowski: allein mit dem Komplettpaket oder 6 Monate begleitet in der Gruppe oder im Einzelcoaching.">
@@ -40,6 +45,13 @@ p{margin:0 0 18px}
 .section.alt{background:#f4f7f6}
 .section.dark{background:#16313a;color:#e7eef0}
 .section.dark h2,.section.dark h3{color:#fff}
+.nur-b{display:none}
+.ab-b .nur-b{display:block}
+.facts.nein li::before{content:"✗";color:#e0604f}
+.section.dark .facts li{border-bottom-color:rgba(255,255,255,.16)}
+.urteil{max-width:820px;margin:26px auto 0;border-left:5px solid #c0392b;background:rgba(255,255,255,.07);padding:18px 22px;border-radius:0 10px 10px 0}
+.urteil p{margin:0 0 12px}.urteil p:last-child{margin-bottom:0}
+.ehrlich{max-width:820px;margin:24px auto 0;font-weight:600}
 .preheadline{background:#16313a;color:#fff;text-align:center;font-weight:700;font-size:1rem;padding:12px 16px;font-family:'Oswald',sans-serif;letter-spacing:.02em}
 .hero{padding:42px 0 34px;text-align:center;background:linear-gradient(#ffffff,#f4f7f6)}
 .hero .sub{font-size:1.15rem;color:#4a5b5f;max-width:760px;margin:0 auto 26px}
@@ -174,6 +186,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- B1: EINWAND "HABE SCHON GEREINIGT" (nur Variante B) -->
+<section class="section dark nur-b">
+  <div class="wrap narrow">
+    <h2 class="center">Du hast schon eine Darmreinigung gemacht? Dann lies das, bevor du weiterklickst.</h2>
+    <p>Fast jeder, mit dem ich telefoniere, sagt mir denselben Satz: „Reinigungen habe ich schon gemacht. Hat nichts gebracht.“ Wenn ich nachfrage, war es fast immer eines davon:</p>
+    <ul class="facts nein">
+      <li><b>Flohsamenschalen, Bentonit oder ein Pulver aus der Drogerie.</b> Das macht den Stuhl locker und schiebt ihn schneller hinaus. Die alten, verhärteten Schlacken an der Darmwand bleiben kleben.</li>
+      <li><b>Bittersalz oder Glaubersalz.</b> Das leert den Darm. Gereinigt ist er danach nicht.</li>
+      <li><b>Colon-Hydro oder Einläufe.</b> Das erreicht die rund 2&nbsp;Meter Dickdarm. Die rund 6&nbsp;Meter Dünndarm davor bleiben unberührt, und genau dort liegen die eigentlichen Baustellen.</li>
+      <li><b>Eine Kur von ein bis zwei Wochen mit ein paar Kapseln.</b> Wenn du während einer Kur nichts merkst und nichts siehst, ist auch nichts passiert.</li>
+    </ul>
+    <div class="urteil">
+      <p><b>Mein hartes Urteil nach über 20 Jahren:</b> Rund 95&nbsp;% von dem, was als Darm-, Leber- oder Nierenreinigung verkauft wird, verdient den Namen nicht.</p>
+      <p>Das Schlimmste daran ist nicht das verlorene Geld. Wer darauf hereingefallen ist, glaubt, er habe „schon alles probiert“, hakt das Thema ab und sucht jahrelang an der falschen Stelle weiter.</p>
+    </div>
+    <p style="margin-top:24px">Eine echte Reinigung erkennst du daran, dass du siehst, was herauskommt. Bei der EdenGold Verdauungstrakt-Instandsetzung sind das im Schnitt 15 bis 25&nbsp;Meter dunkle, zähe Schlacken. Bei den Leberentstauungen sind es über die Monate hunderte bis zu 2.000 Steine.</p>
+    <p style="margin-bottom:0"><b>Wenn du das bei deiner Reinigung nie gesehen hast, war es keine.</b></p>
+  </div>
+</section>
+
 <!-- PROBLEM -->
 <section class="section alt">
   <div class="wrap narrow">
@@ -198,6 +230,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="lvl"><div class="n">Ebene 2</div><h3>Deine Seele</h3><p>Mit dem Seelenspiegel erkennst du, welche Eigenschaften in dir aus dem Gleichgewicht geraten sind, und lernst, deinen Charakter bewusst zu formen.</p></div>
       <div class="lvl"><div class="n">Ebene 3</div><h3>Dein Geist</h3><p>Du verstehst, wie Gedanken, Unterbewusstsein und Glaube auf deine Gesundheit wirken, und was du täglich dafür tun kannst.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- B2: REIHENFOLGE DER ORGANE (nur Variante B) -->
+<section class="section alt nur-b">
+  <div class="wrap">
+    <h2 class="center">Warum Nieren, Leber und Darm. Und warum genau in dieser Reihenfolge.</h2>
+    <div class="three">
+      <div class="lvl"><div class="n">Zuerst</div><h3>Die Nieren</h3><p>Sie filtern die Gifte aus dem Blut und regeln den Säure-Basen-Haushalt. Wer mit Leber oder Darm beginnt, spült Gifte ins Blut, die verstopfte Nieren nicht ausscheiden können. Die Folge: Kopfschmerzen, noch mehr Gelenkschmerzen, Abbruch. Daran scheitern die meisten Kuren, auch die guten.</p></div>
+      <div class="lvl"><div class="n">Dann</div><h3>Die Leber</h3><p>Eine einzelne Leberreinigung ist ein Anfang, kein Ergebnis. Erfahrungsgemäß braucht es 15 bis 25 Entstauungen im Abstand von zwei Wochen, bis zweimal hintereinander keine Steine mehr kommen.</p></div>
+      <div class="lvl"><div class="n">Danach</div><h3>Der ganze Verdauungstrakt</h3><p>Rund 60 Tage mit 21 Kräutern, darunter Weihrauch und Myrrhe. Sie lösen die Schlacken, statt sie nur weiterzuschieben, und reinigen Lymphe und Blut mit, damit sich nichts zurückstaut. Danach folgen 30 Tage Darmaufbau.</p></div>
+    </div>
+    <p class="center narrow" style="margin-top:24px;margin-bottom:0">Darum dauert das Programm Monate und nicht zwei Wochen. Was sich über Jahrzehnte abgelagert hat, kommt nicht in zehn Tagen heraus.</p>
+  </div>
+</section>
+
+<!-- B3: INHALT DES PAKETS (nur Variante B) -->
+<section class="section nur-b">
+  <div class="wrap narrow">
+    <h2 class="center">Was im EdenGold Komplettpaket steckt</h2>
+    <ul class="facts">
+      <li><b>EdenGold N:</b> Kräuter für die Nieren, 20 bis 30 Tage</li>
+      <li><b>EdenGold L:</b> Kräuter für die Leber, rund 14 Tage, dazu die Anleitung für die Leberentstauungen</li>
+      <li><b>EdenGold Quellpulver</b> mit 10 Kräutern</li>
+      <li><b>EdenGold Kräuterkapseln</b> mit 12 Wirkstoffen</li>
+      <li><b>EdenGold Probiotika Komplex</b> mit 10 Bakterienstämmen für den Darmaufbau</li>
+      <li><b>Der Fahrplan Schritt für Schritt,</b> im Buch und im Videokurs</li>
+    </ul>
+    <p class="ehrlich">Das ist kein Spaziergang. Du trinkst Tees, die nicht schmecken, und brauchst Disziplin. Dafür siehst du vom ersten Monat an mit eigenen Augen, dass etwas passiert.</p>
   </div>
 </section>
 
@@ -416,6 +477,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   if(!id)return;
   var a=document.querySelector('[data-ev="wahl_selbst"]');
   if(a&&a.href.indexOf('gclid=')===-1){a.href=a.href+'&gclid='+id;}
+})();
+/* A/B-Test: Variante an Bewerbung (Tally, verstecktes Feld "variante") und Warenkorb (Anhang ab=...) weitergeben.
+   Besucher werden je Variante einmal an Google Analytics gemeldet: Ereignis ab_besucher_a bzw. ab_besucher_b. */
+(function(){
+  var v=window.RF_AB==='b'?'b':'a';
+  var b=document.querySelector('[data-ev="bewerbung_start"]');
+  if(b&&b.href.indexOf('variante=')===-1){b.href=b.href+(b.href.indexOf('?')===-1?'?':'&')+'variante='+v.toUpperCase();}
+  var k=document.querySelector('[data-ev="wahl_selbst"]');
+  if(k&&k.href.indexOf('&ab=')===-1){k.href=k.href+'&ab='+v;}
+  window.dataLayer=window.dataLayer||[];
+  window.dataLayer.push({event:'ab_test',ab_variante:v});
+  try{if(window.localStorage.getItem('rf_ab_gezaehlt')===v){return;}window.localStorage.setItem('rf_ab_gezaehlt',v);}catch(e){}
+  gtag('event','ab_besucher_'+v,{send_to:'G-3D9GQ07CRF'});
 })();
 /* Nur zur Beobachtung (in Google Ads sekundaer): Klick auf "Paket bestellen" und Klick auf den Bewerbungsknopf. Die echten Ziele sind Paketkauf (im Shop) und abgeschickte Bewerbung (/programm/danke). */
 var ADS_ZIELE={wahl_selbst:'AW-667197452/YHMoCKOpzb4dEIzAkr4C',bewerbung_start:'AW-667197452/d7VBCKapzb4dEIzAkr4C'};
