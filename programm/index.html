@@ -406,7 +406,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-667197452"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-667197452');</script>
 <script>
-/* Google-Ads-Conversions dieser Seite: Klick auf "Paket bestellen" und Klick auf die Bewerbung */
+/* Klick-Kennung der Anzeige (gclid) merken und an den Warenkorb-Link haengen. Der Shop (collmex.de) meldet damit den echten Paketkauf an Google Ads. */
+(function(){
+  var m=/[?&]gclid=([A-Za-z0-9_-]{10,200})/.exec(window.location.search),id=m?m[1]:'';
+  try{
+    if(id){window.localStorage.setItem('rf_gclid',id+'|'+Date.now());}
+    else{var v=(window.localStorage.getItem('rf_gclid')||'').split('|');if(v[0]&&Date.now()-parseInt(v[1],10)<7776000000){id=v[0];}}
+  }catch(e){}
+  if(!id)return;
+  var a=document.querySelector('[data-ev="wahl_selbst"]');
+  if(a&&a.href.indexOf('gclid=')===-1){a.href=a.href+'&gclid='+id;}
+})();
+/* Nur zur Beobachtung (in Google Ads sekundaer): Klick auf "Paket bestellen" und Klick auf den Bewerbungsknopf. Die echten Ziele sind Paketkauf (im Shop) und abgeschickte Bewerbung (/programm/danke). */
 var ADS_ZIELE={wahl_selbst:'AW-667197452/YHMoCKOpzb4dEIzAkr4C',bewerbung_start:'AW-667197452/d7VBCKapzb4dEIzAkr4C'};
 document.addEventListener('click',function(e){
   var a=e.target.closest('[data-ev]');

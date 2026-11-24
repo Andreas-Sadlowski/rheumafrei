@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="de">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N94TMQSZ');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danke, deine Bewerbung ist angekommen</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Oswald:wght@600;700&display=swap">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f7f6;color:#2b2b2b;font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.top{background:#16313a;color:#fff;text-align:center;padding:14px 18px;font-weight:700;font-size:.95rem}
+.box{max-width:720px;margin:44px auto;background:#fff;border:2px solid #16313a;border-radius:12px;padding:34px 30px;text-align:center}
+h1{font-family:'Oswald','Open Sans',sans-serif;line-height:1.2;margin:0 0 18px;color:#1f2d3d;font-size:clamp(1.6rem,4.4vw,2.3rem)}
+p{margin:0 0 18px}
+.steps{text-align:left;max-width:520px;margin:0 auto 22px;padding-left:22px}
+.steps li{margin-bottom:8px}
+.sign{margin:26px 0 0;font-size:1.05rem}
+.back{display:inline-block;margin-top:22px;color:#1a73c7;font-size:.95rem}
+footer{color:#6f8084;text-align:center;padding:10px 16px 40px;font-size:.88rem}
+footer a{color:#6f8084;margin:0 8px}
+@media(max-width:520px){.box{margin:24px 14px;padding:26px 20px}}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N94TMQSZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="top">Deine Bewerbung für die Gruppe oder die Einzelbegleitung</div>
+
+<main class="box">
+  <h1>Danke, deine Bewerbung ist bei mir angekommen.</h1>
+  <p>Ich lese jede Bewerbung selbst. So geht es jetzt weiter:</p>
+  <ol class="steps">
+    <li>Ich lese deine Antworten in Ruhe durch.</li>
+    <li>Ich melde mich innerhalb weniger Tage bei dir, per E-Mail oder per Telefon.</li>
+    <li>Wir klären in einem Gespräch, ob die Begleitung für dich passt und welcher Weg der richtige ist.</li>
+  </ol>
+  <p>Bitte schau in den nächsten Tagen auch in deinen Spam-Ordner.</p>
+  <p class="sign">Herzliche Grüße<br><b>Andreas Sadlowski</b></p>
+  <a class="back" href="/programm">Zurück zur Seite des Programms</a>
+</main>
+
+<footer>
+  <a href="/impressum/">Impressum</a> | <a href="/datenschutz/">Datenschutz</a>
+</footer>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-667197452"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-667197452');
+/* Google Ads: abgeschickte Bewerbung. Zaehlt nur, wenn der Besucher direkt aus dem Tally-Formular kommt, und nur einmal pro Sitzung. */
+(function(){
+  var vonTally=/(^|\/\/)([a-z0-9-]+\.)?tally\.so(\/|$)/i.test(document.referrer||'');
+  var schon=false;
+  try{schon=!!sessionStorage.getItem('rf_bewerbung_gemeldet');}catch(e){}
+  window.dataLayer.push({event:'bewerbung_abgeschickt',bewerbung_von_tally:vonTally});
+  if(!vonTally||schon)return;
+  gtag('event','conversion',{send_to:'AW-667197452/gwwrCOvS1L4dEIzAkr4C'});
+  try{sessionStorage.setItem('rf_bewerbung_gemeldet','1');}catch(e){}
+})();
+</script>
+</body>
+</html>
