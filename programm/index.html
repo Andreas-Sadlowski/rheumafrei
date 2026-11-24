@@ -403,12 +403,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p class="disc">Die Inhalte dieser Seite ersetzen keine ärztliche Beratung, Diagnose oder Behandlung. Andreas Sadlowski ist weder Arzt noch Heilpraktiker.</p>
 </footer>
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-667197452"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-667197452');</script>
 <script>
+/* Google-Ads-Conversions dieser Seite: Klick auf "Paket bestellen" und Klick auf die Bewerbung */
+var ADS_ZIELE={wahl_selbst:'AW-667197452/YHMoCKOpzb4dEIzAkr4C',bewerbung_start:'AW-667197452/d7VBCKapzb4dEIzAkr4C'};
 document.addEventListener('click',function(e){
   var a=e.target.closest('[data-ev]');
   if(!a)return;
+  var ziel=a.getAttribute('data-ev');
   window.dataLayer=window.dataLayer||[];
-  window.dataLayer.push({event:'begleitung_klick',begleitung_ziel:a.getAttribute('data-ev')});
+  window.dataLayer.push({event:'begleitung_klick',begleitung_ziel:ziel});
+  if(ADS_ZIELE[ziel]&&window.gtag){gtag('event','conversion',{send_to:ADS_ZIELE[ziel]});}
 });
 /* Wand: YouTube wird erst beim Klick geladen (youtube-nocookie) */
 document.addEventListener('click',function(e){
