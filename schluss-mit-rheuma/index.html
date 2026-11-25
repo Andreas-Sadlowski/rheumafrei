@@ -501,7 +501,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>Das EdenGold Komplettpaket mit allen Kräutern kannst du weiter zum normalen Preis im Shop bestellen. Videokurs, Buch und die drei Geschenke sind dann nicht mehr dabei.</p>
 </div>
 
-<a class="knopf kauf" href="https://www.collmex.de/c.cmx?141637,0,shoppingcart,11,9#add=2-81-82" target="_blank" rel="noopener" data-ev="wahl_selbst"><span class="vor-frist">Ja, ich will es diesmal richtig machen. Für 497 € bestellen</span><span class="nach-frist">EdenGold Komplettpaket im Shop bestellen</span></a>
+<a class="knopf kauf" href="https://www.collmex.de/c.cmx?141637,0,shoppingcart,11#add=9-2-81-82" target="_blank" rel="noopener" data-ev="wahl_selbst"><span class="vor-frist">Ja, ich will es diesmal richtig machen. Für 497 € bestellen</span><span class="nach-frist">EdenGold Komplettpaket im Shop bestellen</span></a>
 <p class="klein">einmalig, inkl. MwSt., zzgl. Versand. Du bestellst im Shop schmerzfrei24.com.</p>
 
 <h2>Du hast sicher noch Fragen</h2>
@@ -525,7 +525,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p><b>„Schaffe ich das allein?“</b><br>Du bist nicht allein. Du hast das Buch als Landkarte, die Videos, alle vier Tage einen Brief von mir und meine Garantie, wenn du festhängst.</p>
 
 <p class="uhr-text vor-frist">Deine Frist läuft noch: <b class="uhr-zeit"></b></p>
-<a class="knopf kauf" href="https://www.collmex.de/c.cmx?141637,0,shoppingcart,11,9#add=2-81-82" target="_blank" rel="noopener" data-ev="wahl_selbst"><span class="vor-frist">Ja, ich will anfangen. Für 497 € bestellen</span><span class="nach-frist">EdenGold Komplettpaket im Shop bestellen</span></a>
+<a class="knopf kauf" href="https://www.collmex.de/c.cmx?141637,0,shoppingcart,11#add=9-2-81-82" target="_blank" rel="noopener" data-ev="wahl_selbst"><span class="vor-frist">Ja, ich will anfangen. Für 497 € bestellen</span><span class="nach-frist">EdenGold Komplettpaket im Shop bestellen</span></a>
 <p class="klein">einmalig, inkl. MwSt., zzgl. Versand. Du bestellst im Shop schmerzfrei24.com.</p>
 
 <h2>Du hast jetzt zwei Möglichkeiten</h2>
@@ -538,7 +538,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <p>Du bist es wert.</p>
 
-<a class="knopf kauf" href="https://www.collmex.de/c.cmx?141637,0,shoppingcart,11,9#add=2-81-82" target="_blank" rel="noopener" data-ev="wahl_selbst"><span class="vor-frist">Komplett-Instandsetzung jetzt für 497 € bestellen</span><span class="nach-frist">EdenGold Komplettpaket im Shop bestellen</span></a>
+<a class="knopf kauf" href="https://www.collmex.de/c.cmx?141637,0,shoppingcart,11#add=9-2-81-82" target="_blank" rel="noopener" data-ev="wahl_selbst"><span class="vor-frist">Komplett-Instandsetzung jetzt für 497 € bestellen</span><span class="nach-frist">EdenGold Komplettpaket im Shop bestellen</span></a>
 <p class="klein">einmalig, inkl. MwSt., zzgl. Versand. Du bestellst im Shop schmerzfrei24.com.</p>
 
 <div class="gruss"><img class="foto" src="/assets/img/andreas-sadlowski.jpg" alt="Andreas Sadlowski" width="110" height="110" loading="lazy"><p>Herzliche Grüße<br><b>Andreas Sadlowski</b></p></div>
@@ -570,7 +570,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     for(var i=0;i<orte.length;i++){orte[i].textContent=txt;}
   }
   /* Nach der Frist legt der Knopf nur noch das Komplettpaket zum normalen Shop-Preis in den Warenkorb (ohne Videokurs und Buch, also ohne Paketpreis). */
-  function nurPaket(){document.querySelectorAll('.kauf').forEach(function(a){a.href=a.href.split('#')[0]+'#';});}
+  function nurPaket(){document.querySelectorAll('.kauf').forEach(function(a){a.href='https://www.collmex.de/c.cmx?141637,0,shoppingcart,11,9#';});}
   /* Solange die Frist laeuft, traegt der Link ihr Ende. Der Warenkorb zeigt dann die Liste der Zugaben. */
   if(Date.now()<window.RF_ENDE){document.querySelectorAll('.kauf').forEach(function(a){a.href=a.href+'&frist='+window.RF_ENDE;});}
   var lauf=setInterval(tick,1000);tick();
