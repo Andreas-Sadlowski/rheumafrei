@@ -569,7 +569,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     for(var i=0;i<orte.length;i++){orte[i].textContent=txt;}
   }
   /* Nach der Frist legt der Knopf nur noch das Komplettpaket zum normalen Shop-Preis in den Warenkorb (ohne Videokurs und Buch, also ohne Paketpreis). */
-  function nurPaket(){document.querySelectorAll('.kauf').forEach(function(a){a.href=a.href.replace('add=2-81','');});}
+  function nurPaket(){document.querySelectorAll('.kauf').forEach(function(a){a.href=a.href.split('#')[0]+'#';});}
+  /* Solange die Frist laeuft, traegt der Link ihr Ende. Der Warenkorb zeigt dann die Liste der Zugaben. */
+  if(Date.now()<window.RF_ENDE){document.querySelectorAll('.kauf').forEach(function(a){a.href=a.href+'&frist='+window.RF_ENDE;});}
   var lauf=setInterval(tick,1000);tick();
 })();
 /* Klick-Kennung der Anzeige (gclid) merken und an die Warenkorb-Links haengen. Der Shop meldet damit den echten Paketkauf an Google Ads. */
