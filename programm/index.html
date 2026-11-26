@@ -105,6 +105,21 @@ h2[id]{scroll-margin-top:70px}
 .fuss a{color:#cfe0e2;text-decoration:none;margin:0 8px}
 .fuss .disc{max-width:720px;margin:14px auto 0;font-size:.75rem;color:#6f8084;line-height:1.6}
 @media(max-width:520px){body{font-size:18px}.wrap{padding:24px 16px 50px}.foto{width:110px;height:110px}}
+/* Telefon: Nummer erst nach Klick */
+.callbox{margin:26px 0;padding:18px 22px;background:#fff;border:2px solid #2189da;border-radius:10px;text-align:center;font-family:Arial,Helvetica,sans-serif}
+.callbox .call-q{font-size:1.2rem;font-weight:700;margin:0 0 4px;line-height:1.35}
+.callbox .call-t{margin:0 0 12px;font-size:1rem;color:#4a5b5f;line-height:1.45}
+.callbox .call-btn{display:inline-block;background:#fff;color:#2189da;border:2px solid #2189da;border-radius:8px;padding:12px 22px;font-family:Arial,Helvetica,sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer}
+.callbox .call-num{display:none;font-size:1.6rem;font-weight:700;color:#2189da;text-decoration:none}
+.callbox.open .call-btn{display:none}
+.callbox.open .call-num{display:inline-block}
+.callbox.leise{margin:18px 0 8px;padding:0;background:none;border:0;border-radius:0}
+.callbox.leise .call-q,.callbox.leise .call-t{display:inline;font-size:.92rem;font-weight:400;color:#5a6b6f;margin:0}
+.callbox.leise .call-btn{background:none;border:0;border-radius:0;padding:4px 0;margin-top:2px;font-size:.92rem;color:#1a73c7;text-decoration:underline}
+.callbox.leise .call-num{font-size:1.05rem;margin-top:6px}
+.callbox.leise .call-btn,.callbox.leise .call-num{display:block;width:max-content;max-width:100%;margin-left:auto;margin-right:auto}
+.callbox.leise .call-num,.callbox.leise.open .call-btn{display:none}
+.callbox.leise.open .call-num{display:block}
 </style>
 </head>
 <body>
@@ -554,6 +569,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <a class="knopf kauf" href="https://www.collmex.de/c.cmx?141637,0,shoppingcart,11#add=9-2-81-82" target="_blank" rel="noopener" data-ev="wahl_selbst"><span class="vor-frist">Ja, ich will es diesmal richtig machen. Für 497 € bestellen</span><span class="nach-frist">EdenGold Komplettpaket im Shop bestellen</span></a>
 <p class="klein">einmalig, inkl. MwSt., zzgl. Versand. Du bestellst im Shop schmerzfrei24.com.</p>
+<div class="callbox leise" data-callbox>
+<p class="call-q">Du hast Fragen? Ruf uns gerne an.</p>
+<p class="call-t">Wir verstecken uns nicht hinter dem Internet.</p>
+<button type="button" class="call-btn" data-callreveal>&#128222; Telefonnummer anzeigen</button>
+<a class="call-num" href="tel:+491626281837" data-callnum>+49 162 6281837</a>
+</div>
 
 <h2>Du hast sicher noch Fragen</h2>
 
@@ -591,6 +612,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <a class="knopf kauf" href="https://www.collmex.de/c.cmx?141637,0,shoppingcart,11#add=9-2-81-82" target="_blank" rel="noopener" data-ev="wahl_selbst"><span class="vor-frist">Komplett-Instandsetzung jetzt für 497 € bestellen</span><span class="nach-frist">EdenGold Komplettpaket im Shop bestellen</span></a>
 <p class="klein">einmalig, inkl. MwSt., zzgl. Versand. Du bestellst im Shop schmerzfrei24.com.</p>
+<div class="callbox" data-callbox>
+<p class="call-q">Du hast Fragen? Ruf uns gerne an.</p>
+<p class="call-t">Wir verstecken uns nicht hinter dem Internet.</p>
+<button type="button" class="call-btn" data-callreveal>&#128222; Telefonnummer anzeigen</button>
+<a class="call-num" href="tel:+491626281837" data-callnum>+49 162 6281837</a>
+</div>
 
 <div class="gruss"><img class="foto" src="/assets/img/andreas-sadlowski.jpg" alt="Andreas Sadlowski" width="110" height="110" loading="lazy"><p>Herzliche Grüße<br><b>Andreas Sadlowski</b></p></div>
 
@@ -684,6 +711,15 @@ document.addEventListener('play',function(e){
   window.dataLayer=window.dataLayer||[];
   window.dataLayer.push({event:'begleitung_video',begleitung_video:v.getAttribute('data-video')});
 },true);
+</script>
+<script>
+/* Telefonnummer erst nach Klick */
+document.addEventListener('click',function(e){
+  var r=e.target.closest('[data-callreveal]');
+  if(r){var b=r.closest('[data-callbox]');b.className+=' open';(window.dataLayer=window.dataLayer||[]).push({event:'phone_reveal'});if(window.gtag){gtag('event','conversion',{send_to:'AW-667197452/-6bLCJ3p-70dEIzAkr4C'});}return;}
+  var n=e.target.closest('[data-callnum]');
+  if(n){(window.dataLayer=window.dataLayer||[]).push({event:'phone_click'});}
+});
 </script>
 </body>
 </html>
