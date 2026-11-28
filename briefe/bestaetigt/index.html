@@ -67,8 +67,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <main class="blatt">
 
-<p class="anrede" id="anrede" hidden>Hallo <span></span>,</p>
-<h1>Geschafft. Schön, dass du da bist!</h1>
+
+<h1><span id="anrede" hidden><span></span>, </span><span id="start" data-klein="geschafft">Geschafft</span>. Schön, dass du da bist!</h1>
 <p>Deine E-Mail-Adresse ist bestätigt.</p>
 <p><strong>Schau jetzt in dein Postfach.</strong> Dort kommt gleich eine erste kurze E-Mail von mir an.</p>
 <p>Damit meine E-Mails bei dir nicht im Spam landen, speichere <strong>service@schmerzfrei24.com</strong> in deinen Kontakten.</p>
@@ -92,6 +92,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var a=document.getElementById('anrede');
   a.querySelector('span').textContent=n.charAt(0).toUpperCase()+n.slice(1);
   a.hidden=false;
+  var t=document.getElementById('start');
+  t.textContent=t.getAttribute('data-klein');
 })();
 </script>
 </body>

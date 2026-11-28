@@ -126,5 +126,17 @@ document.querySelectorAll('form.kasten').forEach(function(f){
   });
 });
 </script>
+<script>
+/* Test Brief gegen Buch: jeden Anzeigenbesucher je Gruppe einmal an Google Analytics melden */
+(function(){
+  try{
+    if(!(localStorage.getItem('rf_brieftest')==='brief'&&/[?&](gclid|gbraid|wbraid)=/.test(location.search))||localStorage.getItem('rf_brieftest_gezaehlt'))return;
+    localStorage.setItem('rf_brieftest_gezaehlt','brief');
+  }catch(e){return;}
+  window.dataLayer=window.dataLayer||[];
+  if(!window.gtag){window.gtag=function(){dataLayer.push(arguments);};}
+  window.gtag('event','brieftest_brief',{send_to:'G-3D9GQ07CRF'});
+})();
+</script>
 </body>
 </html>

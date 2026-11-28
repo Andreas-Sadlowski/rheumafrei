@@ -1,6 +1,20 @@
 <!doctype html>
 <html lang="de">
 <head>
+<!-- TEST BRIEF GEGEN BUCH (seit 28.11.2026): Jeder zweite Besucher aus einer Google-Anzeige geht auf /briefe.
+     Ansehen: ?weg=brief oder ?weg=buch (wird nicht gemerkt). Test beenden: diesen Block entfernen. -->
+<script>(function(){
+var q=location.search,fest=/[?&]weg=(brief|buch)(&|$)/.exec(q);
+if(!fest&&!/[?&](gclid|gbraid|wbraid)=/.test(q))return;
+var v='';
+if(fest){v=fest[1];}else{
+try{v=localStorage.getItem('rf_brieftest')||'';}catch(e){}
+if(v!=='brief'&&v!=='buch'){v=Math.random()<0.5?'brief':'buch';}
+try{localStorage.setItem('rf_brieftest',v);}catch(e){}
+window.RF_BRIEFTEST=v;
+}
+if(v==='brief'){location.replace('/briefe'+q+location.hash);}
+})();</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -584,5 +598,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p class="disc">This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
 </footer>
 
+<script>
+/* Test Brief gegen Buch: jeden Anzeigenbesucher je Gruppe einmal an Google Analytics melden */
+(function(){
+  try{
+    if(!(window.RF_BRIEFTEST==='buch')||localStorage.getItem('rf_brieftest_gezaehlt'))return;
+    localStorage.setItem('rf_brieftest_gezaehlt','buch');
+  }catch(e){return;}
+  window.dataLayer=window.dataLayer||[];
+  if(!window.gtag){window.gtag=function(){dataLayer.push(arguments);};}
+  window.gtag('event','brieftest_buch',{send_to:'G-3D9GQ07CRF'});
+})();
+</script>
 </body>
 </html>

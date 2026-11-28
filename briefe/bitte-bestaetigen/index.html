@@ -67,8 +67,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <main class="blatt">
 
-<p class="anrede" id="anrede" hidden>Hallo <span></span>,</p>
-<h1>Fast geschafft – bitte bestätige kurz deine <span style="white-space:nowrap">E-Mail-Adresse</span></h1>
+
+<h1><span id="anrede" hidden><span></span>, </span><span id="start" data-klein="fast">Fast</span> geschafft – bitte bestätige kurz deine <span style="white-space:nowrap">E-Mail-Adresse</span></h1>
 
 <div class="wichtig">
   <p>Ich habe dir gerade eine E-Mail geschickt. Bitte klick darin auf den Bestätigungs-Link, damit ich dir deine 7&nbsp;E-Mails schicken darf. (Aus Datenschutzgründen darf ich ohne diesen Klick nichts senden.)</p>
@@ -108,6 +108,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var a=document.getElementById('anrede');
   a.querySelector('span').textContent=n.charAt(0).toUpperCase()+n.slice(1);
   a.hidden=false;
+  var t=document.getElementById('start');
+  t.textContent=t.getAttribute('data-klein');
 })();
 </script>
 </body>
