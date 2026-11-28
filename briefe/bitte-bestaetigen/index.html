@@ -29,7 +29,6 @@ p{margin:0 0 22px}
 .kasten button:hover{background:#244835}
 .klein{font-size:.8rem;line-height:1.5;color:#6A645A;text-align:center;margin:12px 0 0}
 .klein a{color:inherit}
-.hinweis{display:none;margin:12px 0 0;padding:10px 12px;font-size:.85rem;line-height:1.5;background:#FFF3CD;border-radius:6px}
 hr{border:0;border-top:1px solid #D9CFBD;width:120px;margin:42px auto}
 ul{list-style:none;margin:0 0 26px;padding:0}
 li{position:relative;padding-left:34px;margin:0 0 18px}
@@ -46,6 +45,19 @@ footer a{color:inherit}
   .einleitung{margin-bottom:20px;line-height:1.55}
   .kasten{padding:18px 16px 14px}
 }
+.anrede{font-family:Georgia,'Times New Roman',serif;font-size:1.45rem;text-align:center;margin:0 0 6px}
+.wichtig{background:#FFF3CD;border:3px solid #E0A800;border-radius:10px;padding:20px 20px 2px;margin:0 0 26px;text-align:center;font-weight:700;font-size:1.1rem;line-height:1.6}
+.schritte{margin:0 0 26px;padding-left:24px}
+.schritte li{padding-left:6px;margin:0 0 10px}
+.schritte li::before{content:none}
+.zurueck{display:inline-block;margin:0 0 22px;padding:10px 18px;font-weight:700;color:#FFFFFF;background:#2E5A44;border-radius:8px;text-decoration:none}
+.legal h2{font-size:1.25rem;margin:30px 0 10px}
+.legal h3{font-size:1.08rem;margin:22px 0 8px}
+.legal address{font-style:normal;margin:0 0 22px}
+.legal ul{list-style:disc;padding-left:22px}
+.legal li{padding-left:0;margin:0 0 6px}
+.legal li::before{content:none}
+.legal{overflow-wrap:break-word}
 </style>
 </head>
 <body>
@@ -55,24 +67,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <main class="blatt">
 
-<h1>Halt, ganz wichtig: Bitte bestätige jetzt deine <span style="white-space:nowrap">E-Mail-Adresse!</span></h1>
-<div style="background:#FFF3CD;border:3px solid #E0A800;border-radius:10px;padding:20px 20px 4px;margin:0 0 26px;text-align:center">
-  <p style="font-size:1.25rem;line-height:1.5"><strong>Hey, bitte klick unbedingt auf den Link in der E-Mail, die ich dir gerade geschickt habe, und bestätige deine Adresse.</strong></p>
-  <p><strong>Ohne diesen Klick bekommst du keine E-Mails von mir.</strong></p>
+<p class="anrede" id="anrede" hidden>Hallo <span></span>,</p>
+<h1>Fast geschafft – bitte bestätige kurz deine <span style="white-space:nowrap">E-Mail-Adresse</span></h1>
+
+<div class="wichtig">
+  <p>Ich habe dir gerade eine E-Mail geschickt. Bitte klick darin auf den Bestätigungs-Link, damit ich dir deine 7&nbsp;E-Mails schicken darf. (Aus Datenschutzgründen darf ich ohne diesen Klick nichts senden.)</p>
 </div>
-<p>So geht es:</p>
-<p>1. Öffne jetzt dein E-Mail-Postfach.<br>2. Such die E-Mail mit dem Betreff <strong>„Ein Klick fehlt noch ...“</strong><br>3. Klick auf den Link darin. Fertig.</p>
-<h2>Nichts angekommen?</h2>
+
+<h2>So geht es in 10 Sekunden:</h2>
+<ol class="schritte">
+  <li>Öffne dein E-Mail-Postfach.</li>
+  <li>Schau nach der Nachricht mit dem Betreff <strong>„Ein Klick fehlt noch ...“</strong>.</li>
+  <li>Klick auf den Link in der E-Mail – und schon geht es los.</li>
+</ol>
+
+<h2>Keine E-Mail gesehen?</h2>
 <ul>
-  <li>Warte ein paar Minuten.</li>
-  <li>Schau in deinen Spam-Ordner und in den Ordner „Werbung“.</li>
-  <li>Absender ist <strong>service@schmerzfrei24.com</strong>.</li>
+  <li>Manchmal dauert es ein bis zwei Minuten, bis die Nachricht ankommt.</li>
+  <li>Schau auch kurz in deinen Spam- oder Werbeordner.</li>
+  <li>Achte auf den Absender: <strong>service@schmerzfrei24.com</strong></li>
 </ul>
 
+<div class="gruss">
+  <p>Herzliche Grüße</p>
+  <img class="unterschrift" src="/assets/img/unterschrift-andreas-sadlowski.png" width="804" height="321" alt="Unterschrift Andreas Sadlowski">
+  <p>Dein Andreas Sadlowski</p>
+</div>
+
 <footer>
-  <p><a href="/impressum">Impressum</a> | <a href="/datenschutz">Datenschutz</a></p>
+  <p><a href="/briefe/impressum">Impressum</a> | <a href="/briefe/datenschutz">Datenschutz</a></p>
 </footer>
 
 </main>
+<script>
+(function(){
+  var m=document.cookie.match(/(?:^|; )rf_vorname=([^;]*)/);
+  if(!m)return;
+  var n='';try{n=decodeURIComponent(m[1]).trim().slice(0,40);}catch(e){}
+  if(!n)return;
+  var a=document.getElementById('anrede');
+  a.querySelector('span').textContent=n.charAt(0).toUpperCase()+n.slice(1);
+  a.hidden=false;
+})();
+</script>
 </body>
 </html>

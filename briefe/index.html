@@ -68,7 +68,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <label for="m1">E-Mail-Adresse</label>
   <input id="m1" name="email" type="email" required placeholder="Deine E-Mail-Adresse" autocomplete="email">
   <button type="submit" name="FormSubmit" value="Ja, ich möchte deine 7 E-Mails bekommen">Ja, ich möchte deine 7&nbsp;E-Mails bekommen</button>
-  <p class="klein">100&nbsp;% kostenlos. Kein Spam. Abmeldung jederzeit mit einem Klick möglich.<br>Mit dem Eintragen stimmst du unserer <a href="/datenschutz">Datenschutzerklärung</a> zu.</p>
+  <p class="klein">100&nbsp;% kostenlos. Kein Spam. Abmeldung jederzeit mit einem Klick möglich.<br>Mit dem Eintragen stimmst du unserer <a href="/briefe/datenschutz">Datenschutzerklärung</a> zu.</p>
 </form>
 
 <hr>
@@ -100,7 +100,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <label for="m2">E-Mail-Adresse</label>
   <input id="m2" name="email" type="email" required placeholder="Deine E-Mail-Adresse" autocomplete="email">
   <button type="submit" name="FormSubmit" value="Ja, ich möchte deine 7 E-Mails bekommen">Ja, ich möchte deine 7&nbsp;E-Mails bekommen</button>
-  <p class="klein">100&nbsp;% kostenlos. Kein Spam. Abmeldung jederzeit mit einem Klick möglich.<br>Mit dem Eintragen stimmst du unserer <a href="/datenschutz">Datenschutzerklärung</a> zu.</p>
+  <p class="klein">100&nbsp;% kostenlos. Kein Spam. Abmeldung jederzeit mit einem Klick möglich.<br>Mit dem Eintragen stimmst du unserer <a href="/briefe/datenschutz">Datenschutzerklärung</a> zu.</p>
 </form>
 
 <div class="gruss">
@@ -112,10 +112,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <footer>
   <p>Hinweis: Meine Inhalte basieren auf 20 Jahren Erfahrung und ersetzen keine ärztliche Beratung, Diagnose oder Therapie. Setze Medikamente niemals eigenmächtig oder ohne Rücksprache mit deinem Arzt ab.</p>
-  <p><a href="/impressum">Impressum</a> | <a href="/datenschutz">Datenschutz</a></p>
+  <p><a href="/briefe/impressum">Impressum</a> | <a href="/briefe/datenschutz">Datenschutz</a></p>
 </footer>
 
 </main>
 <script type="text/javascript" src="https://scripts.cdn.klicktipp.cloud/captcha/protect.js"></script>
+<script>
+document.querySelectorAll('form.kasten').forEach(function(f){
+  f.addEventListener('submit',function(){
+    var n=f.querySelector('input[name="fields[fieldFirstName]"]').value.trim().slice(0,40);
+    var d=/(^|\.)rheumafrei\.de$/.test(location.hostname)?'; domain=rheumafrei.de':'';
+    document.cookie='rf_vorname='+encodeURIComponent(n)+'; path=/; max-age=604800; SameSite=Lax; Secure'+d;
+  });
+});
+</script>
 </body>
 </html>
