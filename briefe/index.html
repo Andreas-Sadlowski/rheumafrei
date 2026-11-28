@@ -32,7 +32,6 @@ p{margin:0 0 22px}
 .kasten button:hover{background:#244835}
 .klein{font-size:.8rem;line-height:1.5;color:#6A645A;text-align:center;margin:12px 0 0}
 .klein a{color:inherit}
-.hinweis{display:none;margin:12px 0 0;padding:10px 12px;font-size:.85rem;line-height:1.5;background:#FFF3CD;border-radius:6px}
 hr{border:0;border-top:1px solid #D9CFBD;width:120px;margin:42px auto}
 ul{list-style:none;margin:0 0 26px;padding:0}
 li{position:relative;padding-left:34px;margin:0 0 18px}
@@ -61,14 +60,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h1>Rheuma &amp; Arthritis: Wie du trotz Medikamenten an den echten Ursachen arbeitest</h1>
 <p class="einleitung">20 Jahre Erfahrung mit Tausenden Betroffenen – ehrlich, einfach und ohne Rätselraten. Ich zeige dir in 7&nbsp;E-Mails, was wirklich hilft, was in der Naturheilkunde schiefläuft und wie du dir teure Fehler ersparst.</p>
 
-<form class="kasten" novalidate>
+<form class="kasten" id="ktv2-form-363501" action="https://app.klicktipp.com/api/subscriber/signin.html" method="post" accept-charset="UTF-8">
+  <input type="hidden" name="apikey" value="8gpqz45f6z8z941f">
+  <input type="hidden" name="fields[fieldDigit]" value="">
   <label for="v1">Vorname</label>
-  <input id="v1" name="vorname" type="text" placeholder="Dein Vorname" autocomplete="given-name">
+  <input id="v1" name="fields[fieldFirstName]" type="text" required placeholder="Dein Vorname" autocomplete="given-name">
   <label for="m1">E-Mail-Adresse</label>
-  <input id="m1" name="email" type="email" placeholder="Deine E-Mail-Adresse" autocomplete="email">
-  <button type="submit">Ja, ich möchte deine 7&nbsp;E-Mails bekommen</button>
+  <input id="m1" name="email" type="email" required placeholder="Deine E-Mail-Adresse" autocomplete="email">
+  <button type="submit" name="FormSubmit" value="Ja, ich möchte deine 7 E-Mails bekommen">Ja, ich möchte deine 7&nbsp;E-Mails bekommen</button>
   <p class="klein">100&nbsp;% kostenlos. Kein Spam. Abmeldung jederzeit mit einem Klick möglich.<br>Mit dem Eintragen stimmst du unserer <a href="/datenschutz">Datenschutzerklärung</a> zu.</p>
-  <p class="hinweis">Die Anmeldung wird gerade eingerichtet. Es wurde noch nichts gespeichert. Bitte schau bald wieder vorbei.</p>
 </form>
 
 <hr>
@@ -92,14 +92,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2>Trag dich jetzt ein:</h2>
 <p>Gib unten deinen Vornamen und deine beste E-Mail-Adresse ein, in die du jeden Tag schaust. Ich schicke dir sieben Tage lang richtig wertvolle Informationen. Danach bekommst du regelmäßig weitere Tipps von mir – meine Leser sind mir dafür unendlich dankbar, weil sich ihr Leben grundlegend verändert hat, nachdem wir in Kontakt gekommen sind.</p>
 
-<form class="kasten" novalidate>
+<form class="kasten" id="ktv2-form-363501-2" action="https://app.klicktipp.com/api/subscriber/signin.html" method="post" accept-charset="UTF-8">
+  <input type="hidden" name="apikey" value="8gpqz45f6z8z941f">
+  <input type="hidden" name="fields[fieldDigit]" value="">
   <label for="v2">Vorname</label>
-  <input id="v2" name="vorname" type="text" placeholder="Dein Vorname" autocomplete="given-name">
+  <input id="v2" name="fields[fieldFirstName]" type="text" required placeholder="Dein Vorname" autocomplete="given-name">
   <label for="m2">E-Mail-Adresse</label>
-  <input id="m2" name="email" type="email" placeholder="Deine E-Mail-Adresse" autocomplete="email">
-  <button type="submit">Ja, ich möchte deine 7&nbsp;E-Mails bekommen</button>
+  <input id="m2" name="email" type="email" required placeholder="Deine E-Mail-Adresse" autocomplete="email">
+  <button type="submit" name="FormSubmit" value="Ja, ich möchte deine 7 E-Mails bekommen">Ja, ich möchte deine 7&nbsp;E-Mails bekommen</button>
   <p class="klein">100&nbsp;% kostenlos. Kein Spam. Abmeldung jederzeit mit einem Klick möglich.<br>Mit dem Eintragen stimmst du unserer <a href="/datenschutz">Datenschutzerklärung</a> zu.</p>
-  <p class="hinweis">Die Anmeldung wird gerade eingerichtet. Es wurde noch nichts gespeichert. Bitte schau bald wieder vorbei.</p>
 </form>
 
 <div class="gruss">
@@ -115,13 +116,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 </main>
-<script>
-document.querySelectorAll('form.kasten').forEach(function(f){
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    f.querySelector('.hinweis').style.display='block';
-  });
-});
-</script>
+<script type="text/javascript" src="https://scripts.cdn.klicktipp.cloud/captcha/protect.js"></script>
 </body>
 </html>
